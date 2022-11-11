@@ -17,7 +17,7 @@
 
 ## Roadmap (Future Iterations)
 
-##Acknowledgements 
+## Acknowledgements 
 
 ## License 
 
