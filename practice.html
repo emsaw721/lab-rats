@@ -14,13 +14,24 @@
       <h1 class="titleformat">
         WELCOME TO YOUR LAB BENCH
       </h1>
-      <nav class="notransition">
+      <!-- <nav class="notransition">
         <a href="/dashboard">Dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         <a href="/login" class="login-link">login</a>
-    </nav>
+    </nav> -->
 </header>
 <main>
+  <form class="login-form">
+    <div>
+        <input type="text" id="email-login" placeholder="email" />
+    </div>
+    <div>
+        <input type="password" id="password-login" placeholder="password" />
+    </div>
+    <div>
+        <button stype="submit">login</button>
+    </div>
+</form>
     {{{body}}}
 </main>
 <footer>

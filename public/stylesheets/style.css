@@ -12,6 +12,15 @@ body, html {
     -webkit-text-fill-color: #fcfdfd;
     text-align: center;
 }  
+
+.login-form {
+    text-align: center;
+}
+
+#email-login{
+    color: black; 
+    
+}
   
   a {
     text-decoration: none;
