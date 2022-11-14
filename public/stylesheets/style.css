@@ -16,32 +16,41 @@ h1 {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: #fcfdfd;
     text-align: center;
-    margin-top: 30%;
+    margin-top: 25%;
 }
 
 .login-form {
     text-align: center;
+    margin: 15%; 
+}
+
+.login-title {
+    color: black; 
+
 }
 
 #email-login {
     border: #5bd0f4;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     font-size: 1em;
+    margin: 1em 0; 
 
 }
 
 #password-login {
     border:#5bd0f4;
-    padding: 8px; 
+    padding: 10px; 
     border-radius: 5px;
     font-size: 1em;
+    margin: 1em 0; 
 }
 
 .loginbtn {
     position: relative;
     padding: 8px 16px;
     border-radius: 5px;
+    border-color: none; 
 }
 
 .loginbtn:active {
@@ -53,10 +62,6 @@ h1 {
     position: absoute; 
     width: 16px; 
     height: 16px; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
     margin: auto;
     border: 4px solid transparent;
     border-top-color: #ffffff;
