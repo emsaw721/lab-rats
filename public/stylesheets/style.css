@@ -104,11 +104,12 @@ a:hover {
     -webkit-text-fill-color: none;
 }
 
-nav {
+.sideNavBar {
     height: 100%;
-    width: 15%;
+    width: 0;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1;
     background-color: #aae6f9;
     overflow-x: hidden;
@@ -116,7 +117,7 @@ nav {
     transition: 0.5s; 
 }
 
-nav a {
+.sideNavBar a {
     padding: 8px;
     text-decoration: none;
     font-size: 1em;
@@ -125,6 +126,14 @@ nav a {
     transition: 0.5s; 
 }
 
-nav a:hover {
+.sideNavBar a:hover {
     background-color: #5bd0f4;
+}
+
+.sideNavBar .closenav {
+    position: absoulte; 
+    top: 0;
+    right: 25px; 
+    font-size: 1em;
+    margin-left: 50px; 
 }

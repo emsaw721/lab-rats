@@ -14,15 +14,31 @@
       <!-- <h1 class="titleformat">
         LAB BENCH
       </h1> -->
-      <span onclick="openNavBar()"></span>
-      <nav>
+      <div id="navBar" class="sideNavBar">
+        <a class="closenav" onclick="closeNav()">&times;</a>
         <a href="/dashboard">Dashboard</a>
         <a href="/login" class="login-link">login</a>
-        <button id="logout" class="btn-no-style">logout</button>
-    </nav>
-</header>
-<main>
-  <!-- <form class="login-form">
+        <a href="/logout" class="logout-link">logout</a>
+      </div>
+      <script>
+        function openNavBar() {
+          document.getElementById("navBar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+          document.getElementById("navBar").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+          document.body.style.backgroundColor = "rgb(224, 243, 249)";
+        }
+      </script>
+    </header>
+    <main id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
+
+
+      <!-- <form class="login-form">
     <h2 class="login-title">log-in</h2>
     <div>
         <input type="text" id="email-login" placeholder="email" />
@@ -38,12 +54,12 @@
   New to Lab Bench? <a href="/views/signup.handlebars">Signup!</a>
 </div> -->
 
-</main>
+    </main>
 
-<footer>
-</footer>
+    <footer>
+    </footer>
 
-</div>
+  </div>
 
 </body>
 
