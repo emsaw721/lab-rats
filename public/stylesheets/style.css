@@ -16,12 +16,12 @@ h1 {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: #fcfdfd;
     text-align: center;
-    margin-top: 25%;
+    margin-top: 10%;
 }
 
 .login-form {
-    text-align: center;
     margin: 15%; 
+    text-align: center;
 }
 
 .login-title {
@@ -30,20 +30,22 @@ h1 {
 }
 
 #email-login {
-    border: #5bd0f4;
+    border: 1px solid #cacbcb;
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
-    margin: 1em 0; 
+    margin-top: 1em;
+    text-align: center;
 
 }
 
 #password-login {
-    border:#5bd0f4;
+    border: 1px solid #cacbcb;
     padding: 10px; 
     border-radius: 5px;
     font-size: 1em;
-    margin: 1em 0; 
+    margin-top: 1em; 
+    text-align: center;
 }
 
 .loginbtn {
@@ -51,6 +53,8 @@ h1 {
     padding: 8px 16px;
     border-radius: 5px;
     border-color: none; 
+    text-align: center;
+    margin-top: 1em; 
 }
 
 .loginbtn:active {
@@ -80,9 +84,14 @@ h1 {
     }
 }
 
+.signup-link {
+    color: black; 
+    margin: 10px; 
+}
+
 a {
     text-decoration: none;
-    color: #fafcfc;
+    color:  #5bd0f4;
     font-weight: bold;
 }
 
