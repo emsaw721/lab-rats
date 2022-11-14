@@ -113,6 +113,7 @@ nav {
     background-color: #aae6f9;
     overflow-x: hidden;
     padding-top: 3%;
+    transition: 0.5s; 
 }
 
 nav a {
@@ -121,6 +122,7 @@ nav a {
     font-size: 1em;
     color: #fcfdfd;
     display: block;
+    transition: 0.5s; 
 }
 
 nav a:hover {
