@@ -1,49 +1,17 @@
 
 
+{{#if notebooks.length}}
 <section>
-  <h2>Create New Lab Entry</h2>
-
-  <form class="new-lab-form">
-    <div>
-      <label for="lab-title">Title</label>
-      <input type="text" id="lab-title" name="lab-title" />
-    </div>
-    <div>
-      <label for="purpose">Purpose and Hypothesis</label>
-      <input type"text" id="lab-purpose" name="lab-purpose" />
-    </div>
-    <div>
-        <label for="background">Background</label>
-        <input type="text" id="lab-bg" name="lab-background" />
-    </div>
-    <div>
-        <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
-        <input type="text" id="lab-protocols" name="lab-protocols" />
-    </div>
-    <div>
-        <label for="Observations">Observations</label>
-        <input type="text" id="lab-obs" name="lab-observations" />
-    </div>
-    <div>
-        <label for="analysis">Analysis</label>
-        <input type="text" id="lab-analysis" name="lab-analysis" /> 
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
-
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+  <h2>Your Notebooks</h2>
   <ol>
-    {{#each posts as |post|}}
+    {{#each notebooks as |notebook|}}
     <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+      {{> notebook-info notebook}}
+      <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-lab-post.js"></script>
+<script src="/javascript/add-notebook.js"></script>

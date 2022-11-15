@@ -1,0 +1,50 @@
+
+
+
+<section>
+  <h2>Create New Lab Entry</h2>
+
+  <form class="new-lab-form">
+    <div>
+      <label for="lab-title">Title</label>
+      <input type="text" id="lab-title" name="lab-title"></textarea>
+    </div>
+    <div>
+      <label for="purpose">Purpose and Hypothesis</label>
+      <textarea id="lab-purpose" name="lab-purpose"></textarea>
+    </div>
+    <div>
+        <label for="background">Background</label>
+        <textarea id="lab-bg" name="lab-background"></textarea>
+    </div>
+    <div>
+        <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
+        <textarea id="lab-protocols" name="lab-protocols"></textarea>
+    </div>
+    <div>
+        <label for="Observations">Observations</label>
+        <textarea id="lab-obs" name="lab-observations"></textarea>
+    </div>
+    <div>
+        <label for="analysis">Analysis</label>
+        <textarea id="lab-analysis" name="lab-analysis"></textarea> 
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if labs.length}}
+<section>
+  <h2>Your Labs</h2>
+  <ol>
+    {{#each labs as |lab|}}
+    <li>
+      {{> lab-info lab}}
+      <a href="/dashboard/edit/{{lab.id}}" class="edit-link">Edit Lab Entry</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-lab-post.js"></script>
