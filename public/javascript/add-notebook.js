@@ -20,5 +20,5 @@ async function newNotebookHandler(event) {
     }
   }
   
-  document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+  document.querySelector('.new-notebook-form').addEventListener('submit', newNotebookHandler);
   

@@ -24,7 +24,7 @@ async function newLabHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/notebook');
     } else {
       alert(response.statusText);
     }
