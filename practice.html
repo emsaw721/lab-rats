@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab Bench Buddy</title>
-  <link rel=”stylesheet” href=”dist/scripts/tailwind.css”/>
+  <link rel=”stylesheet” href="./dist/output.css" />
   <link rel="stylesheet" href="./public/stylesheets/style.css" />
 </head>
 
@@ -40,7 +40,19 @@
     <main id="main">
       <span class="hamburger" style="font-size:50px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
 
-
+      <div class="center-circle" class="border-black-500/75 hover:border-black-500/100" id="center-circle">
+        <h2>Lab Bench</h2>
+        <p>Welcome to Your Dashboard</p>
+      </div>
+      <div class="notebook-{{id}}-circle" id="notebook-{{id}}-circle">
+        <h2>Notebook</h2>
+      </div>
+      <div class="new-notebook" id="new-notebook">
+        <h2>Add Notebook</h2>
+      </div>
+      <div class="new-manager" id="new-manager">
+        <h2>Add Manager</h2>
+      </div>
     </main>
 
     <footer>
