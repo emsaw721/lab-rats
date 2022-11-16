@@ -112,6 +112,11 @@ a:hover {
     -webkit-text-fill-color: none;
 }
 
+.withtransition {
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: #fcfdfd;
+}
+
 .hamburger {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: #fcfdfd;
@@ -237,7 +242,7 @@ form label {
     width: 175px;
 
 }
-
+/* 
 .circle {
     border-radius: 50%;
     width: 150px;
@@ -304,6 +309,42 @@ form label {
 
 .three h3 {
     margin-top: 55px; 
+} */
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    width:300px;
+    height: 377px; 
+    text-decoration: none;
+    border: 1px solid var(--quaternary-color); 
+    background-color: var(--quaternary-color);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card a {
+    color: var(--secondary-color); 
+}
+.notebook-edit-link {
+    margin: 10px;
+    color: var(--secondary-color); 
+    align-content: flex-end;
+}
+
+.title-note-book {
+    text-align: center;
+    margin: 60px 30px 200px; 
+    padding: 8px; 
+    color: black;
+    background-color: var(--primary-color);
+    text-transform: uppercase;
+
 }
 
 
