@@ -15,7 +15,7 @@
       <!-- <h1 class="titleformat">
         LAB BENCH
       </h1> -->
-    
+
       <div id="navBar" class="sideNavBar">
         <a class="closenav" onclick="closeNav()">&times;</a>
         <div class="dropdown">
@@ -23,7 +23,7 @@
           <div class="dropdown-content">
             <a href="/notebook">Notebooks</a>
           </div>
-          </div>
+        </div>
         <a href="/logout" class="logout-link">LOGOUT</a>
       </div>
       <script>
@@ -39,33 +39,11 @@
           document.body.style.backgroundColor = "rgb(224, 243, 249)";
         }
       </script>
-   
+
     </header>
     <main id="main">
       <span class="hamburger" style="font-size:50px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
-      <section class="section-notebooks">
-        <h1 class="titleformat">Your Notebooks</h1>
-        <div class="card-deck">
-          <div class="card">
-            <div class="title-note-book">Title</div>
-            <div class="notebook-edit-link">
-            <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="title-note-book">Title</div>
-            <div class="notebook-edit-link">
-            <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
-            </div>
-          </div>
-          <div class="card">
-            <div class="title-note-book">Title</div>
-            <div class="notebook-edit-link">
-            <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </main>
 
     <footer>
