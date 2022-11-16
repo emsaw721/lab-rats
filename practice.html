@@ -36,44 +36,31 @@
     <main id="main">
       <span class="hamburger" style="font-size:50px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
 
-      <section class="section-notebooks">
-        <h1 class="titleformat">Your Notebooks</h1>
-      
-        <div class="card-deck">
-       
-          <div class="card">
-            <div class="title-note-book">Title</div>
-            <div class="notebook-edit-link">
-              <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+
+      <article>
+        <a href="/notebook/{{id}}"> &larr; {{title}}</a>
+        <h2>Edit Lab Entry</h2>
+        <form class="edit-lab-form">
+            <div id="lab-id" data-id="{{lab.id}}">
+                <input name="lab-title" type="text" value="{{lab.title}}" />
             </div>
-          </div>
-          <div class="card">
-            <div class="title-note-book">Title</div>
-            <div class="notebook-edit-link">
-              <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            <div>
+                <a href="/lab/{{lab.id}}">{{lab.comments.length}} {{format_plural "comment" lab.comments.length}}</a>
             </div>
-          </div>
-          <div class="card">
-            <div class="title-note-book">Title</div>
-            <div class="notebook-edit-link">
-              <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
-            </div>
-          </div>
-      
-          <div class="card shadow-note-book">
-            <h2>Create New Notebook</h2>
-            <form class="new-notebook-form">
-              <div>
-                <input type="text" id="notebook-title" name="notebook-title" placeholder="TITLE" />
-              </div>
-              <button class="new-notebook-btn">Create Notebook</button>
-            </form>
-          </div>
-      
+            <button type="submit">Save Lab Entry</button>
+            <button type="button" class="delete-lab-btn">Delete Lab Entry</button>
+        </form>
+    </article>
+    
+    <form class="comment-form">
+        <div>
+            <textarea name="comment-body"></textarea>
         </div>
-     
-      </section>
-     
+        <div>
+            <button id="button" type="submit">Add Comment</button>
+        </div>
+    </form>
+
     </main>
 
     <footer>
