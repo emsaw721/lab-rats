@@ -18,15 +18,19 @@
     
       <div id="navBar" class="sideNavBar">
         <a class="closenav" onclick="closeNav()">&times;</a>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/notebook">NoteBooks</a>
-        <a href="/logout" class="logout-link">logout</a>
+        <div class="dropdown">
+          <a href="/dashboard"><button class="dropbtn">DASHBOARD</button></a>
+          <div class="dropdown-content">
+            <a href="/notebook">NoteBooks</a>
+          </div>
+          </div>
+        <a href="/logout" class="logout-link">LOGOUT</a>
       </div>
       <script>
         function openNavBar() {
           document.getElementById("navBar").style.width = "250px";
           document.getElementById("main").style.marginLeft = "250px";
-          document.body.style.backgroundColor = "rgba(0,0,0,0.3)";
+          document.body.style.backgroundColor = "rgba(240,255,240,0.5)";
         }
 
         function closeNav() {
@@ -42,15 +46,14 @@
 
       <div class="center circle" class="border-black-500/75 hover:border-black-500/100" id="center-circle">
         <h2>Lab Bench</h2>
-        <p>Welcome to Your Dashboard</p>
       <div class="circle one" id="notebook-circle">
-        <h2>View Notebooks</h2>
+        <h3>View Notebooks</h3>
       </div>
       <div class="circle two" id="new-notebook">
-        <h2>Add Notebook</h2>
+        <h3>Add Notebook</h3>
       </div>
       <div class="circle three" id="new-manager">
-        <h2>Something Else</h2>
+        <h3>Something Else</h3>
       </div>
       </div>
     </main>
