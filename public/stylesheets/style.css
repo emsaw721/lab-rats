@@ -1,6 +1,7 @@
 :root {
+    --text-color: #fcfdfd;
     --primary-color: #b5e9f4;
-    --secondary-color: #bcd5da;
+    --secondary-color: rgb(188, 213, 218);
     --tertiary-color: #69a2b2;
     --quaternary-color: #7ac7b7;
     --quinary-color: #0097bd; 
@@ -12,7 +13,7 @@ html {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background-color: #e0f3f9;
+    background-color: var(--primary-color);
     color: #fcfdfd;
 }
 
@@ -38,7 +39,7 @@ h1 {
 }
 
 #email-login {
-    border: 1px solid #cacbcb;
+    border: 1px solid var(--secondary-color);
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
@@ -48,7 +49,7 @@ h1 {
 }
 
 #password-login {
-    border: 1px solid #cacbcb;
+    border: 1px solid var(--secondary-color);
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
@@ -66,7 +67,7 @@ h1 {
 }
 
 .loginbtn:active {
-    background-color: #5bd0f4;
+    background-color: var(--quinary-color);
 }
 
 .loginbtn::after {
@@ -99,12 +100,12 @@ h1 {
 
 a {
     text-decoration: none;
-    color: #5bd0f4;
+    color: var(--quinary-color);
     font-weight: bold;
 }
 
 a:hover {
-    color: #dbc1ac;
+    color: var(--quaternary-color);
 }
 
 .notransition {
@@ -129,7 +130,7 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: #aae6f9;
+    background-color: var(--primary-color);
     overflow-x: hidden;
     padding-top: 3%;
     transition: 0.5s;
@@ -139,14 +140,14 @@ a:hover {
     padding: 15px;
     text-decoration: none;
     font-size: 1em;
-    color: #fcfdfd;
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     transition: 0.5s;
 }
 
 .sideNavBar a:hover {
-    background-color: #5bd0f4;
+    background-color: var(--quinary-color);
 }
 
 .logout-link {
@@ -163,47 +164,9 @@ a:hover {
 
 .closenav:hover {
     -webkit-text-stroke: 1px black;
-    -webkit-text-fill-color: #fcfdfd;
+    -webkit-text-fill-color: var(--text-color);
 }
 
-.dropbtn {
-    background-color: #aae6f9;
-    color: #fcfdfd;
-    font-size: 1em;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #5bd0f4;
-  }
 
 .wrapper {
     width: 100%;
@@ -249,6 +212,7 @@ form label {
     justify-content: space-evenly;
 }
 
+
 .card {
     width:300px;
     height: 377px; 
@@ -258,6 +222,7 @@ form label {
     margin: 10px;
     display: flex;
     flex-direction: column;
+    box-shadow: 5px 5px var(--tertiary-color);
 }
 
 .card a {
@@ -274,7 +239,7 @@ form label {
     margin: 60px 30px 200px; 
     padding: 8px; 
     color: black;
-    background-color: var(--primary-color);
+    background-color: var(--text-color);
     text-transform: uppercase;
 
 }
@@ -294,6 +259,16 @@ form label {
 .new-notebook-form {
     text-transform: uppercase;
     text-align: center;
+    align-content: center;
 }
 
-
+.new-notebook-btn {
+    width: 150px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid var(--quaternary-color);
+    border-radius: 5px;
+    background-color: var(--quaternary-color); 
+    margin-top: 150px;
+    align-items: center;
+}
