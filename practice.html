@@ -43,19 +43,29 @@
     </header>
     <main id="main">
       <span class="hamburger" style="font-size:50px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
-
-      <div class="center circle" class="border-black-500/75 hover:border-black-500/100" id="center-circle">
-        <h2>Lab Bench</h2>
-      <div class="circle one" id="notebook-circle">
-        <h3>View Notebooks</h3>
-      </div>
-      <div class="circle two" id="new-notebook">
-        <h3>Add Notebook</h3>
-      </div>
-      <div class="circle three" id="new-manager">
-        <h3>Something Else</h3>
-      </div>
-      </div>
+      <section class="section-notebooks">
+        <h1 class="titleformat">Your Notebooks</h1>
+        <div class="card-deck">
+          <div class="card">
+            <div class="title-note-book">Title</div>
+            <div class="notebook-edit-link">
+            <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="title-note-book">Title</div>
+            <div class="notebook-edit-link">
+            <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="title-note-book">Title</div>
+            <div class="notebook-edit-link">
+            <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
