@@ -11,38 +11,68 @@
 
 <body>
   <div class="wrapper">
-    <header>
-      <!-- <h1 class="titleformat">
-        LAB BENCH
-      </h1> -->
-
-      <div id="navBar" class="sideNavBar">
-        <a class="closenav" onclick="closeNav()">&times;</a>
-        <div class="dropdown">
-          <a href="/dashboard"><button class="dropbtn">DASHBOARD</button></a>
-          <div class="dropdown-content">
-            <a href="/notebook">Notebooks</a>
-          </div>
+    <div class="wrapper">
+      <header>
+  
+        <div id="navBar" class="sideNavBar">
+          <a class="closenav" onclick="closeNav()">&times;</a>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/logout" class="logout-link">logout</a>
         </div>
-        <a href="/logout" class="logout-link">LOGOUT</a>
-      </div>
-      <script>
-        function openNavBar() {
-          document.getElementById("navBar").style.width = "250px";
-          document.getElementById("main").style.marginLeft = "250px";
-          document.body.style.backgroundColor = "rgba(240,255,240,0.5)";
-        }
-
-        function closeNav() {
-          document.getElementById("navBar").style.width = "0";
-          document.getElementById("main").style.marginLeft = "0";
-          document.body.style.backgroundColor = "rgb(224, 243, 249)";
-        }
-      </script>
-
-    </header>
+        <script>
+          function openNavBar() {
+            document.getElementById("navBar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(188,213,218,0.3)";
+          }
+  
+          function closeNav() {
+            document.getElementById("navBar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "rgb(181, 233, 244)";
+          }
+        </script>
+  </header>
     <main id="main">
       <span class="hamburger" style="font-size:50px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
+
+      <section class="section-notebooks">
+        <h1 class="titleformat">Your Notebooks</h1>
+      
+        <div class="card-deck">
+       
+          <div class="card">
+            <div class="title-note-book">Title</div>
+            <div class="notebook-edit-link">
+              <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="title-note-book">Title</div>
+            <div class="notebook-edit-link">
+              <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="title-note-book">Title</div>
+            <div class="notebook-edit-link">
+              <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+            </div>
+          </div>
+      
+          <div class="card shadow-note-book">
+            <h2>Create New Notebook</h2>
+            <form class="new-notebook-form">
+              <div>
+                <input type="text" id="notebook-title" name="notebook-title" placeholder="TITLE" />
+              </div>
+              <button class="new-notebook-btn">Create Notebook</button>
+            </form>
+          </div>
+      
+        </div>
+     
+      </section>
      
     </main>
 
