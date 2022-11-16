@@ -26,8 +26,10 @@ In order for this application to work, the user will need to install the <a href
 ## Support
 
 ## Roadmap
+Future iterations of this application will include the ability to add a manager and will allow only users with proper authorization to access lab entries. 
 
 ## Acknowledgements 
+This project was made by <a href="https://github.com/TBertazoli">Tatiana Bertazoli</a>, <a href="https://github.com/emsaw721">Emily Hill</a>, and <a href="https://github.com/deadseal001">Wenbo Li</a>. 
 
 ## License 
 
