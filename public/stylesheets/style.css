@@ -187,6 +187,52 @@ form label {
 
 }
 
-.center-circle {
-    
+.circle {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px; 
+    background-color: #78eb85;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
 }
+.center.circle {
+    height: 300px;
+    width: 300px; 
+    background-color: #78eb85; 
+    border-radius: 50%;
+    margin: 25%; 
+    text-align: center;
+}
+
+.center h2 {
+    margin-top: 100px; 
+}
+
+.one {
+  left: 300px;
+  top:-25px; 
+}
+
+.one h2{
+    margin-top: 55px;
+}
+
+.two {
+    top: -180px;
+    left: 70px;
+}
+
+.two h2 {
+    margin-top: 45px;
+}
+.three {
+    right: 300px;
+    top: -25px; 
+}
+
+.three h2 {
+    margin-top: 55px; 
+}
+
+
