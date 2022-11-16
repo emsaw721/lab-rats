@@ -125,17 +125,23 @@ a:hover {
 }
 
 .sideNavBar a {
-    padding: 8px;
+    padding: 15px;
     text-decoration: none;
     font-size: 1em;
     color: #fcfdfd;
-    display: block;
+    display: flex;
+    flex-direction: column;
     transition: 0.5s;
 }
 
 .sideNavBar a:hover {
     background-color: #5bd0f4;
 }
+
+.logout-link {
+    margin-top: 50px; 
+}
+
 
 .sideNavBar .closenav {
     top: 0;
@@ -148,6 +154,45 @@ a:hover {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: #fcfdfd;
 }
+
+.dropbtn {
+    background-color: #aae6f9;
+    color: #fcfdfd;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #5bd0f4;
+  }
 
 .wrapper {
     width: 100%;
@@ -196,6 +241,7 @@ form label {
     position: absolute;
     text-align: center;
 }
+
 .center.circle {
     height: 300px;
     width: 300px; 
@@ -205,16 +251,25 @@ form label {
     text-align: center;
 }
 
+
 .center h2 {
-    margin-top: 100px; 
+    margin-top: 100px;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: #fcfdfd;
+    font-size: 3em;
 }
+
 
 .one {
   left: 300px;
   top:-25px; 
 }
 
-.one h2{
+.one:hover {
+    transform: scale(1.5);
+}
+
+.one h3 {
     margin-top: 55px;
 }
 
@@ -223,15 +278,25 @@ form label {
     left: 70px;
 }
 
-.two h2 {
+.two:hover {
+    transform: scale(1.5); 
+
+}
+
+.two h3 {
     margin-top: 45px;
 }
+
 .three {
     right: 300px;
     top: -25px; 
 }
 
-.three h2 {
+.three:hover {
+    transform: scale(1.5);
+}
+
+.three h3 {
     margin-top: 55px; 
 }
 
