@@ -150,6 +150,12 @@ a:hover {
     background-color: var(--quinary-color);
 }
 
+.sideNavBar input {
+    padding: 15px; 
+    font-size: 1em;
+    
+}
+
 .logout-link {
     margin-top: 50px; 
 }
