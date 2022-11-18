@@ -19,5 +19,5 @@ async function commentFormHandler(event) {
         }
     }
 };
-
+// sort statement for most recent comment on post gonna be a get request --> wenbo 
 document.querySelector('.comment-form').addEventListener('submit', commentFormHandler); 

@@ -1,7 +1,7 @@
 :root {
     --text-color: #fcfdfd;
     --primary-color: #b5e9f4;
-    --secondary-color: #bcd5da;
+    --secondary-color: rgb(188, 213, 218);
     --tertiary-color: #69a2b2;
     --quaternary-color: #7ac7b7;
     --quinary-color: #0097bd; 
@@ -38,7 +38,7 @@ h1 {
 
 }
 
-#email-login {
+#username-login {
     border: 1px solid var(--secondary-color);
     padding: 10px;
     border-radius: 5px;
@@ -166,7 +166,6 @@ a:hover {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: var(--text-color);
 }
-
 
 .wrapper {
     width: 100%;
