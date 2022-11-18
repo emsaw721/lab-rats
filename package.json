@@ -29,6 +29,7 @@
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
+    "periodic-table": "^0.0.8",
     "postcss-cli": "^10.0.0",
     "sequelize": "^6.25.5",
     "uuidv4": "^6.2.13"
