@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab Bench Buddy</title>
-  <link rel=”stylesheet” href="./dist/output.css" />
-  <link rel="stylesheet" href="./public/stylesheets/style.css" />
+  <link rel="stylesheet" href="./dist/output.css" />
+  <!-- <link rel="stylesheet" href="./public/stylesheets/style.css" /> -->
 </head>
 
 <body>
@@ -33,33 +33,24 @@
           }
         </script>
   </header>
-    <main id="main">
+    <main id="main" class="bg-sky-200">
       <span class="hamburger" style="font-size:50px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
 
-
-      <article>
-        <a href="/notebook/{{id}}"> &larr; {{title}}</a>
-        <h2>Edit Lab Entry</h2>
-        <form class="edit-lab-form">
-            <div id="lab-id" data-id="{{lab.id}}">
-                <input name="lab-title" type="text" value="{{lab.title}}" />
-            </div>
-            <div>
-                <a href="/lab/{{lab.id}}">{{lab.comments.length}} {{format_plural "comment" lab.comments.length}}</a>
-            </div>
-            <button type="submit">Save Lab Entry</button>
-            <button type="button" class="delete-lab-btn">Delete Lab Entry</button>
-        </form>
-    </article>
-    
-    <form class="comment-form">
+      <form class="login-form">
+        <h2 class="login-title">log-in</h2>
         <div>
-            <textarea name="comment-body"></textarea>
+            <input type="text" id="email-login" placeholder="email" />
         </div>
         <div>
-            <button id="button" type="submit">Add Comment</button>
+            <input type="password" id="password-login" placeholder="password" />
+        </div>
+        <div>
+            <button class="loginbtn" type="submit">login</button>
         </div>
     </form>
+    <div class="signup-link">
+      New to Lab Bench? <a href="/views/signup.handlebars">Signup!</a>
+    </div>
 
     </main>
 
