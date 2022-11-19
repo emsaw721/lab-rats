@@ -16,14 +16,14 @@ var elementsearch = document.getElementById("elementsearch");
 
 elementsearch.addEventListener("keydown", searchElementHandler); 
 
-var elementsearch = document.getElementById("elementsearch");
-elementsearch.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        validate(e);
-    }
-});
+// var elementsearch = document.getElementById("elementsearch");
+// elementsearch.addEventListener("keydown", function (e) {
+//     if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+//         validate(e);
+//     }
+// });
 
-function validate(e) {
-    var text = e.target.value;
-    //validation of the input...
-}
+// function validate(e) {
+//     var text = e.target.value;
+//     //validation of the input...
+// }
