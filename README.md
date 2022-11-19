@@ -43,6 +43,9 @@ Future iterations of this application will include the ability to add a manager 
 ## Acknowledgements 
 This project was made by <a href="https://github.com/TBertazoli">Tatiana Bertazoli</a>, <a href="https://github.com/emsaw721">Emily Hill</a>, and <a href="https://github.com/deadseal001">Wenbo Li</a>. 
 
+The badges for this project were acquired <a href="https://dev.to/envoy_/150-badges-for-github-pnk">here</a>.
+
 ## License 
 
 ## Project Status 
+<img src="https://img.shields.io/badge/Status-In%20Progress-orange" />
