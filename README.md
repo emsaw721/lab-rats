@@ -2,7 +2,7 @@
 
 
 ## Description 
-This application is a virtual lab notebook where the user can create new notebooks for different subjects, add new lab entries to the notebooks, delete lab entries, and comment on other users lab entries.
+This application is a virtual lab bench where the user can create new notebooks for different subjects, add new lab entries to the notebooks, delete lab entries, and comment on other users lab entries.
 
 ## Badges
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> 
