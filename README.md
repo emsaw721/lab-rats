@@ -14,10 +14,7 @@ This application is a virtual lab bench where the user can create new notebooks 
 <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" /> 
 <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" /> 
 <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white" /> 
-<img src="https://img.shields.io/npm/l/express-handlebars?color=pink" /> 
-<img src="https://img.shields.io/npm/l/express-session?color=yellow" />
-<img src="https://img.shields.io/npm/l/dotenv?color=gr" />
-<img src="https://img.shields.io/npm/l/bcrypt?color=purple" />
+
 
 
 
