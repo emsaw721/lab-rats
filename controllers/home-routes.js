@@ -22,4 +22,9 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/molemasscal", (req, res) => {
+  console.log("=============Molecuar Mass Calculator==============");
+  res.render("MoleMassCal");
+});
+
 module.exports = router;
