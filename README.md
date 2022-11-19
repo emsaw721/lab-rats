@@ -16,10 +16,6 @@ This application is a virtual lab bench where the user can create new notebooks 
 <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white" /> 
 
 
-
-
-
-
 ## Table of Contents 
 [Visuals](#visuals)<br>
 [Installation](#installation)<br>
