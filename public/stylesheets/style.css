@@ -66,7 +66,7 @@ h1 {
 }
 
 .loginbtn:active {
-    background-color: #5bd0f4;
+  background-color: #5bd0f4;
 }
 
 .loginbtn::after {
@@ -250,6 +250,15 @@ form label {
     border-radius: 5px;
 
 
+#results {
+  font-family: "Courier New", Courier, monospace;
+  padding: 1em;
+}
+
+.cal-input,
+.cal-label {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .card-deck {
