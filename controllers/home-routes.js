@@ -50,4 +50,9 @@ router.get("/logout",(req,res)=>{
   res.render("homepage")
 })
 
+router.get("/molemasscal", (req, res) => {
+  console.log("=============Molecuar Mass Calculator==============");
+  res.render("MoleMassCal");
+});
+
 module.exports = router;

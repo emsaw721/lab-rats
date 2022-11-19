@@ -18,24 +18,23 @@ html {
 }
 
 h1 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .titleformat {
-    -webkit-text-stroke: 1px black;
-    -webkit-text-fill-color: #fcfdfd;
-    text-align: center;
-    margin-top: 10%;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: #fcfdfd;
+  text-align: center;
+  margin-top: 10%;
 }
 
 .login-form {
-    margin: 15%;
-    text-align: center;
+  margin: 15%;
+  text-align: center;
 }
 
 .login-title {
-    color: black;
-
+  color: black;
 }
 
 #username-login {
@@ -58,44 +57,43 @@ h1 {
 }
 
 .loginbtn {
-    position: relative;
-    padding: 8px 16px;
-    border-radius: 5px;
-    border-color: none;
-    text-align: center;
-    margin-top: 1em;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border-color: none;
+  text-align: center;
+  margin-top: 1em;
 }
 
 .loginbtn:active {
-    background-color: var(--quinary-color);
+    background-color: #5bd0f4;
 }
 
 .loginbtn::after {
-    content: "";
-    position: absoute;
-    width: 16px;
-    height: 16px;
-    margin: auto;
-    border: 4px solid transparent;
-    border-top-color: #ffffff;
-    border-radius: 50%;
-    animation: button-loading-spinner 1s ease infinite;
-
+  content: "";
+  position: absoute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
 }
 
 @keyframes button-loading-spinner {
-    from {
-        transform: rotate(0turn);
-    }
+  from {
+    transform: rotate(0turn);
+  }
 
-    to {
-        transform: rotate(1turn);
-    }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .signup-link {
-    color: black;
-    margin: 10px;
+  color: black;
+  margin: 10px;
 }
 
 a {
@@ -109,8 +107,8 @@ a:hover {
 }
 
 .notransition {
-    -webkit-text-stroke: none;
-    -webkit-text-fill-color: none;
+  -webkit-text-stroke: none;
+  -webkit-text-fill-color: none;
 }
 
 .withtransition {
@@ -119,8 +117,8 @@ a:hover {
 }
 
 .hamburger {
-    -webkit-text-stroke: 1px black;
-    -webkit-text-fill-color: #fcfdfd;
+  -webkit-text-stroke: 1px black;
+  -webkit-text-fill-color: #fcfdfd;
 }
 
 .sideNavBar {
@@ -162,10 +160,9 @@ a:hover {
 
 
 .sideNavBar .closenav {
-    top: 0;
-    font-size: 2em;
-    margin-left: 200px;
-
+  top: 0;
+  font-size: 2em;
+  margin-left: 200px;
 }
 
 .closenav:hover {
@@ -212,21 +209,21 @@ a:hover {
   }
 
 .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-form>div {
-    margin-bottom: 2%;
+form > div {
+  margin-bottom: 2%;
 }
 
 form label {
-    display: block;
-    color: black;
+  display: block;
+  color: black;
 }
 
 .new-lab-form {
@@ -236,13 +233,13 @@ form label {
 }
 
 .new-lab-form input {
-    width: 300px;
+  width: 300px;
 }
 .new-lab-form textarea {
-    width: 300px;
-    height: 100px; 
-    inline-size: 300px;
-    overflow-wrap: break-word;
+  width: 300px;
+  height: 100px;
+  inline-size: 300px;
+  overflow-wrap: break-word;
 }
 
 .new-lab-form button {
@@ -335,6 +332,29 @@ form label {
     margin-left: 100px;
     display: flex;
     flex-direction: column;
+#results {
+  font-family: "Courier New", Courier, monospace;
+  padding: 1em;
 }
 
+.cal-input,
+.cal-label {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
+input[type="button"],
+input[type="reset"] {
+  padding: 0.5em;
+}
+
+.calform {
+  margin: 1em;
+  padding: 1em;
+  background-color: #fafafa;
+  border-radius: 0.5em;
+}
+
+.calfieldset {
+  border-radius: 0.5em;
+}
