@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab Bench Buddy</title>
-  <link rel="stylesheet" href="../../public/stylesheets/style.css">
+  <link rel="stylesheet" href="../../public/stylesheets/style.css"/>
+  <link rel="stylesheet" href="../../dist/scripts/tailwind.css" />
 </head>
 
 <body>
@@ -18,19 +19,20 @@
       <div id="navBar" class="sideNavBar">
         <a class="closenav" onclick="closeNav()">&times;</a>
         <a href="/dashboard">Dashboard</a>
+        <input type="text" placeholder="Element Search">
         <a href="/logout" class="logout-link">logout</a>
       </div>
       <script>
         function openNavBar() {
           document.getElementById("navBar").style.width = "250px";
           document.getElementById("main").style.marginLeft = "250px";
-          document.body.style.backgroundColor = "rgba(0,0,0,0.3)";
+          document.body.style.backgroundColor = "rgba(188,213,218,0.3)";
         }
 
         function closeNav() {
           document.getElementById("navBar").style.width = "0";
           document.getElementById("main").style.marginLeft = "0";
-          document.body.style.backgroundColor = "rgb(224, 243, 249)";
+          document.body.style.backgroundColor = "rgb(181, 233, 244)";
         }
       </script>
       {{else}}

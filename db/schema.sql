@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS labrat_db;
+
+CREATE DATABASE labrat_db;

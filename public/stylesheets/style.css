@@ -1,10 +1,26 @@
+<<<<<<< HEAD
+=======
+:root {
+    --text-color: #fcfdfd;
+    --primary-color: #b5e9f4;
+    --secondary-color: rgb(188, 213, 218);
+    --tertiary-color: #69a2b2;
+    --quaternary-color: #7ac7b7;
+    --quinary-color: #0097bd; 
+}
+
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
 body,
 html {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+<<<<<<< HEAD
     background-color: #e0f3f9;
+=======
+    background-color: var(--primary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     color: #fcfdfd;
 }
 
@@ -29,8 +45,13 @@ h1 {
 
 }
 
+<<<<<<< HEAD
 #email-login {
     border: 1px solid #cacbcb;
+=======
+#username-login {
+    border: 1px solid var(--secondary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
@@ -40,7 +61,11 @@ h1 {
 }
 
 #password-login {
+<<<<<<< HEAD
     border: 1px solid #cacbcb;
+=======
+    border: 1px solid var(--secondary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
@@ -58,7 +83,11 @@ h1 {
 }
 
 .loginbtn:active {
+<<<<<<< HEAD
     background-color: #5bd0f4;
+=======
+    background-color: var(--quinary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
 }
 
 .loginbtn::after {
@@ -91,12 +120,20 @@ h1 {
 
 a {
     text-decoration: none;
+<<<<<<< HEAD
     color: #5bd0f4;
+=======
+    color: var(--quinary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     font-weight: bold;
 }
 
 a:hover {
+<<<<<<< HEAD
     color: #dbc1ac;
+=======
+    color: var(--quaternary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
 }
 
 .notransition {
@@ -104,6 +141,14 @@ a:hover {
     -webkit-text-fill-color: none;
 }
 
+<<<<<<< HEAD
+=======
+.withtransition {
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: #fcfdfd;
+}
+
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
 .hamburger {
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: #fcfdfd;
@@ -116,25 +161,55 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 1;
+<<<<<<< HEAD
     background-color: #aae6f9;
+=======
+    background-color: var(--primary-color);
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     overflow-x: hidden;
     padding-top: 3%;
     transition: 0.5s;
 }
 
 .sideNavBar a {
+<<<<<<< HEAD
     padding: 8px;
     text-decoration: none;
     font-size: 1em;
     color: #fcfdfd;
     display: block;
+=======
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     transition: 0.5s;
 }
 
 .sideNavBar a:hover {
+<<<<<<< HEAD
     background-color: #5bd0f4;
 }
 
+=======
+    background-color: var(--quinary-color);
+}
+
+.sideNavBar input {
+    padding: 15px; 
+    font-size: 1em;
+    
+}
+
+.logout-link {
+    margin-top: 50px; 
+}
+
+
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
 .sideNavBar .closenav {
     top: 0;
     font-size: 2em;
@@ -144,9 +219,53 @@ a:hover {
 
 .closenav:hover {
     -webkit-text-stroke: 1px black;
+<<<<<<< HEAD
     -webkit-text-fill-color: #fcfdfd;
 }
 
+=======
+    -webkit-text-fill-color: var(--text-color);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
 .wrapper {
     width: 100%;
     min-height: 100%;
@@ -166,6 +285,10 @@ form label {
 }
 
 .new-lab-form {
+<<<<<<< HEAD
+=======
+    margin-left: 100px;
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
     display: flex;
     flex-direction: column;
 }
@@ -182,5 +305,84 @@ form label {
 
 .new-lab-form button {
     width: 175px;
+<<<<<<< HEAD
 
 }
+=======
+    height: 50px;
+    background-color: var(--quaternary-color);
+    margin-left: 70px; 
+    border-radius: 5px;
+
+
+}
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.card {
+    width:300px;
+    height: 377px; 
+    text-decoration: none;
+    border: 1px solid var(--quaternary-color); 
+    background-color: var(--quaternary-color);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px var(--tertiary-color);
+}
+
+.card a {
+    color: var(--secondary-color); 
+}
+.notebook-edit-link {
+    margin: 10px;
+    color: var(--secondary-color); 
+    align-content: flex-end;
+}
+
+.title-note-book {
+    text-align: center;
+    margin: 60px 30px 200px; 
+    padding: 8px; 
+    color: black;
+    background-color: var(--text-color);
+    text-transform: uppercase;
+
+}
+
+.shadow-note-book {
+    width:300px;
+    height: 377px; 
+    text-decoration: none;
+    border: 1px solid var(--secondary-color); 
+    background-color: var(--secondary-color);
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-notebook-form {
+    text-transform: uppercase;
+    text-align: center;
+    align-content: center;
+}
+
+.new-notebook-btn {
+    width: 150px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid var(--quaternary-color);
+    border-radius: 5px;
+    background-color: var(--quaternary-color); 
+    margin-top: 150px;
+    align-items: center;
+}
+
+
+>>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b

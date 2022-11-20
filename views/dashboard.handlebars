@@ -1,17 +1,30 @@
 
 
-{{#if notebooks.length}}
-<section>
-  <h2>Your Notebooks</h2>
-  <ol>
-    {{#each notebooks as |notebook|}}
-    <li>
-      {{> notebook-info notebook}}
-      <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
-    </li>
+<section class="section-notebooks">
+  <h1 class="titleformat">Your Notebooks</h1>
+  {{#if notebooks.length}}
+  <div class="card-deck">
+    {{#each}}
+    <div class="card">
+      <div class="title-note-book text-center mt-14 mx-8 mb-52">Title</div>
+      <div class="notebook-edit-link m-2.5 text-secondary-color content-end">
+        <a href="/dashboard/edit/{{notebook.id}}" class="edit-link">Edit Notebook</a>
+      </div>
+    </div>
     {{/each}}
-  </ol>
+    {{/if}}
+    <div class="card shadow-note-book border-secondary-color bg-secondary-color m-2.5 text-center flex flex-col">
+      <h2>Create New Notebook</h2>
+      <form class="new-notebook-form uppercase text-center content-center">
+        <div>
+          <input type="text" id="notebook-title" name="notebook-title" placeholder="TITLE" />
+        </div>
+        <button type="submit" class="new-notebook-btn btn border-quaternary-color rounded-md bg-quaternary-color items-center mt-36">Create Notebook</button>
+      </form>
+    </div>
+    {{#if notebooks.length}}
+  </div>
+  {{/if}}
 </section>
-{{/if}}
 
 <script src="/javascript/add-notebook.js"></script>
