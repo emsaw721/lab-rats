@@ -8,7 +8,7 @@ async function newLabHandler(event) {
     const observations = document.querySelector('input[name="lab-observations"]').value; 
     const analysis = document.querySelector('input[name="lab-analysis"]').value; 
   
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/experiments`, {
       method: 'POST',
       body: JSON.stringify({
         title,

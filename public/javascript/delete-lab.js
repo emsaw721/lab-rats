@@ -5,7 +5,7 @@ async function deleteLabHandler(event) {
 
     const id = document.querySelector('#lab-id').getAttribute('data-id');
 
-    const response = await fetch(`api/labs/${id}`, {
+    const response = await fetch(`api/experiments/${id}`, {
         method: 'DELETE'
     });
 
