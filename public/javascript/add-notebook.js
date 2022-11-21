@@ -3,7 +3,7 @@ async function newNotebookHandler(event) {
   
     const title = document.querySelector('input[name="notebook-title"]').value;
   
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/projects`, {
       method: 'POST',
       body: JSON.stringify({
         title
