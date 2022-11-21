@@ -15,15 +15,15 @@ Project.init(
     project_name: {
       type: DataTypes.STRING,
       allowNull: false
-    },    
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id'
       },
-    }
-  },
+    },
+  },  
   {
     sequelize,
     freezeTableName: true,

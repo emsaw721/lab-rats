@@ -11,8 +11,7 @@ User.hasMany(Comment, {
   foreignKey: "user_id",
 });
 
-User.hasMany(Project, {
-  //as manager
+User.hasMany(Project, {  
   foreignKey: "user_id",
 });
 
