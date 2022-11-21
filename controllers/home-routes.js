@@ -1,6 +1,23 @@
 const router = require("express").Router();
 const { Experiment, Comment, User, Project } = require("../models");
 
+router.get('/', (req, res) => {
+  console.log('======================');
+  Project.findAll()
+    .then(dbPostData => {
+      const posts = dbPostData.map(post => post.get({ plain: true }));
+
+      res.render('homepage', {
+        posts,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.get("/login", (req, res) => {
   console.log("==================/login=================");
   if (req.session.loggedIn) {
