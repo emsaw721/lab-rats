@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Experiment extends Model {}
+class Experiment extends Model { }
 
 Experiment.init(
   {
@@ -23,13 +23,13 @@ Experiment.init(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id'
-    //   }
-    // }
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      },
+    },
   },
   {
     sequelize,
