@@ -1,39 +1,32 @@
 async function loginFormHandler(event) {
-    event.preventDefault();
-  
-<<<<<<< HEAD
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
-=======
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (username && password) {
->>>>>>> d23ab1c0d9625670357f54326d5fa2976e125d2b
-      const response = await fetch('/api/users/login', {
-        method: 'post',
-        body: JSON.stringify({
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard/');
-      } else {
-        alert(response.statusText);
-      }
+  event.preventDefault();
+
+  const username = document.querySelector('#username-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+
+  if (username && password) {
+
+    const response = await fetch('/api/users/login', {
+      method: 'post',
+      body: JSON.stringify({
+        email,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboard/');
+    } else {
+      alert(response.statusText);
     }
   }
-  
-  const loginButton = document.querySelector(".loginbtn");
-    loginButton.addEventListener("click", () => {
-        loginButton.classList.add("button--loading");
-    }); 
-  
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-  
-  
+}
+
+const loginButton = document.querySelector(".loginbtn");
+loginButton.addEventListener("click", () => {
+  loginButton.classList.add("button--loading");
+});
+
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
