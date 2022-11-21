@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Experiment, Project } = require('../../models')
-// const withAuth = require('../../utils/auth');
+const { Experiment, Project, Comment, User } = require('../../models')
+const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     console.log('======================');
@@ -11,24 +11,17 @@ router.get('/', (req, res) => {
             'title',
             'description',
             'project_id',
+            'user_id',
             'created_at',
         ],
         include: [
-            // {
-            //     model: Comment,
-            //     attributes: ['id', 'comment_text', 'user_id', 'notes_id'],
-            //     include: {
-            //         model: User,
-            //         attributes: ['username']
-            //     }
-            // },
-            // {
-            //     model: User,
-            //     attributes: ['username']
-            // },
             {
-                model: Project,
-                attributes: ['id', 'project_name', 'manager_id']
+                model: Comment,
+                attributes: ['id', 'comment_text', 'user_id', 'experiment_id'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     })
