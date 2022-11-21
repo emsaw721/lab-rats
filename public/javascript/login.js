@@ -25,7 +25,7 @@ async function loginFormHandler(event) {
   const loginButton = document.querySelector(".loginbtn");
     loginButton.addEventListener("click", () => {
         loginButton.classList.add("button--loading");
-    }); 
+});
   
   document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
   
