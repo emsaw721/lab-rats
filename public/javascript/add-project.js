@@ -1,3 +1,4 @@
+
 async function newNotebookHandler(event) {
     event.preventDefault();
   
