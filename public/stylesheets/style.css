@@ -322,3 +322,10 @@ form label {
     align-items: center;
 }
 
+.project-form {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+
