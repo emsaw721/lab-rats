@@ -33,14 +33,14 @@
   </form>
 </section>
 
-{{#if labs.length}}
+{{#if experiments.length}}
 <section>
   <h2>Your Labs</h2>
   <ol>
-    {{#each labs as |lab|}}
+    {{#each experiments as |experiment|}}
     <li>
-      {{> lab-info lab}}
-      <a href="/project/edit/{{lab.id}}" class="edit-link">Edit Lab Entry</a>
+      {{> lab-info experiment}}
+      <a href="/project/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
     </li>
     {{/each}}
   </ol>

@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { Experiment, Project, Comment, User } = require('../../models')
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/api', (req, res) => {
     console.log('======================');
     Experiment.findAll({
         attributes: [
