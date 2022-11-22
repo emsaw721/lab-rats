@@ -40,7 +40,9 @@
       {{/if}}
 </header>
 <main id="main">
+  {{#if loggedIn}}
    <span style="font-size:30px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
+   {{/if}}
     {{{body}}}
 </main>
 <footer>
