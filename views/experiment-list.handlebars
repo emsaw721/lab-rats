@@ -4,11 +4,10 @@
 <article class="lab">
     <h2>Your Labs</h2>
     {{#each experiments as |experiment|}}
-    <div class="title">
-        <a href="/single-lab-post">{{title}}</a>
-    </div>
+    <div class="title">{{title}} </div>
     <div class="meta">
         <a href="/experiment/{{experiment.id}}">{{<comments class="length">}} {{format_plural "comment" comments.length}}</a>
     </div>
     {{/each}}
 </article>
+{{/if}}
