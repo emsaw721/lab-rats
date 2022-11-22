@@ -1,6 +1,6 @@
 
 async function editFormHandler(event) {
-    event.preventDefault();
+   
   
     const title = document.querySelector('input[name="project-title"]').value.trim();
     const id = document.querySelector('#notebook-id').getAttribute('data-id');
@@ -20,6 +20,6 @@ async function editFormHandler(event) {
       alert(response.statusText);
     }
   }
-  
-  document.querySelector('.edit-post-form').addEventListener('submit', editFormHandler);
+
+  document.querySelector('.edit-project-form').addEventListener('submit', editFormHandler);
   
