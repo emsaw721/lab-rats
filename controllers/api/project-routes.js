@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { Experiment, Project, User } = require('../../models')
 const withAuth = require('../../utils/auth');
 
-router.get('/',  (req, res) => {
+router.get('/', (req, res) => {
     console.log('======================');
     Project.findAll({
         attributes: [
@@ -26,42 +26,60 @@ router.get('/',  (req, res) => {
         });
 });
 
-router.post('/', withAuth, (req, res) => {  
+router.post('/', withAuth, (req, res) => {
     Project.create({
-      project_name: req.body.title
+        project_name: req.body.title
     })
-      .then(dbPostData => res.json(dbPostData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 router.put('/:id', withAuth, (req, res) => {
     Project.update(
         {
-        attributes: [
-            'id',
-            'project_name',
-            'created_at'
-        ],
-    })
-      .then(dbPostData => {
-        if (dbPostData) {
-          const post = dbPostData.get({ plain: true });
-          
-          res.render('edit-post', {
-            post,
-            loggedIn: true
-          });
-        } else {
-          res.status(404).end();
+            project_name: req.body.title
+        },
+        {
+            where: {
+                id: req.params.id
+            }
         }
-      })
-      .catch(err => {
-        res.status(500).json(err);
-      });
-  });
-  
+    )
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.delete('/:id', withAuth, (req, res) => {
+    console.log('id', req.params.id);
+    Project.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbPostData => {
+            if (!dbPostData) {
+                res.status(404).json({ message: 'No post found with this id' });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 
 module.exports = router;
