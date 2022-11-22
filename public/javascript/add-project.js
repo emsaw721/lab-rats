@@ -14,7 +14,7 @@ async function newNotebookHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/projects');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
