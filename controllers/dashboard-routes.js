@@ -5,43 +5,29 @@ const sequelize = require('../config/connection');
 const { Project, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
-router.get('/', withAuth, (req, res) => {
-  console.log(req.session);
+router.get('/', (req, res) => {
   console.log('======================');
   Project.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
-    attributes: [
-        'id',
-        'project_name',
-        'created_at'
-    ],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'experiment_id', 'user_id'],
-    //     include: {
-    //       model: User,
-    //       attributes: ['username']
-    //     }
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ['username']
-    //   }
-    // ]
+      attributes: [
+          'id',
+          'project_name',
+          'created_at'
+      ]
   })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+      .then(dbPostData => {
+          const projects = dbPostData.map(post => post.get({ plain: true }));
+          console.log(projects);
+          res.render('dashboard', {
+              projects
+              // loggedIn: req.session.loggedIn
+          });
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
 });
+
 
 router.get('/edit/:id', withAuth, (req, res) => {
   Project.findByPk(req.params.id, {
@@ -69,7 +55,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       if (dbPostData) {
         const post = dbPostData.get({ plain: true });
         
-        res.render('edit-lab', {
+        res.render('edit-project', {
           post,
           loggedIn: true
         });
