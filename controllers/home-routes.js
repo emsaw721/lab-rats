@@ -42,4 +42,12 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+router.get("/logout",(req,res)=>{
+  console.log("===================router.get/logout=================");
+  req.session.destroy(()=>{
+    res.status(204).end();
+  });
+  res.render("homepage")
+})
+
 module.exports = router;
