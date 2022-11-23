@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS labrat_db;
+DROP DATABASE IF EXISTS virtual_lab_notebook_db;
 
-CREATE DATABASE labrat_db;
+CREATE DATABASE virtual_lab_notebook_db;
