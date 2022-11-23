@@ -6,11 +6,45 @@
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <a href="/api/projects/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
+      <a href="/experiments/edit/:{{id}}" class="edit-link">Edit Lab Entry</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
+<section>
+  <h1 class="titleformat">Create New Lab Entry</h1>
+
+  <form class="new-lab-form ml-24 flex flex-col">
+    <div>
+      <label for="lab-title">Title</label>
+      <input type="text" id="lab-title" name="lab-title"></textarea>
+    </div>
+    <div>
+      <label for="purpose">Purpose and Hypothesis</label>
+      <textarea id="lab-purpose" name="lab-purpose"></textarea>
+    </div>
+    <div>
+        <label for="background">Background</label>
+        <textarea id="lab-bg" name="lab-background"></textarea>
+    </div>
+    <div>
+        <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
+        <textarea id="lab-protocols" name="lab-protocols"></textarea>
+    </div>
+    <div>
+        <label for="Observations">Observations</label>
+        <textarea id="lab-obs" name="lab-observations"></textarea>
+    </div>
+    <div>
+        <label for="analysis">Analysis</label>
+        <textarea id="lab-analysis" name="lab-analysis"></textarea> 
+    </div>
+    <button type="submit" class="btn bg-quaternary-color ml-16 rounded-md">Create</button>
+  </form>
+</section>
+
+
+<script src="/javascript/add-experiment.js"></script>
 <script src="/javascript/edit-lab.js"></script>
