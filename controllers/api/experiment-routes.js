@@ -3,9 +3,9 @@ const sequelize = require('../../config/connection');
 const { Experiment, Project, Comment, User } = require('../../models')
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
     console.log('==========Experiments============');
-    Experiment.findAll({
+    Experiment.findByPk(req.params.id, {
         attributes: [
             'id',
             'title',
@@ -25,11 +25,22 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+    .then(dbPostData => {
+        if (dbPostData) {
+          const experiment = dbPostData.get({ plain: true });
+          
+          res.render('experiment-list', {
+            experiment,
+            loggedIn: true
+          });
+        } else {
+          res.status(404).end();
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
+
 
 module.exports = router;
