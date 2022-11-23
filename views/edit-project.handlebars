@@ -14,9 +14,6 @@
   </form>
 </section>
 
-
-
-
 <section>
   <h1 class="titleformat">Create New Lab Entry</h1>
 
@@ -49,22 +46,8 @@
   </form>
 </section>
 
-{{#if experiments.length}}
-<section>
-  <h2>Your Labs</h2>
-  <ol>
-    {{#each experiments as |experiment|}}
-    <li>
-      {{> lab-info experiment}}
-      <a href="/project/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
 
 <script src="/javascript/add-experiment.js"></script>
-
 <script src="/javascript/edit-project.js"></script>
 <script src="/javascript/delete-project.js"></script>
 <script src="/javascript/add-experiment.js"></script>

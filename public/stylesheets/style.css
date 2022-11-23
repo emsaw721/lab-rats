@@ -275,7 +275,7 @@ form label {
 }
 
 .card a {
-    color: var(--secondary-color); 
+    color: var(--quinary-color); 
 }
 .notebook-edit-link {
     margin: 10px;
@@ -320,6 +320,15 @@ form label {
     background-color: var(--quaternary-color); 
     margin-top: 150px;
     align-items: center;
+}
+
+.project-experiment-list {
+    color: black;
+}
+
+.project-experiment-list a {
+    text-decoration: none;
+    color: black; 
 }
 
 .project-form {

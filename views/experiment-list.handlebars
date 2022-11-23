@@ -1,13 +1,16 @@
 
 
 {{#if experiments.length}}
-<article class="lab">
-    <h2>Your Labs</h2>
+<section>
+  <h2>Your Labs</h2>
+  <ol>
     {{#each experiments as |experiment|}}
-    <div class="title">{{title}} </div>
-    <div class="meta">
-        <a href="/experiment/{{experiment.id}}">{{<comments class="length">}} {{format_plural "comment" comments.length}}</a>
-    </div>
+    <li>
+      <a href="/project/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
+    </li>
     {{/each}}
-</article>
+  </ol>
+</section>
 {{/if}}
+
+<script src="/javascript/edit-lab.js"></script>

@@ -54,29 +54,5 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-router.get('/edit/:newlab', withAuth, (req, res) => {
-  Project.findByPk(req.params.id, {
-    attributes: [
-        'id',
-        'project_name',
-        'created_at'
-    ]
-  })
-    .then(dbPostData => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
-        
-        res.render('edit-project', {
-          post,
-          loggedIn: true
-        });
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
 
 module.exports = router;

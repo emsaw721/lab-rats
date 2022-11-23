@@ -1,7 +1,6 @@
 
 async function editFormHandler(event) {
    
-  
     const title = document.querySelector('input[name="project-title"]').value.trim();
     const id = document.querySelector('#notebook-id').getAttribute('data-id');
     const response = await fetch(`/api/projects/${id}`, {
