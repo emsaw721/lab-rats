@@ -170,7 +170,7 @@ a:hover {
 .sideNavBar .closenav {
   top: 0;
   font-size: 2em;
-  margin-left: 200px;
+  margin-left: 300px;
 }
 
 .sideNavBar .closenav:hover {
@@ -178,7 +178,6 @@ a:hover {
   -webkit-text-fill-color: var(--quinary-color);
   background-color: none;
 }
-
 
 li {
   text-decoration: none;
