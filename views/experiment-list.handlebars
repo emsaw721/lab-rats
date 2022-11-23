@@ -6,7 +6,7 @@
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <a href="/experiments/edit/:{{id}}" class="edit-link">Edit Lab Entry</a>
+      <a href="/api/projects/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
     </li>
     {{/each}}
   </ol>
@@ -14,7 +14,7 @@
 {{/if}}
 
 <section>
-  <h1 class="titleformat">Create New Lab Entry</h1>
+  <h1 class="titleformat">Create New Experiment</h1>
 
   <form class="new-lab-form ml-24 flex flex-col">
     <div>
