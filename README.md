@@ -33,6 +33,11 @@ In order for this application to work, the user will need to install the <a href
 
 ## Usage
 
+![Alt text](./images/lab-bench-first-pg.png)
+![Alt text](./images/lab-bench-sign-in.png)
+![Alt text](./images/lab-bench-sign-up.png)
+![Alt text](./images/lab-bench-dashboard.png)
+
 ## Support
 
 ## Roadmap
