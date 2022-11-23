@@ -25,4 +25,4 @@
     }
   }
 
-  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+  document.querySelector('#signupform').addEventListener('submit', signupFormHandler);
