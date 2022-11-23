@@ -1,7 +1,9 @@
 
-<article class="lab">
-    <div class="title">{{title}}</div>
-    <div class="meta">
-        <a href="/experiment/{{experiment.id}}">{{<comments class="length">}} {{format_plural "comment" comments.length}}</a>
-    </div>
-</article>
+
+<ol class="lab-list">
+    {{#each experiments as |experiment|}}
+    <li>
+        {{> lab-info experiment}}
+    </li>
+    {{/each}}
+</ol>
