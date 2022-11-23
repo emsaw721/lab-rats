@@ -4,7 +4,7 @@ const { Project} = require('../../models')
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    console.log('======================');
+    console.log('==========Projects============');
     Project.findAll({
         attributes: [
             'id',
