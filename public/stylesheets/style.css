@@ -257,7 +257,7 @@ form label {
 
 }
 
-.card-deck {
+.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -278,12 +278,9 @@ form label {
 
 .card a {
   color: var(--quinary-color); 
+  margin-top: auto;
 }
-.notebook-edit-link {
-  margin: 10px;
-  color: var(--secondary-color); 
-  align-content: flex-end;
-}
+
 
 .title-note-book {
   text-align: center;
