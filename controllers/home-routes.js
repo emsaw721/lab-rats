@@ -45,9 +45,7 @@ router.get("/signup", (req, res) => {
 
 router.get("/molemasscal", (req, res) => {
   console.log("=============Molecuar Mass Calculator==============");
-  let loggedIn=req.session.loggedIn;
-  console.log(loggedIn);
-  res.render("MoleMassCal",{ loggedIn});
+  res.render("MoleMassCal");
 });
 
 router.get("/logout",(req,res)=>{
