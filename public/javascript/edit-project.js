@@ -25,4 +25,4 @@ async function editFormHandler(event) {
   }
 }
 
-document.querySelector('.edit-project-form').addEventListener('submit', editFormHandler);
+document.querySelector('#edit-project-form').addEventListener('submit', editFormHandler);

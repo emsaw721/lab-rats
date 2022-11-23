@@ -82,7 +82,6 @@ h2 {
 }
 
 .loginbtn::after {
-  content: "";
   position: absoute;
   width: 16px;
   height: 16px;
@@ -162,7 +161,7 @@ h2 {
   border: 4px solid transparent;
   border-top-color: #ffffff;
   border-radius: 50%;
-  animation: button-loading-spinner 1s ease infinite;
+  animation: button-loading-spinner 5s ease infinite;
 }
 
 @keyframes button-loading-spinner {

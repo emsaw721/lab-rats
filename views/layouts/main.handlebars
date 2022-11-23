@@ -7,17 +7,13 @@
   <title>Lab Bench Buddy</title>
 
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  {{!--
-  <link rel="stylesheet" href="/scripts/tailwind.css" /> --}}
+  {{!--<link rel="stylesheet" href="/scripts/tailwind.css" /> --}}
 </head>
 
 <body>
   <div class="wrapper">
     <header>
        {{#if loggedIn}}
-      <h1 class="titleformat">
-        WELCOME TO YOUR LAB BENCH
-      </h1>
       <div id="navBar" class="sideNavBar">
         <a class="closenav" onclick="closeNav()">&times;</a>
         <li><a href="/dashboard">Dashboard</a></li>
