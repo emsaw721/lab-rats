@@ -24,6 +24,10 @@ h1 {
   font-size: 3em;
 }
 
+h2 {
+  font-size: 2em; 
+}
+
 .titleformat {
   -webkit-text-stroke: 1px black;
   -webkit-text-fill-color: #fcfdfd;
@@ -116,12 +120,12 @@ a:hover {
 
 .withtransition {
   -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: #fcfdfd;
+  -webkit-text-fill-color: var(--text-color);
 }
 
 .hamburger {
   -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: #fcfdfd;
+  -webkit-text-fill-color: var(--text-color);
 }
 
 .sideNavBar {
@@ -169,10 +173,12 @@ a:hover {
   margin-left: 200px;
 }
 
-.closenav:hover {
+.sideNavBar .closenav:hover {
   -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: var(--text-color);
+  -webkit-text-fill-color: var(--quinary-color);
+  background-color: none;
 }
+
 
 li {
   text-decoration: none;
@@ -251,14 +257,11 @@ form label {
 }
 
 .new-lab-form button {
-
     width: 175px;
     height: 50px;
     background-color: var(--quaternary-color);
     margin-left: 70px; 
     border-radius: 5px;
-
-
 }
 
 .container {
@@ -312,10 +315,19 @@ form label {
   flex-direction: column;
 }
 
+
 .new-notebook-form {
   text-transform: uppercase;
   text-align: center;
   align-content: center;
+}
+
+.new-notebook-form input {
+  font-size: 14px; 
+  width: 300px;
+  height: 100px;
+  inline-size: 300px;
+  overflow-wrap: break-word;
 }
 
 .new-notebook-btn {
@@ -325,8 +337,15 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 150px;
+  margin-top: 120px;
   align-items: center;
+}
+
+.new-notebook-btn:hover {
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  background-color: var(--secondary-color); 
+  box-shadow: inset -2px -2px var(--quinary-color);
 }
 
 .project-experiment-list {

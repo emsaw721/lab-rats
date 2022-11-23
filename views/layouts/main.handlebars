@@ -14,10 +14,10 @@
 <body>
   <div class="wrapper">
     <header>
+       {{#if loggedIn}}
       <h1 class="titleformat">
         WELCOME TO YOUR LAB BENCH
       </h1>
-      {{#if loggedIn}}
       <div id="navBar" class="sideNavBar">
         <a class="closenav" onclick="closeNav()">&times;</a>
         <li><a href="/dashboard">Dashboard</a></li>
@@ -39,12 +39,13 @@
         }
       </script>
       {{else}}
+      <h1 class="titleformat">WELCOME TO YOUR LAB BENCH</h1>
       <a href="/login" class="login-link">login</a>
       {{/if}}
     </header>
     <main id="main">
       {{#if loggedIn}}
-      <span style="font-size:30px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
+      <span class="hamburger" style="font-size:40px;cursor:pointer" onclick="openNavBar()">&#9776;</span>
       {{/if}}
       {{{body}}}
     </main>
