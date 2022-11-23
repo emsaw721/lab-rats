@@ -6,7 +6,7 @@
   <div class="card-deck">
     {{#each projects as |project|}}
     <div class="card">
-      <div class="title-note-book text-center mt-14 mx-8 mb-52"><a href="/api/experiment" class="project-experiment-list text-black">{{project_name}}</a></div>
+      <div class="title-note-book text-center mt-14 mx-8 mb-52">{{project_name}}</div>
       <div class="notebook-edit-link m-2.5 text-secondary-color content-end">
         <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit Notebook</a>
       </div>

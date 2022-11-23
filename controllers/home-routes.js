@@ -25,7 +25,7 @@ router.get("/login", (req, res) => {
   console.log("==================router.get/login=================");
   if (req.session.loggedIn) {
     console.log("already loggedin, redirecting to /");
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   console.log("not loggedin go to login page");
@@ -41,5 +41,20 @@ router.get("/signup", (req, res) => {
   }
   res.render("signup");
 });
+
+
+router.get("/molemasscal", (req, res) => {
+  console.log("=============Molecuar Mass Calculator==============");
+  res.render("MoleMassCal");
+});
+
+router.get("/logout",(req,res)=>{
+  console.log("===================router.get/logout=================");
+  req.session.destroy(()=>{
+    res.status(204).end();
+  });
+  res.render("homepage")
+})
+
 
 module.exports = router;
