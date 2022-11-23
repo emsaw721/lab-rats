@@ -8,9 +8,6 @@ const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
   console.log('======================');
   Project.findAll({
-    where: {
-      user_id: req.session.user_id
-    },
       attributes: [
           'id',
           'project_name',
