@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "tailwindcss -i ./src/style.css -o ./dist/output.css --watch",
+    "start": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,14 +21,23 @@
   },
   "homepage": "https://github.com/emsaw721/lab-rats#readme",
   "dependencies": {
+    "autoprefixer": "^10.4.13",
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
+    "node-periodic-table": "^0.0.6",
+    "nodemon": "^2.0.20",
+    "periodic-table": "^0.0.8",
+    "postcss-cli": "^10.0.0",
     "sequelize": "^6.25.5",
     "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }

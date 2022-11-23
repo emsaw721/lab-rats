@@ -1,0 +1,16 @@
+
+
+{{#if experiments.length}}
+<section>
+  <h2>Your Labs</h2>
+  <ol>
+    {{#each experiments as |experiment|}}
+    <li>
+      <a href="/api/projects/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/edit-lab.js"></script>

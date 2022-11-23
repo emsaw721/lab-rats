@@ -3,7 +3,7 @@ const User = require("./User");
 const Comment = require("./Comment"); // comments
 const Project = require("./Project");
 
-User.hasMany(Experiment, {
+User.hasMany(Experiment, {  
   foreignKey: "user_id",
 });
 
@@ -11,22 +11,20 @@ User.hasMany(Comment, {
   foreignKey: "user_id",
 });
 
-User.hasMany(Project, {
-  //as manager
+User.hasMany(Project, {  
   foreignKey: "user_id",
 });
 
-Experiment.belongsTo(User, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL",
+Project.hasMany(Experiment, {
+  foreignKey: "project_id"
+});
+
+Experiment.belongsTo(Project, {
+  foreignKey: "project_id",
 });
 
 Experiment.hasMany(Comment, {
   foreignKey: "experiment_id",
-});
-
-Experiment.belongsTo(project, {
-  foreignKey: "project_id",
 });
 
 Comment.belongsTo(Experiment, {
@@ -35,16 +33,9 @@ Comment.belongsTo(Experiment, {
 });
 
 Comment.belongsTo(User, {
-  foreignKey: "user_id",
+  foreignKey: "user_id"
 });
 
-//may not be necessary for now
-// Project.belongsTo(User, {
-//   foreignKey: "user_id",
-// });
 
-Project.hasMany(Experimetn, {
-  foreignKey: "project_id",
-});
 
 module.exports = { User, Experiment, Comment, Project };

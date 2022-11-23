@@ -1,0 +1,31 @@
+
+
+<article>
+    <a href="/project/{{id}}"> &larr; {{project_name}}</a>
+    <h2>Edit Lab Entry</h2>
+    <form class="edit-lab-form">
+        <div id="lab-id" data-id="{{experiment.id}}">
+            <input name="lab-title" type="text" value="{{experiment.title}}" />
+        </div>
+        <div>
+            <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment" experiment.comments.length}}</a>
+        </div>
+        <button type="submit">Save Lab Entry</button>
+        <button type="button" class="delete-lab-btn">Delete Lab Entry</button>
+    </form>
+</article>
+
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button id="button" type="submit">Add Comment</button>
+    </div>
+</form>
+
+{{> comments experiment.comments}}
+
+<scrpt src="/javascript/edit-lab.js"></scrpt>
+<script src="/javascript/delete-lab.js"></script>
+<script src="/javascript/comment.js"></script>

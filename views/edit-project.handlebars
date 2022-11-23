@@ -1,5 +1,18 @@
 
 
+<section class="project-form">
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Notebook
+  </h2>
+  <form class="edit-project-form">
+    <div id="project-id"  data-id="{{project.id}}">
+      <input name="project-title" type="text" value="{{project_name}}" />
+    </div>
+    <button type="submit">Save Notebook</button>
+    <button type="button" class="delete-post-btn">Delete Notebook</button>
+  </form>
+</section>
 
 <section>
   <h1 class="titleformat">Create New Lab Entry</h1>
@@ -33,18 +46,8 @@
   </form>
 </section>
 
-{{#if experiments.length}}
-<section>
-  <h2>Your Labs</h2>
-  <ol>
-    {{#each experiments as |experiment|}}
-    <li>
-      {{> lab-info experiment}}
-      <a href="/project/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
 
+<script src="/javascript/add-experiment.js"></script>
+<script src="/javascript/edit-project.js"></script>
+<script src="/javascript/delete-project.js"></script>
 <script src="/javascript/add-experiment.js"></script>

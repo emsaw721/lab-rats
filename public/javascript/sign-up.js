@@ -18,11 +18,11 @@
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
     }
   }
 
-  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+  document.querySelector('#signupform').addEventListener('submit', signupFormHandler);

@@ -1,18 +1,18 @@
 
-  <form class="login-form">
-    <h2 class="login-title">log-in</h2>
-    <div>
-        <input type="text" id="email-login" placeholder="email" />
+      <form class="login-form text-center">
+        <h2 class="login-title text-black">log-in</h2>
+        <div>
+            <input class="text-base text-center border-secondary-color rounded-md mt-4 p-2.5" type="text" id="username-login" placeholder="username" />
+        </div>
+        <div>
+            <input class="text-base text-center border-secondary-color rounded-md mt-4 p-2.5" type="password" id="password-login" placeholder="password" />
+        </div>
+        <div>
+            <button class="loginbtn bg-tertiary-color px-4 py-2 border-tertiary-color rounded-md mt-4 hover:bg-quinary-color" type="submit">login</button>
+        </div>
+    </form>
+    <div class="signup-link text-black m-2.5">
+      New to Lab Bench? <a href="/signup">Signup!</a>
     </div>
-    <div>
-        <input type="password" id="password-login" placeholder="password" />
-    </div>
-    <div>
-        <button class="loginbtn" type="submit">login</button>
-    </div>
-</form>
-<div class="signup-link">
-  New to Lab Bench? <a href="/views/signup.handlebars">Signup!</a>
-</div>
 
 <script src="/javascript/login.js"></script>

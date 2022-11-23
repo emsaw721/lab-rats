@@ -1,11 +1,23 @@
+:root {
+    --text-color: #fcfdfd;
+    --primary-color: #b5e9f4;
+    --secondary-color: rgb(188, 213, 218);
+    --tertiary-color: #69a2b2;
+    --quaternary-color: #7ac7b7;
+    --quinary-color: #0097bd; 
+}
+
 body,
 html {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #e0f3f9;
-  color: #fcfdfd;
+
+
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--primary-color);
+    color: #fcfdfd;
+
 }
 
 h1 {
@@ -28,22 +40,26 @@ h1 {
   color: black;
 }
 
-#email-login {
-  border: 1px solid #cacbcb;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1em;
-  margin-top: 1em;
-  text-align: center;
+
+
+
+#username-login {
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 1em;
+    text-align: center;
+
 }
 
 #password-login {
-  border: 1px solid #cacbcb;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1em;
-  margin-top: 1em;
-  text-align: center;
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 1em;
+    text-align: center;
 }
 
 .loginbtn {
@@ -56,7 +72,7 @@ h1 {
 }
 
 .loginbtn:active {
-  background-color: #5bd0f4;
+    background-color: var(--quinary-color);
 }
 
 .loginbtn::after {
@@ -87,18 +103,23 @@ h1 {
 }
 
 a {
-  text-decoration: none;
-  color: #5bd0f4;
-  font-weight: bold;
+    text-decoration: none;
+    color: var(--quinary-color);
+    font-weight: bold;
 }
 
 a:hover {
-  color: #dbc1ac;
+    color: var(--quaternary-color);
 }
 
 .notransition {
   -webkit-text-stroke: none;
   -webkit-text-fill-color: none;
+}
+
+.withtransition {
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: #fcfdfd;
 }
 
 .hamburger {
@@ -107,30 +128,43 @@ a:hover {
 }
 
 .sideNavBar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background-color: #aae6f9;
-  overflow-x: hidden;
-  padding-top: 3%;
-  transition: 0.5s;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    padding-top: 3%;
+    transition: 0.5s;
 }
 
 .sideNavBar a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 1em;
-  color: #fcfdfd;
-  display: block;
-  transition: 0.5s;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1em;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
 }
 
 .sideNavBar a:hover {
-  background-color: #5bd0f4;
+    background-color: var(--quinary-color);
+
 }
+
+.sideNavBar input {
+    padding: 15px; 
+    font-size: 1em;
+    
+}
+
+.logout-link {
+    margin-top: 50px; 
+}
+
 
 .sideNavBar .closenav {
   top: 0;
@@ -139,9 +173,47 @@ a:hover {
 }
 
 .closenav:hover {
-  -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: #fcfdfd;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: var(--text-color);
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .modal-close:hover,
+  .modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 .wrapper {
   width: 100%;
@@ -162,8 +234,9 @@ form label {
 }
 
 .new-lab-form {
-  display: flex;
-  flex-direction: column;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .new-lab-form input {
@@ -177,32 +250,97 @@ form label {
 }
 
 .new-lab-form button {
-  width: 175px;
+
+    width: 175px;
+    height: 50px;
+    background-color: var(--quaternary-color);
+    margin-left: 70px; 
+    border-radius: 5px;
+
+
 }
 
-#results {
-  font-family: "Courier New", Courier, monospace;
-  padding: 1em;
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
-.cal-input,
-.cal-label {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+
+.card {
+    width:300px;
+    height: 377px; 
+    text-decoration: none;
+    border: 1px solid var(--quaternary-color); 
+    background-color: var(--quaternary-color);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px var(--tertiary-color);
 }
 
-input[type="button"],
-input[type="reset"] {
-  padding: 0.5em;
+.card a {
+    color: var(--quinary-color); 
+}
+.notebook-edit-link {
+    margin: 10px;
+    color: var(--secondary-color); 
+    align-content: flex-end;
 }
 
-.calform {
-  margin: 1em;
-  padding: 1em;
-  background-color: #fafafa;
-  border-radius: 0.5em;
+.title-note-book {
+    text-align: center;
+    margin: 60px 30px 200px; 
+    padding: 8px; 
+    color: black;
+    background-color: var(--text-color);
+    text-transform: uppercase;
+
 }
 
-.calfieldset {
-  border-radius: 0.5em;
+.shadow-note-book {
+    width:300px;
+    height: 377px; 
+    text-decoration: none;
+    border: 1px solid var(--secondary-color); 
+    background-color: var(--secondary-color);
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
+
+.new-notebook-form {
+    text-transform: uppercase;
+    text-align: center;
+    align-content: center;
+}
+
+.new-notebook-btn {
+    width: 150px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid var(--quaternary-color);
+    border-radius: 5px;
+    background-color: var(--quaternary-color); 
+    margin-top: 150px;
+    align-items: center;
+}
+
+.project-experiment-list {
+    color: black;
+}
+
+.project-experiment-list a {
+    text-decoration: none;
+    color: black; 
+}
+
+.project-form {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
