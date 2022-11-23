@@ -18,8 +18,8 @@ router.get('/', (req, res) => {
           const projects = dbPostData.map(post => post.get({ plain: true }));
           console.log(projects);
           res.render('dashboard', {
-              projects
-              // loggedIn: req.session.loggedIn
+              projects,
+              loggedIn: req.session.loggedIn
           });
       })
       .catch(err => {
@@ -39,10 +39,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
   })
     .then(dbPostData => {
       if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
+        const project = dbPostData.get({ plain: true });
         
         res.render('edit-project', {
-          post,
+          project,
           loggedIn: true
         });
       } else {
