@@ -25,7 +25,7 @@ router.get("/login", (req, res) => {
   console.log("==================router.get/login=================");
   if (req.session.loggedIn) {
     console.log("already loggedin, redirecting to /");
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   console.log("not loggedin go to login page");
