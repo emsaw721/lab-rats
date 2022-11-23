@@ -109,6 +109,36 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+router.put('/:id', withAuth, (req, res) => {
+ Experiment.update(
+      {
+        title: req.body.title,
+        purpose_and_hypothesis: req.body.purpose_and_hypothesis,
+        background: req.body.background,
+        protocols_calculations_reagents_equipment: req.body.protocols_calculations_reagents_equipment,
+        observations: req.body.observations,
+        analysis:req.body.analysis       
+      },
+      {
+          where: {
+            project_id: req.params.project_id,
+            id: req.params.id
+          }
+      }
+  )
+      .then(dbPostData => {
+          if (!dbPostData) {
+              res.status(404).json({ message: 'No post found with this id' });
+              return;
+          }
+          res.json(dbPostData);
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+});
+
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Experiment.destroy({
