@@ -2,12 +2,15 @@
 
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Project, User, Comment } = require('../models');
+const { Project, User, Comment, Experiment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
   console.log('======================');
   Project.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
       attributes: [
           'id',
           'project_name',

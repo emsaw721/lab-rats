@@ -1,19 +1,19 @@
-
-
-
 async function deleteProjectHandler(event) {
-    const title = document.querySelector('input[name="project-title"]').value.trim();
-    const id = document.querySelector('#notebook-id').getAttribute('data-id');
-  
+    event.preventDefault();
+
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
+
     const response = await fetch(`/api/projects/${id}`, {
-      method: 'DELETE'
+        method: 'DELETE'
     });
 
-    if(response.ok) {
-        document.location.replace('/dashboard/');
+    if (response.ok) {
+        document.location.replace('/dashboard');
     } else {
         alert(response.statusText);
     }
-  }
+};
 
-  document.querySelector('.delete-post-btn').addEventListener('click', deleteProjectHandler); 
+document.querySelector('#deleteproject').addEventListener('click', deleteProjectHandler); 
