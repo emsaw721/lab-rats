@@ -15,9 +15,25 @@ Experiment.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    description: {
+    purpose_and_hypothesis: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    background: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    protocols_calculations_reagents_equipment: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    observations: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    analysis: {
+      type: DataTypes.TEXT,
+      allowNull: true
     },
     project_id: {
       type: DataTypes.INTEGER,
