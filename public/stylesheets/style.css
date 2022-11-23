@@ -35,7 +35,7 @@ h2 {
 
 .titleformat {
   -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: #fcfdfd;
+  -webkit-text-fill-color: var(--text-color);
   text-align: center;
   margin-top: 10%;
 }
@@ -77,30 +77,6 @@ h2 {
   margin-top: 1em;
 }
 
-.loginbtn:active {
-  background-color: var(--quinary-color);
-}
-
-.loginbtn::after {
-  position: absoute;
-  width: 16px;
-  height: 16px;
-  margin: auto;
-  border: 4px solid transparent;
-  border-top-color: #ffffff;
-  border-radius: 50%;
-  animation: button-loading-spinner 1s ease infinite;
-}
-
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-
-  to {
-    transform: rotate(1turn);
-  }
-}
 
 .signup-link {
   color: black;
@@ -146,32 +122,6 @@ h2 {
   border-color: none;
   text-align: center;
   margin-top: 1em;
-}
-
-.signup-form button:active {
-  background-color: var(--quinary-color);
-}
-
-.signup-form button::after {
-  content: "";
-  position: absoute;
-  width: 16px;
-  height: 16px;
-  margin: auto;
-  border: 4px solid transparent;
-  border-top-color: #ffffff;
-  border-radius: 50%;
-  animation: button-loading-spinner 5s ease infinite;
-}
-
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-
-  to {
-    transform: rotate(1turn);
-  }
 }
 
 a {
@@ -253,43 +203,6 @@ a:hover {
 li {
   text-decoration: none;
   list-style: none;
-}
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .wrapper {
@@ -385,6 +298,22 @@ form label {
   flex-direction: column;
 }
 
+.create-notebook-btn {
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  border: 1px solid var(--quaternary-color);
+  border-radius: 5px;
+  background-color: var(--quaternary-color); 
+  margin-top: 120px;
+  align-items: center;
+}
+
+.create-notebook-btn:hover {
+  border: 1px solid var(--quinary-color);
+  border-radius: 5px;
+  background-color: var(--quinary-color); 
+}
 
 .new-notebook-form {
   text-transform: uppercase;
