@@ -2,7 +2,7 @@
 async function editFormHandler(event) {
    
     const title = document.querySelector('input[name="project-title"]').value.trim();
-    const id = document.querySelector('#notebook-id').getAttribute('data-id');
+    const id = document.querySelector('#project-id').getAttribute('data-id');
     const response = await fetch(`/api/projects/${id}`, {
       method: 'PUT',
       body: JSON.stringify({
@@ -20,5 +20,5 @@ async function editFormHandler(event) {
     }
   }
 
-  document.querySelector('.edit-project-form').addEventListener('submit', editFormHandler);
+  document.querySelector('#edit-project-form').addEventListener('submit', editFormHandler);
   
