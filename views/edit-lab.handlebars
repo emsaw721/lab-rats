@@ -32,12 +32,6 @@
     </form>
 </article>
 
-<div class="experiment-comment-list">
-    <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment"
-        experiment.comments.length}}</a>
-</div>
-
-
 <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -46,7 +40,6 @@
         <button id="button" type="submit">Add Comment</button>
     </div>
 </form>
-
 {{> comments experiment.comments}}
 
 <scrpt src="/javascript/edit-lab.js"></scrpt>

@@ -19,11 +19,22 @@ router.get("/", (req, res) => {
       },
     ],
   })
-    .then((dbdata) => res.json(dbdata))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  .then(dbPostData => {
+    if (dbPostData) {
+      const experiments = dbPostData.map(post => post.get({ plain: true }));
+      console.log(experiments)
+      res.render('experiment-list', {
+        experiments,
+        loggedIn: req.session.loggedIn
+      });
+    } else {
+      res.status(404).end();
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 router.get("/:id", (req, res) => {
