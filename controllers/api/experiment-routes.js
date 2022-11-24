@@ -85,6 +85,34 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
+router.get('/edit/:id', withAuth, (req, res) => {
+  Experiment.findByPk(req.params.id, {
+    attributes: [
+        'id',
+        'title',
+        'background',
+        'protocols_calculations_reagents_equipment',
+        'observations',
+        'analysis'
+    ]
+  })
+    .then(dbPostData => {
+      if (dbPostData) {
+        const experiment = dbPostData.get({ plain: true });
+        
+        res.render('edit-lab', {
+          experiment,
+          loggedIn: true
+        });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
 //     .then(dbPostData => {
 //       if (dbPostData) {
 //         const experiment = dbPostData.get({ plain: true });
