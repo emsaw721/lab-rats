@@ -4,7 +4,7 @@
 async function viewLabsHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('.experiment-link');
+    const title = document.querySelector('#experiment-lab-link');
   
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
@@ -13,7 +13,15 @@ async function viewLabsHandler(event) {
     const response = await fetch(`/api/projects/${id}/experiments`, {
       method: 'GET',
       body: JSON.stringify({
-        title
+        title,
+        purpose_and_hypothesis,
+        background,
+        protocols_calculations_reagents_equipment,
+        observations, 
+        analysis,
+        project_id,
+        user_id,
+        created_at
       }),
       headers: {
         'Content-Type': 'application/json'
