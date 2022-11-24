@@ -1,36 +1,52 @@
 <article>
     <h2 class="titleformat">Edit Lab Entry</h2>
     <form id="edit-lab-form" class="edit-lab-info">
-    <div>
-      <label for="lab-title">Title</label>
-      <input type="text" id="lab-title" name="lab-title"></textarea>
-    </div>
-    <div>
-      <label for="purpose">Purpose and Hypothesis</label>
-      <textarea id="lab-purpose" name="lab-purpose"></textarea>
-    </div>
-    <div>
-        <label for="background">Background</label>
-        <textarea id="lab-bg" name="lab-background"></textarea>
-    </div>
-    <div>
-        <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
-        <textarea id="lab-protocols" name="lab-protocols"></textarea>
-    </div>
-    <div>
-        <label for="Observations">Observations</label>
-        <textarea id="lab-obs" name="lab-observations"></textarea>
-    </div>
-    <div>
-        <label for="analysis">Analysis</label>
-        <textarea id="lab-analysis" name="lab-analysis"></textarea> 
-    </div>
-    <div class="btn-div">
-        <button type="submit" class="save-lab-btn">Save Lab Entry</button>
-        <button type="button" class="delete-lab-btn">Delete Lab Entry</button>
+        <div id="lab-id" data-id="{{experiment.id}}">
+            <label for="lab-title">Title</label>
+            <input name="lab-title" type="text" value="{{experiment.title}}" />
+        </div>
+        <div>
+            <label for="purpose">Purpose and Hypothesis</label>
+            <textarea id="lab-purpose" name="lab-purpose"></textarea>
+        </div>
+        <div>
+            <label for="background">Background</label>
+            <textarea id="lab-bg" name="lab-background"></textarea>
+        </div>
+        <div>
+            <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
+            <textarea id="lab-protocols" name="lab-protocols"></textarea>
+        </div>
+        <div>
+            <label for="Observations">Observations</label>
+            <textarea id="lab-obs" name="lab-observations"></textarea>
+        </div>
+        <div>
+            <label for="analysis">Analysis</label>
+            <textarea id="lab-analysis" name="lab-analysis"></textarea>
+        </div>
+        <div class="btn-div">
+            <button type="submit" class="save-lab-btn">Save Lab Entry</button>
+            <button type="button" class="delete-lab-btn">Delete Lab Entry</button>
         </div>
     </form>
+>>>>>>> d974761 (added css for edit-lab.handlebars)
 </article>
+
+<div class="experiment-comment-list">
+    <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment"
+        experiment.comments.length}}</a>
+</div>
+
+<div class="experiment-comment-list">
+    <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment"
+        experiment.comments.length}}</a>
+</div>
+
+<div class="experiment-comment-list">
+    <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment"
+        experiment.comments.length}}</a>
+</div>
 
 <div class="experiment-comment-list">
     <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment"
