@@ -7,18 +7,18 @@ router.get("/", (req, res) => {
   Project.findAll({
     attributes: ["id", "project_name", "created_at"],
   })
-    .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-
-      res.render("homepage", {
-        // posts,
-        // loggedIn: req.session.loggedIn
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
+  .then(dbPostData => {
+    const projects = dbPostData.map(post => post.get({ plain: true }));
+    console.log(projects);
+    res.render('homepage', {
+        projects,
+        loggedIn: req.session.loggedIn
     });
+})
+.catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 router.get("/login", (req, res) => {
@@ -45,14 +45,14 @@ router.get("/signup", (req, res) => {
 
 router.get("/molemasscal", (req, res) => {
   console.log("=============Molecuar Mass Calculator==============");
-  let loggedIn=req.session.loggedIn;
+  let loggedIn = req.session.loggedIn;
   console.log(loggedIn);
-  res.render("MoleMassCal",{ loggedIn});
+  res.render("MoleMassCal", { loggedIn });
 });
 
-router.get("/logout",(req,res)=>{
+router.get("/logout", (req, res) => {
   console.log("===================router.get/logout====================");
-  req.session.destroy(()=>{
+  req.session.destroy(() => {
     res.status(204).end();
   });
   res.render("homepage")
