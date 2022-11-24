@@ -2,19 +2,24 @@
 
 <article>
     <h2>Edit Lab Entry</h2>
-    <form id="edit-lab-form">
-        <div id="lab-id" data-id="{{experiment.id}}">
+    <form id="edit-lab-form" class="edit-lab-form">
+        <div class="edit-lab-info" id="lab-id" data-id="{{experiment.id}}">
+             <label for="lab-title">Title</label>
             <input name="lab-title" type="text" value="{{experiment.title}}" />
-            <input name="lab-purpose" type="text" value="{{experiment.purpose_and_hypothesis}}" />
-            <input name="lab-bg" type="text" value="{{experiment.background}}" />
-            <input name="lab-protocols" type="text" value="{{experiment.protocols_calculations_reagents_equipment}}" />
-            <input name="lab-obs" type="text" value="{{experiment.observations}}" />
-            <input name="lab-analysis" type="text" value="{{experiment.analysis}}" />
+            <label for="purpose">Purpose and Hypothesis</label>
+            <textarea name="lab-purpose" type="text" value="{{experiment.purpose_and_hypothesis}}"></textarea>
+              <label for="background">Background</label>
+            <textarea name="lab-bg" type="text" value="{{experiment.background}}"></textarea>
+                    <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
+            <textarea name="lab-protocols" type="text" value="{{experiment.protocols_calculations_reagents_equipment}}"></textarea>
+             <label for="Observations">Observations</label>
+            <textarea name="lab-obs" type="text" value="{{experiment.observations}}"></textarea>
+             <label for="analysis">Analysis</label>
+            <textarea name="lab-analysis" type="text" value="{{experiment.analysis}}"></textarea>
         </div>
-        <button type="submit">Save Lab Entry</button>
+        <button type="submit" class="save-lab-btn">Save Lab Entry</button>
         <button type="button" class="delete-lab-btn">Delete Lab Entry</button>
     </form>
-
        <div>
             <a href="/experiment/{{experiment.id}}">{{experiment.comments.length}} {{format_plural "comment" experiment.comments.length}}</a>
         </div>
