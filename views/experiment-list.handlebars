@@ -5,7 +5,7 @@
     {{#each experiments as |experiment|}}
     <li>
       <div id="experiment-lab-link">{{experiment.title}}</div>
-      <a href="/api/projects/{{projects_id}}/experiments/edit/{{id}}" class="edit-link">Edit Lab Entry</a>
+      <a href="/api/projects/{{id}}/experiments/edit/{{id}}" class="edit-link">Edit Lab Entry</a>
     </li>
     {{/each}}
   </ol>
@@ -47,3 +47,4 @@
 
 
 <script src="/javascript/add-experiment.js"></script>
+<script src="/javascript/view-experiments.js"></script>
