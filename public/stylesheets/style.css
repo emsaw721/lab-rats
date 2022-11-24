@@ -200,10 +200,6 @@ a:hover {
   background-color: none;
 }
 
-li {
-  text-decoration: none;
-  list-style: none;
-}
 
 .wrapper {
   width: 100%;
@@ -362,5 +358,11 @@ form label {
   flex-direction: column;
 }
 
+.experiment-list ol {
+  font-size: 22px; 
+}
 
-
+.edit-lab-info {
+  display: flex;
+  flex-direction: column;
+}
