@@ -1,14 +1,14 @@
 async function newLabHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="notebook-title"]').value;
+    const title = document.querySelector('input[name="lab-title"]').value;
     const purpose = document.querySelector('input[name="lab-purpose"]').value;
-    const background = document.querySelector('input[name="lab-background"]').value; 
+    const background = document.querySelector('input[name="lab-bg"]').value; 
     const protocols = document.querySelector('input[name="lab-protocols"]').value; 
-    const observations = document.querySelector('input[name="lab-observations"]').value; 
+    const observations = document.querySelector('input[name="lab-obs"]').value; 
     const analysis = document.querySelector('input[name="lab-analysis"]').value; 
   
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/experiments`, {
       method: 'POST',
       body: JSON.stringify({
         title,
@@ -24,7 +24,7 @@ async function newLabHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/notebook');
+      document.location.replace('experiment-list');
     } else {
       alert(response.statusText);
     }
