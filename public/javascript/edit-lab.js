@@ -4,7 +4,7 @@ async function editLabHandler(event) {
     event.preventDefault();
     
     const title = document.querySelector('input[name="lab-title"]').value.trim();
-    
+    const id = document.querySelector('#lab-id').setAttribute('data-id');
     const response = await fetch(`/api/labs/${id}`, {
         method: 'PUT',
         body: JSON.stringify({title}),
