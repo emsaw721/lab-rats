@@ -132,16 +132,13 @@ router.post('/', withAuth, (req, res) => {
   console.log(req.body)
   console.log(req.params)
   Experiment.create({
-    where: {
-      project_id: req.params.project_id
-    },
     title: req.body.title,
     purpose_and_hypothesis: req.body.purpose,
     background: req.body.background,
     protocols_calculations_reagents_equipment: req.body.protocols,
     observations: req.body.observations,
     analysis: req.body.analysis,
-    // project_id: req.params.project_id
+    project_id: req.params.project_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
