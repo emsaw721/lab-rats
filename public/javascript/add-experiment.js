@@ -7,10 +7,13 @@ async function newLabHandler(event) {
   const protocols = document.querySelector('#lab-protocols').value;
   const observations = document.querySelector('#lab-obs').value;
   const analysis = document.querySelector('#lab-analysis').value;
-  const projectid = window.location.href
+
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 2
+];
 
 
-  const response = await fetch(projectid, {
+  const response = await fetch(`/api/projects/${id}/experiments`, {
     method: 'POST',
     body: JSON.stringify({
       title,
@@ -25,7 +28,7 @@ async function newLabHandler(event) {
     }
   })
   if (response.ok) {
-    document.location.replace('/experiment-list');
+    document.location.replace(`/api/projects/${id}/experiments`);
   } else {
     alert(response.statusText);
   }
