@@ -2,21 +2,20 @@
 // go to edit-lab.handlebars for issues 
 async function deleteLabHandler(event) {
     event.preventDefault();
+    const projectid = window.location.href
 
-    const projid= '{{project_id}}'; 
-    const labid = document.querySelector('#lab-id').getAttribute('data-id');
-    console.log(labid)
-    console.log(projid)
 
-    const response = await fetch(``, {
+
+
+    const response = await fetch(projectid, {
         method: 'DELETE'
     });
 
     if(response.ok) {
-        document.location.replace('/experiment-list');
+        window.location.reload();
     } else {
         alert(response.statusText);
     }
 };
 
-document.querySelector('.delete-lab-btn').addEventListener('click', deleteLabHandler); 
+document.querySelector('#edit-lab-form').addEventListener('click', deleteLabHandler); 

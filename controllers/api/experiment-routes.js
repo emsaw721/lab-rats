@@ -185,7 +185,6 @@ router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Experiment.destroy({
     where: {
-      project_id: req.params.project_id,
       id: req.params.id
     }
   })
