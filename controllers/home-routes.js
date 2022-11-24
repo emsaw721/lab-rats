@@ -55,8 +55,12 @@ router.get("/logout",(req,res)=>{
   req.session.destroy(()=>{
     res.status(204).end();
   });
-  res.render("homepage")
+  res.render("homepage");
 })
 
+router.get("/ncbisearh",(req,res)=>{
+  console.log("===================router.get/ncbisearch=====================");
+  res.render("NCBI");
+})
 
 module.exports = router;
