@@ -28,6 +28,7 @@
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "formidable": "^2.0.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "node-periodic-table": "^0.0.6",

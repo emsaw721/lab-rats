@@ -1,34 +1,36 @@
 async function newLabHandler(event) {
-    event.preventDefault();
-  
-    const title = document.querySelector('input[name="lab-title"]').value;
-    const purpose = document.querySelector('input[name="lab-purpose"]').value;
-    const background = document.querySelector('input[name="lab-bg"]').value; 
-    const protocols = document.querySelector('input[name="lab-protocols"]').value; 
-    const observations = document.querySelector('input[name="lab-obs"]').value; 
-    const analysis = document.querySelector('input[name="lab-analysis"]').value; 
-  
-    const response = await fetch(`/experiments`, {
-      method: 'POST',
-      body: JSON.stringify({
-        title,
-        purpose,
-        background,
-        protocols,
-        observations,
-        analysis
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-  
-    if (response.ok) {
-      document.location.replace('experiment-list');
-    } else {
-      alert(response.statusText);
+  event.preventDefault();
+
+  const title = document.querySelector('input[name="lab-title"]').value;
+  const purpose = document.querySelector('#lab-purpose').value;
+  const background = document.querySelector('#lab-bg').value;
+  const protocols = document.querySelector('#lab-protocols').value;
+  const observations = document.querySelector('#lab-obs').value;
+  const analysis = document.querySelector('#lab-analysis').value;
+  const projectid = window.location.href
+
+
+  const response = await fetch(projectid, {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      purpose,
+      background,
+      protocols,
+      observations,
+      analysis
+    }),
+    headers: {
+      'Content-Type': 'application/json'
     }
+  })
+  if (response.ok) {
+    document.location.replace('/experiment-list');
+  } else {
+    alert(response.statusText);
   }
-  
-  document.querySelector('.new-lab-post').addEventListener('submit', newLabHandler);
-  
+}
+
+
+
+document.querySelector('#addexperiment').addEventListener('submit', newLabHandler);

@@ -1,5 +1,3 @@
-
-
 {{#if experiments.length}}
 <section class="experiment-list">
   <h1 class="titleformat">Your Experiments</h1>
@@ -18,7 +16,7 @@
 <section>
   <h1 class="titleformat">Create New Experiment</h1>
 
-  <form class="new-lab-form ml-24 flex flex-col">
+  <form class="new-lab-form ml-24 flex flex-col" id="addexperiment">
     <div>
       <label for="lab-title">Title</label>
       <input type="text" id="lab-title" name="lab-title"></textarea>
@@ -28,20 +26,20 @@
       <textarea id="lab-purpose" name="lab-purpose"></textarea>
     </div>
     <div>
-        <label for="background">Background</label>
-        <textarea id="lab-bg" name="lab-background"></textarea>
+      <label for="background">Background</label>
+      <textarea id="lab-bg" name="lab-background"></textarea>
     </div>
     <div>
-        <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
-        <textarea id="lab-protocols" name="lab-protocols"></textarea>
+      <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
+      <textarea id="lab-protocols" name="lab-protocols"></textarea>
     </div>
     <div>
-        <label for="Observations">Observations</label>
-        <textarea id="lab-obs" name="lab-observations"></textarea>
+      <label for="Observations">Observations</label>
+      <textarea id="lab-obs" name="lab-observations"></textarea>
     </div>
     <div>
-        <label for="analysis">Analysis</label>
-        <textarea id="lab-analysis" name="lab-analysis"></textarea> 
+      <label for="analysis">Analysis</label>
+      <textarea id="lab-analysis" name="lab-analysis"></textarea>
     </div>
     <button type="submit" class="btn bg-quaternary-color ml-16 rounded-md">Create</button>
   </form>
@@ -50,4 +48,4 @@
 
 <script src="/javascript/edit-lab.js"></script>
 <script src="/javascript/add-experiment.js"></script>
-<script src="/javascript/delete-lab.js"></script>
+{{!-- <script src="/javascript/delete-lab.js"></script> --}}
