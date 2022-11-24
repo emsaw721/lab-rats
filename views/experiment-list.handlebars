@@ -6,7 +6,8 @@
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <a href="/experiments/{{project_id}}" class="edit-link">Edit Lab Entry</a>
+      <a id="experimentlab" href="/api/projects/{{id}}/experiments" class="experiment-link">{{experiment.title}}</a>
+      <a href="/experiments/edit/{{id}}" class="edit-link">Edit Lab Entry</a>
     </li>
     {{/each}}
   </ol>
