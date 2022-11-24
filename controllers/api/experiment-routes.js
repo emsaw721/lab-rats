@@ -33,12 +33,16 @@ router.get('/', (req, res) => {
     ]
   })
     .then(dbPostData => {
-      const projects = dbPostData.map(post => post.get({ plain: true }));
-      console.log(projects);
-      res.render('experiment-list', {
-        projects,
-        loggedIn: req.session.loggedIn
-      });
+      if (dbPostData) {
+        const experiments = dbPostData.map(post => post.get({ plain: true }));
+        console.log(experiments)
+        res.render('experiment-list', {
+          experiments,
+          loggedIn: req.session.loggedIn
+        });
+      } else {
+        res.status(404).end();
+      }
     })
     .catch(err => {
       console.log(err);
@@ -112,8 +116,7 @@ router.post('/', withAuth, (req, res) => {
     background: req.body.background,
     protocols_calculations_reagents_equipment: req.body.protocols,
     observations: req.body.observations,
-    analysis: req.body.analysis,
-    // project_id: req.params.project_id
+    analysis: req.body.analysis    
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {

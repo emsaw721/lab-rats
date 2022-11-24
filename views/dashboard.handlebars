@@ -7,7 +7,7 @@
       <div class="title-note-book text-center mt-14 mx-8 mb-52">{{project_name}}</div>
       <div class="notebook-edit-link m-2.5 text-secondary-color content-end">
         <a href="/dashboard/edit/{{project.id}}" class="edit-link">Edit Notebook</a>
-        <a href="/api/projects/{{project.id}}/experiments">View Labs</a>
+        <a href="/api/projects/{{id}}/experiments">View Labs</a>
       </div>
     </div>
     {{/each}}
@@ -30,3 +30,4 @@
 </section>
 
 <script src="/javascript/add-project.js"></script>
+<script src="/javascript/view-experiments.js"></script>

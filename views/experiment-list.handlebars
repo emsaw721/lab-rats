@@ -4,12 +4,14 @@
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <a href="/experiments/{{project_id}}" class="edit-link">Edit Lab Entry</a>
+      <div id="experiment-lab-link">{{experiment.title}}</div>
+      <a href="/project/{{id}}/edit/experiments/{{id}}" class="edit-link">Edit Lab Entry</a>
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
+
 
 <section>
   <h1 class="titleformat">Create New Experiment</h1>
@@ -44,5 +46,3 @@
 </section>
 
 
-<script src="/javascript/add-experiment.js"></script>
-{{!-- <script src="/javascript/edit-lab.js"></script> --}}
