@@ -200,6 +200,10 @@ a:hover {
   background-color: none;
 }
 
+li {
+  text-decoration: none;
+  list-style: none;
+}
 
 .wrapper {
   width: 100%;
@@ -431,3 +435,8 @@ form label {
   margin-bottom: 1%;
 }
 
+
+.edit-lab-info {
+  display: flex;
+  flex-direction: column;
+}
