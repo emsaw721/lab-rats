@@ -155,9 +155,9 @@ router.put('/:id', withAuth, (req, res) => {
   Experiment.update(
     {
       title: req.body.title,
-      purpose_and_hypothesis: req.body.purpose_and_hypothesis,
+      purpose_and_hypothesis: req.body.purpose,
       background: req.body.background,
-      protocols_calculations_reagents_equipment: req.body.protocols_calculations_reagents_equipment,
+      protocols_calculations_reagents_equipment: req.body.protocols,
       observations: req.body.observations,
       analysis: req.body.analysis
     },
