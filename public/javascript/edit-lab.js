@@ -10,10 +10,9 @@ async function editLabHandler(event) {
     const observations = document.querySelector('#lab-obs').value.trim();
     const analysis = document.querySelector('#lab-analysis').value.trim();
 
-    const projectid = window.location.href
-    console.log(projectid)
+  
 
-    const response = await fetch(projectid, {
+    const response = await fetch(`/api/projects/${experiment.project_id}/experiments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,

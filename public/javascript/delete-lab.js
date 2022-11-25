@@ -3,10 +3,9 @@
 async function deleteLabHandler(event) {
     event.preventDefault();
    
-    const projectid = window.location.href
-    console.log(projectid)
 
-    const response = await fetch(projectid, {
+
+    const response = await fetch(`api`, {
         method: 'DELETE'
     });
 
