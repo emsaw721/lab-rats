@@ -2,21 +2,21 @@
 
 
 
-async function viewLabHandler(event) {
+async function viewLabsHandler(event) {
     event.preventDefault();
   
  
-    const title = document.querySelector('#title-lab');
-    const purpose = document.querySelector('#purpose-lab');
-    const background = document.querySelector('#bg-lab');
-    const protocols = document.querySelector('#protocols-lab');
-    const observations = document.querySelector('#obs-lab');
-    const analysis = document.querySelector('#analysis-lab');
+    const title = document.querySelector('input[name="lab-title"]').value;
+    const purpose = document.querySelector('#lab-purpose').value;
+    const background = document.querySelector('#lab-bg').value;
+    const protocols = document.querySelector('#lab-protocols').value;
+    const observations = document.querySelector('#lab-obs').value;
+    const analysis = document.querySelector('#lab-analysis').value;
   
-  const experimentid = window.location.href
-  console.log(experimentid)
+  const projectid = window.location.href
+  console.log(projectid)
   
-    const response = await fetch(`${experimentid}`, {
+    const response = await fetch(`${projectid}/experiments/{{id}}`, {
       method: 'GET',
       body: JSON.stringify({
         title,
@@ -32,11 +32,11 @@ async function viewLabHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/experiment-list');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   }
   
-    document.querySelector('#experiment-lab-link').addEventListener('click', viewLabHandler);
+    document.querySelector('#experimentlab').addEventListener('click', viewLabsHandler);
     
