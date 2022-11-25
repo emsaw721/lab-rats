@@ -4,8 +4,8 @@
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <div id="experiment-lab-link">{{experiment.title}}</div>
-      <a href="/api/projects/{{project_id}}/experiments/edit/{{id}}" class="edit-link">Edit Lab Entry</a>
+      <div id="experiment-lab-link"><a href="/api/projects/{{project_id}}/experiments/{{id}}">{{experiment.title}}</div>
+      <a href="/api/projects/{{project_id}}/experiments/{{id}}" class="edit-link">Edit Lab Entry</a>
 
       <div class="experiment-comment-list">
         <a href="/api/projects/{{project_id}}/experiments/{{id}}">{{experiment.comments.length}} {{format_plural "comment"
