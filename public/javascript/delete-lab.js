@@ -3,10 +3,10 @@
 async function deleteLabHandler(event) {
     event.preventDefault();
    
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 2
-      ];
-    const response = await fetch(`/api/projects/${id}/experiments`, {
+    const projectid = window.location.href
+    console.log(projectid)
+
+    const response = await fetch(projectid, {
         method: 'DELETE'
     });
 
@@ -17,4 +17,4 @@ async function deleteLabHandler(event) {
     }
 };
 
-document.querySelector('#edit-lab-form').addEventListener('click', deleteLabHandler); 
+document.querySelector('.delete-lab-btn').addEventListener('click', deleteLabHandler); 

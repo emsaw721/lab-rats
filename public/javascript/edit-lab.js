@@ -1,7 +1,7 @@
 
 // go to edit-lab.handlebars for issues 
 async function editLabHandler(event) {
-    event.preventDefault();
+   
 
     const title = document.querySelector('input[name="lab-title"]').value.trim();
     const purpose = document.querySelector('#lab-purpose').value.trim();
@@ -13,7 +13,7 @@ async function editLabHandler(event) {
     const projectid = window.location.href
     console.log(projectid)
 
-    const response = await fetch(`projectid`, {
+    const response = await fetch(projectid, {
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -27,10 +27,10 @@ async function editLabHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/notebook')
+        document.location.replace('/experiment-list')
     } else {
         alert(response.statusText);
     }
 };
 
-document.querySelector('#edit-lab-form').addEventListener('submit', editLabHandler); 
+document.querySelector('.save-lab-btn').addEventListener('submit', editLabHandler); 
