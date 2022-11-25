@@ -200,6 +200,9 @@ a:hover {
   background-color: none;
 }
 
+.sideNavBar li {
+  list-style: none;
+}
 
 
 .wrapper {
