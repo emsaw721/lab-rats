@@ -63,10 +63,7 @@ router.get('/:id', (req, res) => {
       'background',
       'protocols_calculations_reagents_equipment',
       'observations',
-      'analysis',
-      'project_id',
-      'user_id',
-      'created_at',
+      'analysis'
     ],
     include: [
       {
@@ -83,7 +80,7 @@ router.get('/:id', (req, res) => {
     if (dbPostData) {
       const experiments = dbPostData.get({ plain: true });
       console.log(experiments)
-      res.render('lab-info', {
+      res.render('single-lab-post', {
         experiments,
         loggedIn: req.session.loggedIn
       });
