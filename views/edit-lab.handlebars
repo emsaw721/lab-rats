@@ -11,19 +11,19 @@
         </div>
         <div>
             <label for="background">Background</label>
-            <textarea id="lab-bg" name="lab-background"></textarea>
+            <textarea id="lab-bg" name="lab-background">{{experiment.background}}</textarea>
         </div>
         <div>
             <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
-            <textarea id="lab-protocols" name="lab-protocols"></textarea>
+            <textarea id="lab-protocols" name="lab-protocols">{{experiment.protocols_calculations_reagents_equipment}}</textarea>
         </div>
         <div>
             <label for="Observations">Observations</label>
-            <textarea id="lab-obs" name="lab-observations"></textarea>
+            <textarea id="lab-obs" name="lab-observations">{{experiment.observations}}</textarea>
         </div>
         <div>
             <label for="analysis">Analysis</label>
-            <textarea id="lab-analysis" name="lab-analysis"></textarea>
+            <textarea id="lab-analysis" name="lab-analysis">{{experiment.analysis}}</textarea>
         </div>
         <div class="btn-div">
             <button type="submit" class="save-lab-btn">Save Lab Entry</button>
