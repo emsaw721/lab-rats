@@ -5,7 +5,7 @@ async function deleteLabHandler(event) {
    
 
 
-    const response = await fetch(`api`, {
+    const response = await fetch(`/api/projects/${experiment.project_id}/experiments/{{id}}`, {
         method: 'DELETE'
     });
 
