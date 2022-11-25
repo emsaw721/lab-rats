@@ -12,7 +12,7 @@ async function editLabHandler(event) {
 
   
 
-    const response = await fetch(`/api/projects/${experiment.project_id}/experiments/${id}`, {
+    const response = await fetch(`/api/projects/{{experiment.project_id}}/experiments/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
