@@ -79,7 +79,18 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => res.json(dbPostData))
+  .then(dbPostData => {
+    if (dbPostData) {
+      const experiments = dbPostData.get({ plain: true });
+      console.log(experiments)
+      res.render('lab-info', {
+        experiments,
+        loggedIn: req.session.loggedIn
+      });
+    } else {
+      res.status(404).end();
+    }
+  })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
