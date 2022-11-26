@@ -9,10 +9,14 @@ async function editLabHandler(event) {
     const observations = document.querySelector('#lab-obs').value.trim();
     const analysis = document.querySelector('#lab-analysis').value.trim();
 
-  
+    experimentid = document.querySelector('#lab-id').getAttribute('data-id'); 
+    console.log(experimentid)
 
-    const response = await fetch(`/api/projects/{{experiment.project_id}}/experiments/${id}`, {
- 
+
+    projectid = document.querySelector('#project-id').getAttribute('data-id'); 
+    console.log(projectid)
+
+    const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -33,7 +37,6 @@ async function editLabHandler(event) {
         alert(response.statusText);
     }
 };
-
 
 document.querySelector('.save-lab-btn').addEventListener('submit', editLabHandler); 
 

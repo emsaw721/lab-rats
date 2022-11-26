@@ -3,9 +3,13 @@
 async function deleteLabHandler(event) {
     event.preventDefault();
    
+    experimentid = document.querySelector('#lab-id').getAttribute('data-id'); 
+    console.log(experimentid)
 
+    projectid = document.querySelector('#project-id').getAttribute('data-id'); 
+    console.log(projectid)
 
-    const response = await fetch(`/api/projects/{{experiment.project_id}}/experiments/${id}`, {
+    const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}`, {
         method: 'DELETE'
     });
 
