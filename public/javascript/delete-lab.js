@@ -2,19 +2,19 @@
 // go to edit-lab.handlebars for issues 
 async function deleteLabHandler(event) {
     event.preventDefault();
-   
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 2
-      ];
-    const response = await fetch(`/api/projects/${id}/experiments`, {
+
+    const project_id = document.querySelector('#edit-lab-form').getAttribute('data-id');
+    const experiment_id = document.querySelector('#lab-id').getAttribute('data-id');
+
+    const response = await fetch(`/api/projects/${project_id}/experiments/${experiment_id}`, {
         method: 'DELETE'
     });
 
-    if(response.ok) {
-        window.location.reload();
+    if (response.ok) {
+        window.location.href = `/project/${project_id}/experiments`;
     } else {
         alert(response.statusText);
     }
 };
 
-document.querySelector('#edit-lab-form').addEventListener('click', deleteLabHandler); 
+document.querySelector('.delete-lab-btn').addEventListener('click', deleteLabHandler); 

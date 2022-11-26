@@ -4,11 +4,11 @@
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <div id="experiment-lab-link"><a href="/api/projects/{{project_id}}/experiments/{{id}}">{{experiment.title}}</div>
-      <a href="/api/projects/{{project_id}}/experiments/edit/{{id}}" class="edit-link">Edit Lab Entry</a>
+      <div id="experiment-lab-link"><a href="/project/{{project_id}}/experiments/{{id}}">{{experiment.title}}</div>
+      <a href="/project/{{project_id}}/experiments/{{id}}/edit" class="edit-link">Edit Lab Entry</a>
 
       <div class="experiment-comment-list">
-        <a href="/api/projects/{{project_id}}/experiments/{{id}}">{{experiment.comments.length}} {{format_plural "comment"
+        <a href="/project/{{project_id}}/experiments/{{id}}">{{experiment.comments.length}} {{format_plural "comment"
           experiment.comments.length}}</a>
       </div>
     </li>
@@ -21,7 +21,7 @@
 <section>
   <h1 class="titleformat">Create New Experiment</h1>
 
-  <form class="new-lab-form ml-24 flex flex-col" id="addexperiment">
+  <form class="new-lab-form ml-24 flex flex-col" id="addexperiment" data-id="{{project_id}}">
     <div>
       <label for="lab-title">Title</label>
       <input type="text" id="lab-title" name="lab-title"></textarea>
@@ -52,5 +52,6 @@
 
 
 <script src="/javascript/add-experiment.js"></script>
+{{!--
 <script src="/javascript/view-experiments.js"></script>
-<script src="/javascript/comments.js"></script>
+<script src="/javascript/comment.js"></script> --}}

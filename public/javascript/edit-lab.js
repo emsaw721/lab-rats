@@ -10,10 +10,10 @@ async function editLabHandler(event) {
     const observations = document.querySelector('#lab-obs').value.trim();
     const analysis = document.querySelector('#lab-analysis').value.trim();
 
-    const projectid = window.location.href
-    console.log(projectid)
+    const project_id = document.querySelector('#edit-lab-form').getAttribute('data-id');
+    const experiment_id = document.querySelector('#lab-id').getAttribute('data-id');
 
-    const response = await fetch(`projectid`, {
+    const response = await fetch(`/api/projects/${project_id}/experiments/${experiment_id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -23,11 +23,13 @@ async function editLabHandler(event) {
             observations,
             analysis
         }),
-        headers: { 'Content-Type': 'applicaton/json' }
+        headers: {
+            'Content-Type': 'application/json'
+        }
     });
 
     if (response.ok) {
-        document.location.replace('/notebook')
+        document.location.replace(`/project/${project_id}/experiments`)
     } else {
         alert(response.statusText);
     }

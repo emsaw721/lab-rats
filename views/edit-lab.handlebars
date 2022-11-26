@@ -1,13 +1,13 @@
 <article>
     <h2 class="titleformat">Edit Lab Entry</h2>
-    <form id="edit-lab-form" class="edit-lab-info">
+    <form id="edit-lab-form" class="edit-lab-info" data-id="{{experiment.project_id}}">
         <div id="lab-id" data-id="{{experiment.id}}">
             <label for="lab-title">Title</label>
             <input name="lab-title" type="text" value="{{experiment.title}}" />
         </div>
         <div>
             <label for="purpose">Purpose and Hypothesis</label>
-            <textarea id="lab-purpose" name="lab-purpose" >{{experiment.purpose}}</textarea>
+            <textarea id="lab-purpose" name="lab-purpose">{{experiment.purpose_and_hypothesis}}</textarea>
         </div>
         <div>
             <label for="background">Background</label>
@@ -42,6 +42,6 @@
 </form>
 {{> comments experiment.comments}}
 
-<scrpt src="/javascript/edit-lab.js"></scrpt>
+<script src="/javascript/edit-lab.js"></script>
 <script src="/javascript/delete-lab.js"></script>
 <script src="/javascript/comment.js"></script>

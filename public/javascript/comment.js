@@ -1,21 +1,21 @@
 
 // go to edit-lab.handlebars for issues 
 async function commentFormHandler(event) {
-    const id = document.querySelector('#lab-id').getAttribute('data-id');
-
+    const project_id = document.querySelector('#edit-lab-form').getAttribute('data-id');
+    const experiment_id = document.querySelector('#lab-id').getAttribute('data-id');
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-    
-    if(comment_text) {
+
+    if (comment_text) {
         const response = await fetch('/api/comments', {
             method: 'POST',
-            body: JSON.stringify({id, comment_text}),
-            headers: {'Content-Type': 'application/json'}
+            body: JSON.stringify({ experiment_id, comment_text }),
+            headers: { 'Content-Type': 'application/json' }
         });
 
-        if(response.ok) {
-            document.location.reload();
+        if (response.ok) {
+            document.location.href = `/project/${project_id}/experiments`;
         } else {
-            alert(response.statusText); 
+            alert(response.statusText);
         }
     }
 };
