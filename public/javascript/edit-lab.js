@@ -12,10 +12,7 @@ async function editLabHandler(event) {
   
 
     const response = await fetch(`/api/projects/{{experiment.project_id}}/experiments/${id}`, {
-    const projectid = window.location.href
-    console.log(projectid)
-
-    const response = await fetch(`projectid`, {
+ 
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -26,7 +23,7 @@ async function editLabHandler(event) {
             analysis
         }),
         headers: { 'Content-Type': 'applicaton/json' }
-    });
+    })
 
     if (response.ok) {
 
