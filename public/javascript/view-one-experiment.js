@@ -16,7 +16,7 @@ async function viewLabHandler(event) {
   const experimentid = document.querySelector('#experimentid').getAttribute('data-id'); 
   const projectid = document.querySelector('#notebookid').getAttribute('data-note'); 
   
-    const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}`, {
+    const response = await fetch(`/project/${projectid}/experiments/${experimentid}`, {
       method: 'GET',
       body: JSON.stringify({
         title,
