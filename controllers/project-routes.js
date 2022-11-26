@@ -18,6 +18,7 @@ router.get('/:project_id/experiments', (req, res) => {
             'project_id',
             'user_id',
             'created_at',
+           
         ],
         include: [
             {
@@ -64,6 +65,7 @@ router.get('/:project_id/experiments/:id', (req, res) => {
             'project_id',
             'user_id',
             'created_at',
+           
         ],
         include: [
             {
@@ -77,7 +79,12 @@ router.get('/:project_id/experiments/:id', (req, res) => {
         ]
     }).then(dbPostData => {
         // TODO render handlebar
-        return res.json(dbPostData);
+            const singleexperiment = dbPostData.map(post => post.get({plain: true})); 
+            console.log(singleexperiment)
+        res.render('lab-info', {
+            singleexperiment,
+            loggedIn: req.session.loggedIn
+        })
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);

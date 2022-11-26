@@ -6,15 +6,15 @@ async function viewLabHandler(event) {
     event.preventDefault();
   
  
-    const title = document.querySelector('#title-lab');
-    const purpose = document.querySelector('#purpose-lab');
-    const background = document.querySelector('#bg-lab');
-    const protocols = document.querySelector('#protocols-lab');
-    const observations = document.querySelector('#obs-lab');
-    const analysis = document.querySelector('#analysis-lab');
+    const title = document.querySelector('#experimenttitle').getAttribute('data-title');
+    const purpose = document.querySelector('#purpose-lab').getAttribute('data-purp');
+    const background = document.querySelector('#bg-lab').getAttribute('data-bg');
+    const protocols = document.querySelector('#protocols-lab').getAttribute('data-prot');
+    const observations = document.querySelector('#obs-lab').getAttribute('data-obs');
+    const analysis = document.querySelector('#analysis-lab').getAttribute('data-analysis');
   
   const experimentid = document.querySelector('#experimentid').getAttribute('data-id'); 
-  const projectid = document.querySelector('#notebookid').getAttribute('data-id'); 
+  const projectid = document.querySelector('#notebookid').getAttribute('data-note'); 
   
     const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}`, {
       method: 'GET',

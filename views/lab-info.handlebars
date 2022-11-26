@@ -1,0 +1,47 @@
+
+
+
+  <section style="margin-left:100px;" id="notebookid" data-note="{{experiment.project_id}}">
+    <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
+      <div id="experimenttitle" data-title="{{experiment.title}}">{{experiment.title}}</div>
+    <div class="experiment-view-heading">Purpose and Hypothesis
+      <div style="margin:100px;" class="purpose-lab" id="purpose-lab" data-purp="{{experiment.purpose}}">{{experiment.purpose}}</div>
+    </div>
+    <div class="experiment-view-heading">Background
+      <div style="margin:100px;" class="bg-lab" id="bg-lab" data-bg="{{experiment.background}}">{{experiment.background}}</div>
+    </div>
+    <div class="experiment-view-heading">Protocols, Calculations, Reagents, Equipment
+      <div style="margin:100px;" class="protocols-lab" id="protocols-lab" data-prot="{{experiment.protocols_calculations_reagents_equipment}}">{{experiment.protocols_calculations_reagents_equipment}}</div>
+    </div>
+    <div class="experiment-view-heading">Observations
+      <div style="margin:100px;" class="obs-lab" id="obs-lab" data-obs="{{experiment.observations}}">{{experiment.observations}}</div>
+    </div>
+    <div class="experiment-view-heading">Analysis
+      <div style="margin:100px;" class="analysis-lab" id="analysis-lab" data-analysis="{{experiment.analysis}}">{{experiment.analysis}}</div>
+    </div>
+    </div>
+  </section>
+
+
+  {{> comments experiment.comments}}
+
+
+  {{#if loggedIn}}
+<div style="margin-top:50px; margin-left:100px; font-size: 30px; ">Have any questions or suggestions? <span>Leave a comment!</span></div>
+<form style="margin:100px;" class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+</form>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
+
+<script src="/javascript/view-one-experiment.js"></script>
+
+

@@ -5,15 +5,15 @@ async function commentFormHandler(event) {
     const experiment_id = document.querySelector('#lab-id').getAttribute('data-id');
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
 
-    if (comment_text) {
-        const response = await fetch('/api/comments', {
+    if (comment) {
+        const response = await fetch(`/api/comments/${experiment_id}`, {
             method: 'POST',
             body: JSON.stringify({ experiment_id, comment_text }),
             headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
-            document.location.href = `/project/${project_id}/experiments`;
+            document.location.href = `/api/project/${project_id}/experiments/${experiment_id}`;
         } else {
             alert(response.statusText);
         }

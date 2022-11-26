@@ -21,10 +21,10 @@ router.get("/", (req, res) => {
   })
     .then(dbPostData => {
       if (dbPostData) {
-        const experiments = dbPostData.map(post => post.get({ plain: true }));
-        console.log(experiments)
-        res.render('experiment-list', {
-          experiments,
+        const comments = dbPostData.map(post => post.get({ plain: true }));
+        console.log(comments)
+        res.render('lab-info', {
+          comments,
           loggedIn: req.session.loggedIn
         });
       } else {
