@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Experiment, Comment, User, Project } = require("../models");
+const ncbi= require('node-ncbi');
+const pubmed = ncbi.pubmed;
 
 router.get("/", (req, res) => {
   console.log("============router.get/=============");
@@ -58,9 +60,22 @@ router.get("/logout",(req,res)=>{
   res.render("homepage");
 })
 
-router.get("/ncbisearh",(req,res)=>{
+router.get("/ncbisearch",(req,res)=>{
   console.log("===================router.get/ncbisearch=====================");
   res.render("NCBI");
+})
+
+router.get("/ncbisearch/:text",(req,res)=>{
+  console.log("===================router.get/ncbisearch/text=====================");
+  pubmed.search(req.params.text)//searchtext)
+    .then((results) => {
+        console.log(results);
+        res.render('NCBI',{papers:results.papers,count:results.count,text:req.params.text});
+    })
+    .catch(err=>{
+      console.log(err);
+      res.status(500).json(err);
+    })
 })
 
 module.exports = router;

@@ -362,5 +362,7 @@ form label {
   flex-direction: column;
 }
 
-
+#ncbiimg {
+  width: 150px;
+}
 
