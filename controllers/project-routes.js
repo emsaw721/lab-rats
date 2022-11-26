@@ -79,7 +79,7 @@ router.get('/:project_id/experiments/:id', (req, res) => {
         ]
     }).then(dbPostData => {
         // TODO render handlebar
-            const singleexperiment = dbPostData.map(post => post.get({plain: true})); 
+            const singleexperiment = dbPostData.get({plain: true}); 
             console.log(singleexperiment)
         res.render('lab-info', {
             singleexperiment,

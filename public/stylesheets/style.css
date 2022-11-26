@@ -421,9 +421,6 @@ form label {
   background-color: var(--quinary-color); 
 }
 
-.experiment-view-heading {
-  background-color: var(--quinary-color);
-}
 
 .experiment-comment-list {
   padding: 1%;
