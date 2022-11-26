@@ -34,5 +34,5 @@ async function editLabHandler(event) {
     }
 };
 
-document.querySelector('.save-lab-btn').addEventListener('submit', editLabHandler); 
+document.querySelector('#edit-lab-form').addEventListener('submit', editLabHandler); 
 
