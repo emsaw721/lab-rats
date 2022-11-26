@@ -200,6 +200,9 @@ a:hover {
   background-color: none;
 }
 
+.sideNavBar li {
+  list-style: none;
+}
 
 
 .wrapper {
@@ -364,7 +367,7 @@ form label {
 }
 
 .edit-lab-info {
-  margin-left: 100px;
+  margin-left: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -379,14 +382,6 @@ form label {
   overflow-wrap: break-word;
 }
 
-.edit-lab-info button {
-    width: 175px;
-    height: 50px;
-    background-color: var(--quaternary-color);
-    margin-left: 70px; 
-    border-radius: 5px;
-}
-
 .btn-div {
   flex-direction: row;
 }
@@ -398,9 +393,8 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 120px;
+  margin-top: 100px;
   align-items: center;
- 
 }
 
 .save-lab-btn:hover {
@@ -416,7 +410,7 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 120px;
+  margin-top: 100px;
   align-items: center;
  
 }
@@ -427,144 +421,8 @@ form label {
   background-color: var(--quinary-color); 
 }
 
-.experiment-comment-list {
-  padding: 1%;
-  margin-bottom: 1%;
-}
-
-
-.edit-lab-info {
-  margin-left: 100px;
-  display: flex;
-  flex-direction: column;
-}
-
-.edit-lab-info input {
-  width: 300px;
-}
-.edit-lab-info textarea {
-  width: 300px;
-  height: 100px;
-  inline-size: 300px;
-  overflow-wrap: break-word;
-}
-
-.edit-lab-info button {
-    width: 175px;
-    height: 50px;
-    background-color: var(--quaternary-color);
-    margin-left: 70px; 
-    border-radius: 5px;
-}
-
-.btn-div {
-  flex-direction: row;
-}
-
-.save-lab-btn {
-  width: 150px;
-  height: 50px;
-  text-decoration: none;
-  border: 1px solid var(--quaternary-color);
-  border-radius: 5px;
-  background-color: var(--quaternary-color); 
-  margin-top: 120px;
-  align-items: center;
- 
-}
-
-.save-lab-btn:hover {
-  border: 1px solid var(--quinary-color);
-  border-radius: 5px;
-  background-color: var(--quinary-color); 
-}
-
-.delete-lab-btn {
-  width: 150px;
-  height: 50px;
-  text-decoration: none;
-  border: 1px solid var(--quaternary-color);
-  border-radius: 5px;
-  background-color: var(--quaternary-color); 
-  margin-top: 120px;
-  align-items: center;
- 
-}
-
-.delete-lab-btn:hover {
-  border: 1px solid var(--quinary-color);
-  border-radius: 5px;
-  background-color: var(--quinary-color); 
-}
-
-.experiment-comment-list {
-  padding: 1%;
-  margin-bottom: 1%;
-}
-
-
-.edit-lab-info {
-  margin-left: 100px;
-  display: flex;
-  flex-direction: column;
-}
-
-.edit-lab-info input {
-  width: 300px;
-}
-.edit-lab-info textarea {
-  width: 300px;
-  height: 100px;
-  inline-size: 300px;
-  overflow-wrap: break-word;
-}
-
-.edit-lab-info button {
-    width: 175px;
-    height: 50px;
-    background-color: var(--quaternary-color);
-    margin-left: 70px; 
-    border-radius: 5px;
-}
-
-.btn-div {
-  flex-direction: row;
-}
-
-.save-lab-btn {
-  width: 150px;
-  height: 50px;
-  text-decoration: none;
-  border: 1px solid var(--quaternary-color);
-  border-radius: 5px;
-  background-color: var(--quaternary-color); 
-  margin-top: 120px;
-  align-items: center;
- 
-}
-
-.save-lab-btn:hover {
-  border: 1px solid var(--quinary-color);
-  border-radius: 5px;
-  background-color: var(--quinary-color); 
-}
-
-.delete-lab-btn {
-  width: 150px;
-  height: 50px;
-  text-decoration: none;
-  border: 1px solid var(--quaternary-color);
-  border-radius: 5px;
-  background-color: var(--quaternary-color); 
-  margin-top: 120px;
-  align-items: center;
- 
-}
-
-.delete-lab-btn:hover {
-  border: 1px solid var(--quinary-color);
-  border-radius: 5px;
-  background-color: var(--quinary-color); 
+.experiment-view-heading {
+  background-color: var(--quinary-color);
 }
 
 .experiment-comment-list {
@@ -587,3 +445,7 @@ form label {
   opacity: .6;
 }
 
+.comment-form textarea{
+  width: 300px;
+  height: 100px; 
+}

@@ -1,4 +1,4 @@
-<article>
+<article id="project-id" data-id="{{experiment.project_id}}">
     <h2 class="titleformat">Edit Lab Entry</h2>
     <form id="edit-lab-form" class="edit-lab-info" data-id="{{experiment.project_id}}">
         <div id="lab-id" data-id="{{experiment.id}}">
@@ -32,16 +32,6 @@
     </form>
 </article>
 
-<form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
-    </div>
-    <div>
-        <button id="button" type="submit">Add Comment</button>
-    </div>
-</form>
-{{> comments experiment.comments}}
 
 <script src="/javascript/edit-lab.js"></script>
 <script src="/javascript/delete-lab.js"></script>
-<script src="/javascript/comment.js"></script>

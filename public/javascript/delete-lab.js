@@ -18,3 +18,4 @@ async function deleteLabHandler(event) {
 };
 
 document.querySelector('.delete-lab-btn').addEventListener('click', deleteLabHandler); 
+document.querySelector('.delete-lab-btn').addEventListener('click', deleteLabHandler); 

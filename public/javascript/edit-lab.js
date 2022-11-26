@@ -1,7 +1,6 @@
 
 // go to edit-lab.handlebars for issues 
 async function editLabHandler(event) {
-    event.preventDefault();
 
     const title = document.querySelector('input[name="lab-title"]').value.trim();
     const purpose = document.querySelector('#lab-purpose').value.trim();
@@ -35,4 +34,5 @@ async function editLabHandler(event) {
     }
 };
 
-document.querySelector('#edit-lab-form').addEventListener('submit', editLabHandler); 
+document.querySelector('.save-lab-btn').addEventListener('submit', editLabHandler); 
+
