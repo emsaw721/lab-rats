@@ -33,10 +33,44 @@ In order for this application to work, the user will need to install the <a href
 
 ## Usage
 
+First, the user will open the terminal and navigate to the application. <br>
+Then, the user will run mysql2 using either the command: 
+
+ > % mysql -u root
+
+or
+
+> % mysql -u root -p 
+
+if there is no set password or a set password, respectively. This will create the database. <br>
+Once it is confirmed that the database is created and in use, the user can exit mysql using the command: 
+
+ > % quit
+
+The user can then interact with the application by typing 
+
+ > npm start 
+
+into the terminal and navigating to the browser and typing the following into the search bar:
+
+ > localhost:3001
+
+
+There, the user will see the homepage. 
 ![Alt text](./images/lab-bench-first-pg.png)
+On the homepage, the user will select the sign-in link. There, the user can sign-in if they have already created an account or can click the link to sign-up if they have not. 
 ![Alt text](./images/lab-bench-sign-in.png)
 ![Alt text](./images/lab-bench-sign-up.png)
+
+After signing-in or signing-up, the user will be taken to their dashboard. An existing user will see their previous lab notebooks with the options to view the experiments contained within, edit the notebook, or create a new notebook. 
 ![Alt text](./images/lab-bench-dashboard.png)
+If they are a new user, they will see an empty dashboard with the option to create their first notebook. 
+![Alt text](./images/lab-rats-new-user-dash.png)
+
+The user also has the option to view and edit the experiments contained within each notbook, as well as view and post comments to an experiment. 
+![Alt text](./images/lab-rats-experiment-list.png)
+![Alt text](./images/lab-rats-edit-lab.png)
+![Alt text](./images/lab-rats-create-experiment.png) 
 
 ## Support
 
