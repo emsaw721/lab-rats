@@ -13,10 +13,10 @@ async function viewLabHandler(event) {
     const observations = document.querySelector('#obs-lab');
     const analysis = document.querySelector('#analysis-lab');
   
-  const experimentid = window.location.href
-  console.log(experimentid)
+  const experimentid = document.querySelector('#experimentid').getAttribute('data-id'); 
+  const projectid = document.querySelector('#notebookid').getAttribute('data-id'); 
   
-    const response = await fetch(`${experimentid}`, {
+    const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}`, {
       method: 'GET',
       body: JSON.stringify({
         title,

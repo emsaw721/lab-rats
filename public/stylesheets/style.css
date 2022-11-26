@@ -421,6 +421,10 @@ form label {
   background-color: var(--quinary-color); 
 }
 
+.experiment-view-heading {
+  background-color: var(--quinary-color);
+}
+
 .experiment-comment-list {
   padding: 1%;
   margin-bottom: 1%;
@@ -441,3 +445,7 @@ form label {
   opacity: .6;
 }
 
+.comment-form textarea{
+  width: 300px;
+  height: 100px; 
+}

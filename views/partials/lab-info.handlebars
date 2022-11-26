@@ -1,30 +1,22 @@
 
 
 
-  <article class="new-lab-form ml-24 flex flex-col">
-    <div>
-      <label id="title-lab" for="lab-title">{{experiment.title}}</label>
+  <section style="margin-left:100px;" id="notebookid" data-id="{{experiment.project_id}}">
+    <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">Experiment Title{{experiment.title}}</div>
+    <div class="experiment-view-heading">Purpose and Hypothesis
+      <div style="margin:100px;" class="purpose-lab" id="purpose-lab">{{experiment.purpose}}</div>
     </div>
-    <div>
-      <label for="purpose">Purpose and Hypothesis</label>
-      <div id="purpose-lab">{{experiment.purpose}}</div>
+    <div class="experiment-view-heading">Background
+      <div style="margin:100px;" class="bg-lab" id="bg-lab">{{experiment.background}}</div>
     </div>
-    <div>
-      <label for="background">Background</label>
-      <div id="bg-lab">{{experiment.background}}</div>
+    <div class="experiment-view-heading">Protocols, Calculations, Reagents, Equipment
+      <div style="margin:100px;" class="protocols-lab" id="protocols-lab">{{experiment.protocols_calculations_reagents_equipment}}</div>
     </div>
-    <div>
-      <label for="protocols">Protocols, Calculations, Reagents, Equipment</label>
-      <div id="protocols-lab">{{experiment.protocols_calculations_reagents_equipment}}</div>
+    <div class="experiment-view-heading">Observations
+      <div style="margin:100px;" class="obs-lab" id="obs-lab">{{experiment.observations}}</div>
     </div>
-    <div>
-      <label for="Observations">Observations</label>
-      <div id="obs-lab">{{experiment.observations}}</div>
+    <div class="experiment-view-heading">Analysis
+      <div style="margin:100px;" class="analysis-lab" id="analysis-lab">{{experiment.analysis}}</div>
     </div>
-    <div>
-      <label for="analysis">Analysis</label>
-      <div id="analysis-lab">{{experiment.analysis}}</div>
-    </div>
-
-  </article>
+  </section>
 
