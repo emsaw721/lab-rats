@@ -67,7 +67,12 @@ router.get("/add_experiment/:id", withAuth,(req, res)=>{
     }
     })
     return;
-})
+});
+
+router.get("/ncbisearch",(req,res)=>{
+  console.log("===================router.get/ncbisearch=====================");
+  res.render("NCBI", {loggedIn:req.session.loggedIn});
+});
 
 router.get("/ncbisearch/:text",(req,res)=>{
   console.log("===================router.get/ncbisearch/text=====================");
@@ -80,6 +85,6 @@ router.get("/ncbisearch/:text",(req,res)=>{
       console.log(err);
       res.status(500).json(err);
     })
-})
+});
 
 module.exports = router;
