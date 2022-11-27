@@ -31,6 +31,7 @@
     "formidable": "^2.0.1",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
+    "node-ncbi": "^0.7.2",
     "node-periodic-table": "^0.0.6",
     "nodemon": "^2.0.20",
     "periodic-table": "^0.0.8",
