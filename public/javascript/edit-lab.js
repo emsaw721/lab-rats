@@ -28,7 +28,7 @@ async function editLabHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace(`/project/${project_id}/experiments`)
+        document.location.replace(`/project/${project_id}`)
     } else {
         alert(response.statusText);
     }
