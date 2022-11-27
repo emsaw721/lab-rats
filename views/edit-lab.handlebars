@@ -1,5 +1,8 @@
+<a href="/project/experiment/{{experiment.id}}" class="mx-5"> &larr; Back to Experiment View Page</a>
+
 <article id="project-id" data-id="{{experiment.project_id}}">
-    <h2 class="titleformat">Edit Lab Entry</h2>
+    <h2 class="project_title">Project: {{experiment.project.project_name}}</h2>
+    <h2 class="titleformat">Edit Experiment Entry</h2>
     <form id="edit-lab-form" class="edit-lab-info" data-id="{{experiment.project_id}}">
         <div id="lab-id" data-id="{{experiment.id}}">
             <label for="lab-title">Title</label>

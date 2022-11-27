@@ -3,10 +3,12 @@ const sequelize = require('../config/connection');
 const { Project, Experiment, Comment, User } = require('../models')
 const withAuth = require('../utils/auth');
 
-router.get('/:project_id/experiments', (req, res) => {
+router.get('/:id', (req, res) => {
+    console.log("=============project router.get/:id==============")
+    router
     Experiment.findAll({
         where: {
-            project_id: req.params.project_id
+            project_id: req.params.id
         },
         attributes: [
             'id',
@@ -18,7 +20,11 @@ router.get('/:project_id/experiments', (req, res) => {
             'project_id',
             'user_id',
             'created_at',
+<<<<<<< HEAD
            
+=======
+            'updated_at'
+>>>>>>> c427c05 (fix routes)
         ],
         include: [
             {
@@ -28,6 +34,10 @@ router.get('/:project_id/experiments', (req, res) => {
                     model: User,
                     attributes: ['username']
                 }
+            },
+            {
+                model:Project,
+                attributes:['id','project_name'],
             }
         ]
     }).then(dbPostData => {
@@ -37,7 +47,8 @@ router.get('/:project_id/experiments', (req, res) => {
             res.render('experiment-list', {
                 experiments,
                 loggedIn: req.session.loggedIn,
-                project_id: req.params.project_id
+                project_id: req.params.id,
+                project_name: experiments[1].project.project_name,
             });
         } else {
             res.status(404).end();
@@ -48,16 +59,17 @@ router.get('/:project_id/experiments', (req, res) => {
     });
 });
 
-router.get('/:project_id/experiments/:id', (req, res) => {
-    console.log('==========Experiments============');
+router.get('/experiment/:id', (req, res) => {
+    console.log('==========project router.get/Experiment/:id============');
     Experiment.findOne({
+        order: [[{ model: Comment }, "createdAt", "ASC"]],
         where: {
-            project_id: req.params.project_id,
             id: req.params.id
         },
         attributes: [
             'id',
             'title',
+            'purpose_and_hypothesis',
             'background',
             'protocols_calculations_reagents_equipment',
             'observations',
@@ -65,19 +77,28 @@ router.get('/:project_id/experiments/:id', (req, res) => {
             'project_id',
             'user_id',
             'created_at',
+<<<<<<< HEAD
            
+=======
+            'updated_at'
+>>>>>>> c427c05 (fix routes)
         ],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'user_id', 'experiment_id'],
+                attributes: ['id', 'comment_text', 'user_id', 'experiment_id','created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
                 }
+            },
+            {
+                model: Project,
+                attributes:['id','project_name'],
             }
         ]
     }).then(dbPostData => {
+<<<<<<< HEAD
         // TODO render handlebar
             const singleexperiment = dbPostData.get({plain: true}); 
             console.log(singleexperiment)
@@ -85,13 +106,28 @@ router.get('/:project_id/experiments/:id', (req, res) => {
             singleexperiment,
             loggedIn: req.session.loggedIn
         })
+=======
+        if (dbPostData) {
+            
+            const experiment = dbPostData.get({ plain: true });
+            console.log(experiment);
+            console.log(req.session);
+            // TODO render handlebar
+            res.render('single-lab-post', {
+                experiment,
+                loggedIn: true,
+                currentuserid:req.session.userId,
+            });
+        }
+>>>>>>> c427c05 (fix routes)
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 })
 
-router.get('/:project_id/experiments/:id/edit', (req, res) => {
+router.get('/experiment/edit/:id', (req, res) => {
+    console.log("===========project  router.get/experiment/edit/:id============");
     Experiment.findByPk(req.params.id, {
         attributes: [
             'id',
@@ -101,10 +137,19 @@ router.get('/:project_id/experiments/:id/edit', (req, res) => {
             'protocols_calculations_reagents_equipment',
             'observations',
             'analysis',
-            'project_id'
+            'project_id',
+            'created_at',
+            'updated_at'
+        ],
+        include: [
+            {
+                model: Project,
+                attributes:['id','project_name'],
+            }
         ]
     }).then(dbPostData => {
         if (dbPostData) {
+            console.log(dbPostData);
             const experiment = dbPostData.get({ plain: true });
             res.render('edit-lab', {
                 experiment,

@@ -1,24 +1,17 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Experiment, Comment, User, Project } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
   console.log("============router.get/=============");
-  Project.findAll({
-    attributes: ["id", "project_name", "created_at"],
-  })
-  .then(dbPostData => {
-    const projects = dbPostData.map(post => post.get({ plain: true }));
-    console.log(projects);
-    res.render('homepage', {
-        projects,
-        loggedIn: req.session.loggedIn
-    });
-})
-.catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-});
+  if (req.session.loggedIn) {
+    console.log("already loggedin, redirecting to /");
+    res.redirect("/dashboard");
+    return;
+  } else {
+    res.render('login');
+  }
 });
 
 router.get("/login", (req, res) => {
@@ -43,7 +36,7 @@ router.get("/signup", (req, res) => {
 });
 
 
-router.get("/molemasscal", (req, res) => {
+router.get("/molemasscal", withAuth,(req, res) => {
   console.log("=============Molecuar Mass Calculator==============");
   let loggedIn = req.session.loggedIn;
   console.log(loggedIn);
@@ -55,7 +48,23 @@ router.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.status(204).end();
   });
-  res.render("homepage")
+  res.render("login");
+});
+
+router.get("/add_experiment/:id", withAuth,(req, res)=>{
+  console.log("=================/ router.get/add_experiment/:id==============");
+    Project.findOne({
+      where:{
+        id: req.params.id
+      }
+    })
+    .then(dbPostData => {
+      if (dbPostData) {
+          console.log(dbPostData.project_name);
+      res.render("add_experiment",{project_id:req.params.id,loggedIn:req.session.loggedIn,project_name:dbPostData.project_name});
+    }
+    })
+    return;
 })
 
 

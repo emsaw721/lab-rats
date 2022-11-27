@@ -6,7 +6,6 @@ async function newLabHandler(event) {
   const protocols = document.querySelector('#lab-protocols').value;
   const observations = document.querySelector('#lab-obs').value;
   const analysis = document.querySelector('#lab-analysis').value;
-
   const project_id = document.querySelector('#addexperiment').getAttribute('data-id');
 
   const response = await fetch(`/api/projects/${project_id}/experiments`, {
@@ -17,14 +16,15 @@ async function newLabHandler(event) {
       background,
       protocols,
       observations,
-      analysis
+      analysis,
+      project_id: project_id
     }),
     headers: {
       'Content-Type': 'application/json'
     }
   })
   if (response.ok) {
-    document.location.href = `/project/${project_id}/experiments`;
+    document.location.href = `/project/${project_id}`;
   } else {
     alert(response.statusText);
   }

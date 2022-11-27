@@ -11,8 +11,10 @@ router.get('/', (req, res) => {
       attributes: [
           'id',
           'project_name',
-          'created_at'
-      ]
+          'created_at',
+          'updated_at'
+      ],
+      order: [[ "updatedAt", "DESC"]],
   })
       .then(dbPostData => {
           const projects = dbPostData.map(post => post.get({ plain: true }));
