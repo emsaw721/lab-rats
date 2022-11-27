@@ -6,8 +6,8 @@ async function commentFormHandler(event) {
     const experiment_id = document.querySelector('#experimentid').getAttribute('data-id');
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
 
-    if (comment) {
-        const response = await fetch(`/api/comments/${experiment_id}`, {
+    if (comment_text) {
+        const response = await fetch(`/api/comments`, {
             method: 'POST',
             body: JSON.stringify({ 
                 comment_text:comment_text, 
@@ -17,20 +17,12 @@ async function commentFormHandler(event) {
         });
 
         if (response.ok) {
-<<<<<<< HEAD
-            document.location.href = `/api/project/${project_id}/experiments/${experiment_id}`;
-=======
             document.location.reload();
->>>>>>> c427c05 (fix routes)
         } else {
             alert(response.statusText);
         }
     }
 };
-<<<<<<< HEAD
-// sort statement for most recent comment on post gonna be a get request --> wenbo 
-document.querySelector('.add-comment-btn').addEventListener('submit', commentFormHandler); 
-=======
- 
+
 document.querySelector('.comment-form').addEventListener('submit', commentFormHandler); 
->>>>>>> c427c05 (fix routes)
+

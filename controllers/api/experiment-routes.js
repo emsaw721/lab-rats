@@ -5,6 +5,7 @@ const formidable = require('formidable');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, (req, res) => {
+  console.log("------------experiments router.post/---------");
   Experiment.create({
     title: req.body.title,
     purpose_and_hypothesis: req.body.purpose,
@@ -12,7 +13,7 @@ router.post('/', withAuth, (req, res) => {
     protocols_calculations_reagents_equipment: req.body.protocols,
     observations: req.body.observations,
     analysis: req.body.analysis,
-    project_id: req.params.project_id,
+    project_id: req.body.project_id,
     user_id: req.session.userId
   })
     .then(dbPostData => res.json(dbPostData))
@@ -30,7 +31,7 @@ router.put('/:id', withAuth, (req, res) => {
       background: req.body.background,
       protocols_calculations_reagents_equipment: req.body.protocols,
       observations: req.body.observations,
-      analysis: req.body.analysis
+      analysis: req.body.analysis,
     },
     {
       where: {

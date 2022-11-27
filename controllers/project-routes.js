@@ -20,11 +20,7 @@ router.get('/:id', (req, res) => {
             'project_id',
             'user_id',
             'created_at',
-<<<<<<< HEAD
-           
-=======
             'updated_at'
->>>>>>> c427c05 (fix routes)
         ],
         include: [
             {
@@ -41,17 +37,30 @@ router.get('/:id', (req, res) => {
             }
         ]
     }).then(dbPostData => {
-        if (dbPostData) {
+        if (dbPostData.length > 0) {
             const experiments = dbPostData.map(post => post.get({ plain: true }));
-            console.log(experiments)
+            console.log(experiments);
             res.render('experiment-list', {
                 experiments,
                 loggedIn: req.session.loggedIn,
                 project_id: req.params.id,
-                project_name: experiments[1].project.project_name,
+                project_name: experiments[0].project.project_name,
             });
         } else {
-            res.status(404).end();
+            Project.findOne ({
+                where:{
+                    id: req.params.id
+                }
+            }).then(dbdata=>{
+                const project = dbdata.get({ plain: true });
+                console.log(dbdata);
+                res.render('experiment-list', {
+                    
+                    loggedIn: req.session.loggedIn,
+                    project_id: req.params.id,
+                    project_name: project.project_name,
+                })
+            });
         }
     }).catch(err => {
         console.log(err);
@@ -77,11 +86,7 @@ router.get('/experiment/:id', (req, res) => {
             'project_id',
             'user_id',
             'created_at',
-<<<<<<< HEAD
-           
-=======
             'updated_at'
->>>>>>> c427c05 (fix routes)
         ],
         include: [
             {
@@ -98,17 +103,8 @@ router.get('/experiment/:id', (req, res) => {
             }
         ]
     }).then(dbPostData => {
-<<<<<<< HEAD
-        // TODO render handlebar
-            const singleexperiment = dbPostData.get({plain: true}); 
-            console.log(singleexperiment)
-        res.render('lab-info', {
-            singleexperiment,
-            loggedIn: req.session.loggedIn
-        })
-=======
-        if (dbPostData) {
-            
+
+        if (dbPostData) {           
             const experiment = dbPostData.get({ plain: true });
             console.log(experiment);
             console.log(req.session);
@@ -119,7 +115,6 @@ router.get('/experiment/:id', (req, res) => {
                 currentuserid:req.session.userId,
             });
         }
->>>>>>> c427c05 (fix routes)
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);

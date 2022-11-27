@@ -11,7 +11,7 @@ async function deleteLabHandler(event) {
     });
 
     if (response.ok) {
-        window.location.href = `/project/${project_id}/experiments`;
+        window.location.href = `/project/${project_id}`;
     } else {
         alert(response.statusText);
     }

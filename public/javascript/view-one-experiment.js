@@ -38,5 +38,5 @@ async function viewLabHandler(event) {
     }
   }
   
-    document.querySelector('#experiment-lab-link').addEventListener('click', viewLabHandler);
+    //document.querySelector('#experiment-lab-link').addEventListener('click', viewLabHandler);
     

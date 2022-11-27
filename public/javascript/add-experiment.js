@@ -1,5 +1,7 @@
-async function newLabHandler(event) {
+//const sequelize = require("../../config/connection");
 
+async function newLabHandler(event) {
+  console.log('before getting data')
   const title = document.querySelector('input[name="lab-title"]').value;
   const purpose = document.querySelector('#lab-purpose').value;
   const background = document.querySelector('#lab-bg').value;
@@ -8,7 +10,8 @@ async function newLabHandler(event) {
   const analysis = document.querySelector('#lab-analysis').value;
   const project_id = document.querySelector('#addexperiment').getAttribute('data-id');
 
-  const response = await fetch(`/api/projects/${project_id}/experiments`, {
+  console.log("before fetch");
+  const response = await fetch(`/api/projects/${project_id}}/experiments`, {
     method: 'POST',
     body: JSON.stringify({
       title,
@@ -17,13 +20,14 @@ async function newLabHandler(event) {
       protocols,
       observations,
       analysis,
-      project_id: project_id
+      project_id,
     }),
     headers: {
       'Content-Type': 'application/json'
     }
   })
   if (response.ok) {
+    console.log("responseok!!!")
     document.location.href = `/project/${project_id}`;
   } else {
     alert(response.statusText);
