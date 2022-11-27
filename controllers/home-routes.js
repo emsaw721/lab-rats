@@ -79,7 +79,7 @@ router.get("/ncbisearch/:text",(req,res)=>{
   pubmed.search(req.params.text)//searchtext)
     .then((results) => {
         console.log(results);
-        res.render('NCBI',{papers:results.papers,count:results.count,text:req.params.text});
+        res.render('NCBI',{papers:results.papers,count:results.count,text:req.params.text,loggedIn:req.session.loggedIn});
     })
     .catch(err=>{
       console.log(err);
