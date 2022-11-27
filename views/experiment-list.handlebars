@@ -7,7 +7,7 @@
     {{#each experiments as |experiment|}}
     <li>
       <div id="experiment-lab-link"><a href="/project/experiment/{{id}}">{{experiment.title}}</a></div>
-      <p>Created on {{format_date created_at}}
+      <p class="text-xs">Created on {{format_date created_at}}
         ---
         last updated on {{format_date updated_at}}
       </p>
@@ -21,7 +21,7 @@
 </section>
 {{/if}}
 
-<a href="/add_experiment/{{project_id}}">Create a New Experiment</a>
+<button class="new-experiment-btn" class="new-notebook-btn"><a href="/add_experiment/{{project_id}}">Create New Experiment</a></button>
 
 {{!--
 <script src="/javascript/view-experiments.js"></script>

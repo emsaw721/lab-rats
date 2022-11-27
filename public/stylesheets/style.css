@@ -336,7 +336,7 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 120px;
+  margin-top: 50px;
   align-items: center;
 }
 
@@ -364,6 +364,29 @@ form label {
 
 .experiment-list ol {
   font-size: 22px; 
+}
+
+.experiment-list p{
+  font-size: 14px;
+  color:var(--quaternary-color); 
+}
+
+.new-experiment-btn {
+  margin-left: 75px;
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  border: 1px solid var(--quaternary-color);
+  border-radius: 5px;
+  background-color: var(--quaternary-color); 
+  margin-top: 30px;
+  align-items: center;
+}
+
+.new-experiment-btn:hover{
+  border: 1px solid var(--quinary-color);
+  border-radius: 5px;
+  background-color: var(--quinary-color);
 }
 
 .edit-lab-info {
@@ -433,7 +456,7 @@ form label {
 }
 
 .comment:nth-child(odd) {
-  background-color: #f7f4f0;
+  background-color: var(--tertiary-color);
 }
 
 .comment .meta {
@@ -446,3 +469,4 @@ form label {
   width: 300px;
   height: 100px; 
 }
+
