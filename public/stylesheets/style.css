@@ -368,7 +368,7 @@ form label {
 
 .experiment-list p{
   font-size: 14px;
-  color:var(--quaternary-color); 
+  color:var(--tertiary-color); 
 }
 
 .new-experiment-btn {
@@ -444,10 +444,52 @@ form label {
   background-color: var(--quinary-color); 
 }
 
+.one-lab-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.experiment-view-heading {
+  background-color: var(--quinary-color);
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding-left: 5px; 
+}
+
+.experiment-info {
+  color: var(--tertiary-color); 
+  margin: 25px 0; 
+}
+
+.edit-lab-btn {
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  border: 1px solid var(--quaternary-color);
+  border-radius: 5px;
+  background-color: var(--quaternary-color); 
+  margin: 25px 0 50px 100px; 
+  align-items: center;
+}
+
+.edit-lab-btn:hover {
+  border: 1px solid var(--quinary-color);
+  border-radius: 5px;
+  background-color: var(--quinary-color); 
+}
 
 .experiment-comment-list {
   padding: 1%;
   margin-bottom: 1%;
+}
+
+.lab-comment-list { 
+  position: absolute;
+  right: -20px; 
+  width: 100px;
+  height: 120px; 
+  border: 3px solid var(--secondary-color); 
 }
 
 .comment {
@@ -457,6 +499,10 @@ form label {
 
 .comment:nth-child(odd) {
   background-color: var(--tertiary-color);
+}
+
+.comment:nth-child(even) {
+  color: var(--quinary-color); 
 }
 
 .comment .meta {

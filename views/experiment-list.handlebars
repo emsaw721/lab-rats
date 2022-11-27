@@ -1,7 +1,7 @@
 <a href="/dashboard"> &larr; Back to Dashboard</a>
 <h1 class="project_title titleformat">{{project_name}}</h1>
 {{#if experiments.length}}
-<section class="experiment-list">
+<div class="experiment-list">
   <h2 class="underline underline-offset-4">Your Experiments</h2>
   <ol>
     {{#each experiments as |experiment|}}
@@ -18,11 +18,7 @@
     </li>
     {{/each}}
   </ol>
-</section>
+</div>
 {{/if}}
 
 <button class="new-experiment-btn" class="new-notebook-btn"><a href="/add_experiment/{{project_id}}">Create New Experiment</a></button>
-
-{{!--
-<script src="/javascript/view-experiments.js"></script>
-<script src="/javascript/comment.js"></script> --}}
