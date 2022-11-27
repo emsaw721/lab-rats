@@ -1,17 +1,16 @@
 <a href="/dashboard"> &larr; Back to Dashboard</a>
-<h2 class="project_title">Project: {{project_name}}</h2>
+<h1 class="project_title titleformat">{{project_name}}</h1>
 {{#if experiments.length}}
 <section class="experiment-list">
-  <h1 class="titleformat">Your Experiments</h1>
+  <h2>Your Experiments</h2>
   <ol>
     {{#each experiments as |experiment|}}
     <li>
-      <div id="experiment-lab-link"><a href="/project/experiment/{{id}}">{{experiment.title}}</div>
+      <div id="experiment-lab-link"><a href="/project/experiment/{{id}}">{{experiment.title}}</a></div>
       <p>Created on {{format_date created_at}}
         ---
         last updated on {{format_date updated_at}}
       </p>
-
       <div class="experiment-comment-list">
         <a href="/project/experiment/{{id}}">{{experiment.comments.length}} {{format_plural "comment"
           experiment.comments.length}}</a>
