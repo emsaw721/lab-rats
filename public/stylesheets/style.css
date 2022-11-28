@@ -1,6 +1,7 @@
 :root {
   --text-color: #fcfdfd;
   --primary-color: #b5e9f4;
+  --primary-color-lite: rgb(181, 233, 244, 0.8);  
   --secondary-color: rgb(188, 213, 218);
   --tertiary-color: #69a2b2;
   --quaternary-color: #7ac7b7;
@@ -17,8 +18,8 @@ html {
     font-family: sans-serif;
     background-color: var(--primary-color);
     background-image: url('../img/possible-background.png'); 
-    color: #fcfdfd;
-
+    background-position: center;
+    background-repeat: none; 
 }
 
 h1 {
@@ -184,7 +185,9 @@ a:hover {
 }
 
 .sideNavBar a:hover {
+    color: var(--text-color);
     background-color: var(--quinary-color);
+    text-decoration: none;
 
 }
 
@@ -238,7 +241,8 @@ form label {
   margin-left: 100px;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .new-lab-form input {
@@ -283,16 +287,12 @@ form label {
   margin-top: auto; 
 }
 
-#project-id {
-  background-color: var(--primary-color);
-}
-
 .notebook-edit-link {
   justify-content: space-between;
 }
 
 .notebook-edit-form {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-lite);
   padding: 10px; 
   border-radius: 5px;
 }
@@ -385,11 +385,16 @@ form label {
 }
 
 .experiment-list {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .experiment-list ol {
   font-size: 22px; 
+}
+
+.experiment-list li {
+  color: var(--text-color); 
 }
 
 .experiment-list h2{
@@ -420,23 +425,36 @@ form label {
 }
 
 .edit-lab-info {
-  margin-left: 200px;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-color-lite); 
+  color: var(--text-color); 
+  border-radius: 5px;
+}
+
+.edit-lab-info label {
+  font-size: 22px; 
+  color: var(--text-color); 
+  background-color: var(--quinary-color);
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding-left: 5px; 
+  position: -webkit-sticky;
+  position: sticky; 
 }
 
 .edit-lab-info input {
-  width: 300px;
+  width: 90%;
 }
 .edit-lab-info textarea {
-  width: 300px;
-  height: 100px;
+  height: 300px;
   inline-size: 300px;
   overflow-wrap: break-word;
 }
 
 .btn-div {
   flex-direction: row;
+  margin-top: 20px; 
 }
 
 .save-lab-btn {
@@ -446,8 +464,9 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 100px;
+
   align-items: center;
+  color: var(--text-color); 
 }
 
 .save-lab-btn:hover {
@@ -463,9 +482,9 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 100px;
+
   align-items: center;
- 
+  color: var(--text-color); 
 }
 
 .delete-lab-btn:hover {
@@ -478,7 +497,14 @@ form label {
   position: relative;
   width: 90%;
   height: 100%; 
+  background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
+
+.one-lab-container h4 {
+  color: var(--text-color);
+}
+
 .experiment-view-heading {
   font-size: 22px; 
   color: var(--text-color); 
@@ -529,17 +555,20 @@ form label {
   position: absolute;
   left: 80%;
   right: 10%; 
-  top: 29%;
+  top: 33%;
   width: 15%;
   height: 120px; 
   display: flex; 
   flex-direction: column;
   flex-basis: content;
+  
 }
 
 .lab-comment-list { 
   font-size: 20px;
   flex-grow: 3;
+  background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .comment {
@@ -548,6 +577,7 @@ form label {
 
 .comment:nth-child(odd) {
   background-color: var(--tertiary-color);
+  color: var(--text-color); 
 }
 
 .comment:nth-child(even) {
@@ -585,9 +615,35 @@ form label {
 }
 
 .calform {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-lite);
+  padding: 5px; 
+  border-radius: 5px;
 }
 
 .result-div {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-lite);
+  border-radius: 5px;
+}
+
+.filebtn {
+  color: var(--text-color); 
+  position: relative;
+  right: 30%; 
+  top: 25%;
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 5px;
+  background-color: var(--tertiary-color); 
+  margin: 0 0 50px 75px; 
+  align-items: center;
+}
+
+.back-btn {
+  font-size: 20px; 
+}
+
+.back-btn:hover {
+  text-decoration: none;
 }
