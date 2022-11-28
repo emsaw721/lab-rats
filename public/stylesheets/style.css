@@ -16,6 +16,7 @@ html {
     margin: 0;
     font-family: sans-serif;
     background-color: var(--primary-color);
+    background-image: url('../img/possible-background.png'); 
     color: #fcfdfd;
 
 }
@@ -237,6 +238,7 @@ form label {
   margin-left: 100px;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-color);
 }
 
 .new-lab-form input {
@@ -281,8 +283,18 @@ form label {
   margin-top: auto; 
 }
 
+#project-id {
+  background-color: var(--primary-color);
+}
+
 .notebook-edit-link {
   justify-content: space-between;
+}
+
+.notebook-edit-form {
+  background-color: var(--primary-color);
+  padding: 10px; 
+  border-radius: 5px;
 }
 
 .title-note-book {
@@ -370,6 +382,10 @@ form label {
   margin-left: 100px;
   display: flex;
   flex-direction: column;
+}
+
+.experiment-list {
+  background-color: var(--primary-color);
 }
 
 .experiment-list ol {
@@ -568,3 +584,10 @@ form label {
   align-items: center;
 }
 
+.calform {
+  background-color: var(--primary-color);
+}
+
+.result-div {
+  background-color: var(--primary-color);
+}
