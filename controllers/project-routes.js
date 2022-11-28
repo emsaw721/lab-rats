@@ -1,6 +1,6 @@
 const router = require('express').Router({ mergeParams: true });
 const sequelize = require('../config/connection');
-const { Project, Experiment, Comment, User } = require('../models')
+const { Project, Experiment, Comment, User, Attachment } = require('../models')
 const withAuth = require('../utils/auth');
 
 router.get('/:id', (req, res) => {
@@ -108,6 +108,10 @@ router.get('/experiment/:id', (req, res) => {
             {
                 model: User,
                 attributes: ['username'],
+            },
+            {
+                model: Attachment,
+                attributes: ['file_name', 'file_path'],
             }
 
         ]
@@ -167,9 +171,9 @@ router.get('/experiment/edit/:id', (req, res) => {
     });
 })
 
-router.get('/experiment/:id/attachments', (req, res) => {
-    console.log('==========project router.get/Experiment/:id/attachments============');
-    Attachment.findOne({
+router.get('/:id/fileupload/', (req, res) => {
+    console.log('==========project router.get/experiment/:id/fileupload============');
+    Attachment.findAll({
         where: {
             id: req.params.id
         },
@@ -181,37 +185,41 @@ router.get('/experiment/:id/attachments', (req, res) => {
             'created_at',
             'updated_at'
         ],
-        include: [
-            {
-                model: Project,
-                attributes: ['id', 'project_name'],
-            },
-            {
-                model: Experiment,
-                attributes: ['id', 'title']
-            },
-            {
-                model: User,
-                attributes: ['username'],
-            }
+        // include: [
+        //     {
+        //         model: Project,
+        //         attributes: ['id', 'project_name'],
+        //     },
+        //     {
+        //         model: Experiment,
+        //         attributes: ['id', 'title']
+        //     },
+        //     {
+        //         model: User,
+        //         attributes: ['username'],
+        //     }
 
-        ]
-    }).then(dbPostData => {
+        // ]  
 
-        if (dbPostData) {
-            const attachment = dbPostData.get({ plain: true });
-            console.log(attachment);
-            console.log(req.session);
-            // TODO render handlebar
-            res.render('view-attachments', {
-                attachment,
-                loggedIn: true,
-                currentuserid: req.session.userId,
-            });
-        }
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    }).then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    //     if (dbPostData) {
+    //         const attachment = dbPostData.get({ plain: true });
+    //         console.log(attachment);
+    //         console.log(req.session);
+    //         // TODO render handlebar
+    //         res.render('view-attachment', {
+    //             attachment,
+    //             loggedIn: true,
+    //             currentuserid: req.session.userId,
+    //         });
+    //     }
+    // }).catch(err => {
+    //     console.log(err);
+    //     res.status(500).json(err);
+    // });
 })
 module.exports = router;
