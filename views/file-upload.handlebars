@@ -1,10 +1,10 @@
 
 
-<section>
-  <a href="/project/experiment/{{id}}" class="mx-5"> &larr; Back to {{experiment.title}}</a>
+<section id="projectid" data-id="{{experiment.project_id}}">
+  <a href="/project/{{experiment.project_id}}/experiment/{{experiment.id}}" class="mx-5"> &larr; Back to {{experiment.title}}</a>
   <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
     {{experiment.title}}</div>
     <div class="attachment-container">
-        <a class="btn btn-primary view-pdf" href="../public/fileupload/lecture7.pdf">View PDF</a>        
+        <a class="view-pdf" href="../public/fileupload/lecture7.pdf">View PDF</a>        
 </div>
 </section>
