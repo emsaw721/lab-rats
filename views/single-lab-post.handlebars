@@ -1,13 +1,13 @@
 <section id="notebookid" data-id="{{experiment.project_id}}">
-  <a href="/project/{{experiment.project_id}}" class="mx-5"> &larr; Back to {{experiment.project.project_name}}</a>
+  <a class="back-btn" href="/project/{{experiment.project_id}}" class="mx-5"> &larr; Back to {{experiment.project.project_name}}</a>
   <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
     {{experiment.title}}</div>
   <div class="one-lab-container">
-    <h3>Created on {{format_date experiment.created_at}} by {{experiment.user.username}}</h3>
+    <h4>Created on {{format_date experiment.created_at}} by {{experiment.user.username}}</h4>
     {{#if fileupload}}
-    <div class="attachmentimg">
+    <img src="/img/3floppy_mount.png" /> 
       <div class="attachmentlink"></div>
-    </div>
+  
   {{/if}}
   <div>
     <div class="experiment-view-heading">Purpose and Hypothesis</div>

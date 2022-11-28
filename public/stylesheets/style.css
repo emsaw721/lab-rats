@@ -18,6 +18,8 @@ html {
     font-family: sans-serif;
     background-color: var(--primary-color);
     background-image: url('../img/possible-background.png'); 
+    background-position: center;
+    background-repeat: none; 
     color: #fcfdfd;
 
 }
@@ -185,7 +187,9 @@ a:hover {
 }
 
 .sideNavBar a:hover {
+    color: var(--text-color);
     background-color: var(--quinary-color);
+    text-decoration: none;
 
 }
 
@@ -240,6 +244,7 @@ form label {
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .new-lab-form input {
@@ -384,10 +389,15 @@ form label {
 
 .experiment-list {
   background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .experiment-list ol {
   font-size: 22px; 
+}
+
+.experiment-list li {
+  color: var(--text-color); 
 }
 
 .experiment-list h2{
@@ -422,6 +432,7 @@ form label {
   flex-direction: column;
   background-color: var(--primary-color-lite); 
   color: var(--text-color); 
+  border-radius: 5px;
 }
 
 .edit-lab-info label {
@@ -490,7 +501,13 @@ form label {
   width: 90%;
   height: 100%; 
   background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
+
+.one-lab-container h4 {
+  color: var(--text-color);
+}
+
 .experiment-view-heading {
   font-size: 22px; 
   color: var(--text-color); 
@@ -541,7 +558,7 @@ form label {
   position: absolute;
   left: 80%;
   right: 10%; 
-  top: 29%;
+  top: 33%;
   width: 15%;
   height: 120px; 
   display: flex; 
@@ -554,6 +571,7 @@ form label {
   font-size: 20px;
   flex-grow: 3;
   background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .comment {
@@ -562,6 +580,7 @@ form label {
 
 .comment:nth-child(odd) {
   background-color: var(--tertiary-color);
+  color: var(--text-color); 
 }
 
 .comment:nth-child(even) {
@@ -599,11 +618,15 @@ form label {
 }
 
 .calform {
+  
   background-color: var(--primary-color-lite);
+  padding: 5px; 
+  border-radius: 5px;
 }
 
 .result-div {
   background-color: var(--primary-color-lite);
+  border-radius: 5px;
 }
 
 .filebtn {
@@ -621,7 +644,10 @@ form label {
   align-items: center;
 }
 
-.attachment-img {
-  content: url('../img/3floppy_mount.png'); 
+.back-btn {
+  font-size: 20px; 
 }
 
+.back-btn:hover {
+  text-decoration: none;
+}
