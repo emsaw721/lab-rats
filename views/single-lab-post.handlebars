@@ -40,7 +40,7 @@
     </form>
     <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post" enctype="multipart/form-data">
       <input type="file" name="filetoupload"><br>
-      <input type="hidden" name="experimentId" value="{{experiment.id}}">
+      <input type="hidden" name="experiment_id" value="{{experiment.id}}">
       <input type="submit">
     </form>
     <script src="/javascript/comment.js"></script>

@@ -74,12 +74,22 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, file) {
     console.log(file);
-    //TODO move file from temp folder to final folder
     const oldpath = file.filetoupload.filepath;
     const newpath = 'public/fileupload/' + file.filetoupload.originalFilename;
     fs.rename(oldpath, newpath, function (err) {
       if (err) throw err;
-
+      Attachment.create({
+        file_name: file.filetoupload.originalFilename,
+        file_path: newpath,
+        experiment_id: fields.experiment_id
+        //TODO rendering handlebar
+        // TODO list attachments
+        //TODO delete attachments
+      }).then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
     });
   });
 });
