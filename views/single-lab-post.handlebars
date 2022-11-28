@@ -3,6 +3,7 @@
   <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
     {{experiment.title}}</div>
   <div class="one-lab-container">
+    <h3>Created on {{format_date experiment.created_at}} by {{experiment.user.username}} </h3>
     <div>
       <div class="experiment-view-heading">Purpose and Hypothesis</div>
       <div class="experiment-info" id="purpose-lab">{{experiment.purpose_and_hypothesis}}</div>

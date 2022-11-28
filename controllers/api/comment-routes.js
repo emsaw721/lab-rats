@@ -76,7 +76,7 @@ router.post("/", withAuth, (req, res) => {
   Comment.create({
     comment_text: req.body.comment_text,
     experiment_id: req.body.experiment_id,
-    user_id: req.session.user_id
+    user_id: req.session.userId
   }).then((dbdata) => res.json(dbdata))
     .catch((err) => {
     console.log(err);
