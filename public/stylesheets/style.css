@@ -20,8 +20,6 @@ html {
     background-image: url('../img/possible-background.png'); 
     background-position: center;
     background-repeat: none; 
-    color: #fcfdfd;
-
 }
 
 h1 {
@@ -288,7 +286,6 @@ form label {
   color: var(--quinary-color); 
   margin-top: auto; 
 }
-
 
 .notebook-edit-link {
   justify-content: space-between;
@@ -618,7 +615,6 @@ form label {
 }
 
 .calform {
-  
   background-color: var(--primary-color-lite);
   padding: 5px; 
   border-radius: 5px;
