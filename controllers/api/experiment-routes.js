@@ -1,8 +1,9 @@
 const router = require('express').Router({ mergeParams: true });
 const sequelize = require('../../config/connection');
-const { Experiment, Project, Comment, User } = require('../../models');
+const { Experiment, Attachment } = require('../../models');
 const formidable = require('formidable');
 const withAuth = require('../../utils/auth');
+const fs = require('fs');
 
 router.post('/', withAuth, (req, res) => {
   console.log("------------experiments router.post/---------");
@@ -74,8 +75,12 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
   form.parse(req, function (err, fields, file) {
     console.log(file);
     //TODO move file from temp folder to final folder
-    //TODO create model for file file_name file_path experiment_id
+    const oldpath = file.filetoupload.filepath;
+    const newpath = 'public/fileupload/' + file.filetoupload.originalFilename;
+    fs.rename(oldpath, newpath, function (err) {
+      if (err) throw err;
 
+    });
   });
 });
 

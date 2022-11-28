@@ -3,6 +3,7 @@ node_modules
 Icon
 .env
 .vscode
+fileupload/*
 
 
 
