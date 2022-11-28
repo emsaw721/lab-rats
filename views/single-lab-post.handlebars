@@ -3,35 +3,40 @@
   <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
     {{experiment.title}}</div>
   <div class="one-lab-container">
-    <h3>Created on {{format_date experiment.created_at}} by {{experiment.user.username}} </h3>
-    <div>
-      <div class="experiment-view-heading">Purpose and Hypothesis</div>
-      <div class="experiment-info" id="purpose-lab">{{experiment.purpose_and_hypothesis}}</div>
+    <h3>Created on {{format_date experiment.created_at}} by {{experiment.user.username}}</h3>
+    {{#if fileupload}}
+    <div class="attachmentimg">
+      <div class="attachmentlink"></div>
     </div>
-    <div>
-      <div class="experiment-view-heading">Background</div>
-      <div class="experiment-info" id="bg-lab">{{experiment.background}}</div>
-    </div>
-    <div>
-      <div class="experiment-view-heading">Protocols, Calculations, Reagents, Equipment</div>
-      <div class="experiment-info" id="protocols-lab">
-        {{experiment.protocols_calculations_reagents_equipment}}</div>
-    </div>
-    <div>
-      <div class="experiment-view-heading">Observations</div>
-      <div class="experiment-info" id="obs-lab">{{experiment.observations}}</div>
-    </div>
-    <div>
-      <div class="experiment-view-heading">Analysis</div>
-      <div class="experiment-info" id="analysis-lab">{{experiment.analysis}}</div>
-    </div>
+  {{/if}}
+  <div>
+    <div class="experiment-view-heading">Purpose and Hypothesis</div>
+    <div class="experiment-info" id="purpose-lab">{{experiment.purpose_and_hypothesis}}</div>
+  </div>
+  <div>
+    <div class="experiment-view-heading">Background</div>
+    <div class="experiment-info" id="bg-lab">{{experiment.background}}</div>
+  </div>
+  <div>
+    <div class="experiment-view-heading">Protocols, Calculations, Reagents, Equipment</div>
+    <div class="experiment-info" id="protocols-lab">
+      {{experiment.protocols_calculations_reagents_equipment}}</div>
+  </div>
+  <div>
+    <div class="experiment-view-heading">Observations</div>
+    <div class="experiment-info" id="obs-lab">{{experiment.observations}}</div>
+  </div>
+  <div>
+    <div class="experiment-view-heading">Analysis</div>
+    <div class="experiment-info" id="analysis-lab">{{experiment.analysis}}</div>
+  </div>
   </div>
   <div class="lab-comment-sidebar">
     {{> comments experiment.comments}}
     {{#if loggedIn}}
     <form class="comment-form" data-cuser="currentuserid">
       <div class="questions">Questions or suggestions? Leave a
-          comment or drop a file!</div>
+        comment or drop a file!</div>
       <div>
         <textarea name="comment-body"></textarea>
       </div>
@@ -39,7 +44,8 @@
         <button type="submit">Add Comment</button>
       </div>
     </form>
-    <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post" enctype="multipart/form-data">
+    <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post"
+      enctype="multipart/form-data">
       <input class="fileslct" type="file" name="filetoupload"><br>
       <input type="hidden" name="experiment_id" value="{{experiment.id}}">
       <input class="filebtn" type="submit">

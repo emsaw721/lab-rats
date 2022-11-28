@@ -620,3 +620,8 @@ form label {
   margin: 0 0 50px 75px; 
   align-items: center;
 }
+
+.attachment-img {
+  content: url('../img/3floppy_mount.png'); 
+}
+
