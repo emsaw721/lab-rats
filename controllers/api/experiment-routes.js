@@ -1,8 +1,9 @@
 const router = require('express').Router({ mergeParams: true });
 const sequelize = require('../../config/connection');
-const { Experiment, Project, Comment, User } = require('../../models');
+const { Experiment, Attachment } = require('../../models');
 const formidable = require('formidable');
 const withAuth = require('../../utils/auth');
+const fs = require('fs');
 
 router.post('/', withAuth, (req, res) => {
   console.log("------------experiments router.post/---------");
@@ -66,6 +67,30 @@ router.delete('/:id', withAuth, (req, res) => {
   }).catch(err => {
     console.log(err);
     res.status(500).json(err);
+  });
+});
+
+router.post('/:id/fileupload', withAuth, (req, res) => {
+  var form = new formidable.IncomingForm();
+  form.parse(req, function (err, fields, file) {
+    console.log(file);
+    const oldpath = file.filetoupload.filepath;
+    const newpath = 'public/fileupload/' + file.filetoupload.originalFilename;
+    fs.rename(oldpath, newpath, function (err) {
+      if (err) throw err;
+      Attachment.create({
+        file_name: file.filetoupload.originalFilename,
+        file_path: newpath,
+        experiment_id: fields.experiment_id
+        //TODO rendering handlebar
+        // TODO list attachments
+        //TODO delete attachments
+      }).then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    });
   });
 });
 
