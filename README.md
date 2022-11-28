@@ -71,6 +71,7 @@ The user also has the option to view and edit the experiments contained within e
 ![Alt text](./images/lab-rats-experiment-list.png)
 ![Alt text](./images/lab-rats-edit-lab.png)
 ![Alt text](./images/lab-rats-create-experiment.png) 
+![Alt text](./images/lab-rats-one-lab-with-comments.png) 
 
 ## Support
 
