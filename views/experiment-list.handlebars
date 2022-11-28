@@ -7,7 +7,7 @@
     {{#each experiments as |experiment|}}
     <li>
       <div id="experiment-lab-link"><a href="/project/experiment/{{id}}">{{experiment.title}}</a></div>
-      <p class="text-xs">Created on {{format_date created_at}}
+      <p class="text-xs">Created on {{format_date created_at}} by {{user.username}}
         ---
         last updated on {{format_date updated_at}}
       </p>

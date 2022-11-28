@@ -32,6 +32,10 @@ Experiment.hasMany(Attachment, {
   foreignKey: "experiment_id",
 });
 
+Experiment.belongsTo(User,{
+  foreignKey:"user_id",
+})
+
 Attachment.belongsTo(Experiment, {
   foreignKey:"experiment_id"
 });

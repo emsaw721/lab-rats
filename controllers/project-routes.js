@@ -34,7 +34,11 @@ router.get('/:id', (req, res) => {
             {
                 model:Project,
                 attributes:['id','project_name'],
-            }
+            },
+            {
+                model:User,
+                attributes: ['username'],
+            },
         ]
     }).then(dbPostData => {
         if (dbPostData.length > 0) {
@@ -100,7 +104,12 @@ router.get('/experiment/:id', (req, res) => {
             {
                 model: Project,
                 attributes:['id','project_name'],
+            },
+            {
+                model:User,
+                attributes: ['username'],
             }
+
         ]
     }).then(dbPostData => {
 
