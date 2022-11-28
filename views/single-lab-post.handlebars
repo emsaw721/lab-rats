@@ -30,8 +30,8 @@
     {{> comments experiment.comments}}
     {{#if loggedIn}}
     <form class="comment-form" data-cuser="currentuserid">
-      <div class="questions">Questions or suggestions? <span>Leave a
-          comment!</span></div>
+      <div class="questions">Questions or suggestions? Leave a
+          comment or drop a file!</div>
       <div>
         <textarea name="comment-body"></textarea>
       </div>
@@ -40,9 +40,9 @@
       </div>
     </form>
     <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post" enctype="multipart/form-data">
-      <input type="file" name="filetoupload"><br>
+      <input class="fileslct" type="file" name="filetoupload"><br>
       <input type="hidden" name="experiment_id" value="{{experiment.id}}">
-      <input type="submit">
+      <input class="filebtn" type="submit">
     </form>
     <script src="/javascript/comment.js"></script>
     {{/if}}
