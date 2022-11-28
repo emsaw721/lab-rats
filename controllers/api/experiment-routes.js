@@ -69,4 +69,14 @@ router.delete('/:id', withAuth, (req, res) => {
   });
 });
 
+router.post('/:id/fileupload', withAuth, (req, res) => {
+  var form = new formidable.IncomingForm();
+  form.parse(req, function (err, fields, file) {
+    console.log(file);
+    //TODO move file from temp folder to final folder
+    //TODO create model for file file_name file_path experiment_id
+
+  });
+});
+
 module.exports = router;
