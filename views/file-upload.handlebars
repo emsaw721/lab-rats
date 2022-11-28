@@ -1,10 +1,7 @@
 
 
-<section id="projectid" data-id="{{experiment.project_id}}">
-  <a class="back-btn" href="/project/{{experiment.project_id}}/experiment/{{experiment.id}}" class="mx-5"> &larr; Back to {{experiment.title}}</a>
-  <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
-    {{experiment.title}}</div>
-    <div class="attachment-container">
-        <a class="view-pdf" href="../public/fileupload/lecture7.pdf">View PDF</a>        
+<section id="projectid" data-idproj="{{fileupload.experiment_id.project_id}}">
+  <div id="experimentid" data-idlab="{{fileupload.experiment_id}}">
+  <a class="back-btn" href="/project/{{fileupload.experiment_id.project_id}}/experiment/{{fileupload.experiment_id}}" class="mx-5"> &larr; Back to {{fileupload.experiment_id.experiment.title}}</a>
 </div>
 </section>

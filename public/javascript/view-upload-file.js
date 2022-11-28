@@ -1,19 +1,19 @@
 
 
 async function viewAttachment(event) {
-    event.preventDefault(); 
+   
 
-    const experimentid = document.querySelector('#experimentid').getAttribute('data-id'); 
-    const projectid = document.querySelector('#projectid').getAttribute('data-note'); 
-    const attachment = document.querySelector('.view-pdf').getAttribute('href'); 
+    const projectid = document.querySelector('#projectid').getAttribute('data-idproj'); 
+    const experimentid = document.querySelector('#experimentid').getAttribute('data-idlab'); 
+    const attachment = document.querySelector('.attachmentlink').getAttribute('href'); 
 
     const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}/fileupload`, {
-        method: 'GET',
+        method: 'POST',
         body: JSON.stringify({
             attachment
         }),
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/pdf'
         }
     }); 
 
