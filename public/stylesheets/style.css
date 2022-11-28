@@ -486,6 +486,7 @@ form label {
 .experiment-comment-list {
   padding: 1%;
   margin-bottom: 1%;
+  color: var(--quaternary-color); 
 }
 
 .experiment-comment-list a {

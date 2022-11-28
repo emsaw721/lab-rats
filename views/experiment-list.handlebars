@@ -1,4 +1,4 @@
-<a href="/dashboard"> &larr; Back to Dashboard</a>
+{{!-- <a href="/dashboard"> &larr; Back to Dashboard</a> --}}
 <h1 class="project_title titleformat">{{project_name}}</h1>
 {{#if experiments.length}}
 <div class="experiment-list">
@@ -11,10 +11,8 @@
         ---
         last updated on {{format_date updated_at}}
       </p>
-      <div class="experiment-comment-list">
-        <a href="/project/experiment/{{id}}">{{experiment.comments.length}} {{format_plural "comment"
-          experiment.comments.length}}</a>
-      </div>
+      <div class="experiment-comment-list">{{experiment.comments.length}} {{format_plural "comment"
+          experiment.comments.length}}</div>
     </li>
     {{/each}}
   </ol>
