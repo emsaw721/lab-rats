@@ -32,11 +32,11 @@ router.get('/:id', (req, res) => {
                 }
             },
             {
-                model:Project,
-                attributes:['id','project_name'],
+                model: Project,
+                attributes: ['id', 'project_name'],
             },
             {
-                model:User,
+                model: User,
                 attributes: ['username'],
             },
         ]
@@ -51,15 +51,15 @@ router.get('/:id', (req, res) => {
                 project_name: experiments[0].project.project_name,
             });
         } else {
-            Project.findOne ({
-                where:{
+            Project.findOne({
+                where: {
                     id: req.params.id
                 }
-            }).then(dbdata=>{
+            }).then(dbdata => {
                 const project = dbdata.get({ plain: true });
                 console.log(dbdata);
                 res.render('experiment-list', {
-                    
+
                     loggedIn: req.session.loggedIn,
                     project_id: req.params.id,
                     project_name: project.project_name,
@@ -95,7 +95,7 @@ router.get('/experiment/:id', (req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'user_id', 'experiment_id','created_at'],
+                attributes: ['id', 'comment_text', 'user_id', 'experiment_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -103,17 +103,17 @@ router.get('/experiment/:id', (req, res) => {
             },
             {
                 model: Project,
-                attributes:['id','project_name'],
+                attributes: ['id', 'project_name'],
             },
             {
-                model:User,
+                model: User,
                 attributes: ['username'],
             }
 
         ]
     }).then(dbPostData => {
 
-        if (dbPostData) {           
+        if (dbPostData) {
             const experiment = dbPostData.get({ plain: true });
             console.log(experiment);
             console.log(req.session);
@@ -121,7 +121,7 @@ router.get('/experiment/:id', (req, res) => {
             res.render('single-lab-post', {
                 experiment,
                 loggedIn: true,
-                currentuserid:req.session.userId,
+                currentuserid: req.session.userId,
             });
         }
     }).catch(err => {
@@ -148,7 +148,7 @@ router.get('/experiment/edit/:id', (req, res) => {
         include: [
             {
                 model: Project,
-                attributes:['id','project_name'],
+                attributes: ['id', 'project_name'],
             }
         ]
     }).then(dbPostData => {
@@ -167,4 +167,51 @@ router.get('/experiment/edit/:id', (req, res) => {
     });
 })
 
+router.get('/experiment/:id/attachments', (req, res) => {
+    console.log('==========project router.get/Experiment/:id/attachments============');
+    Attachment.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'file_name',
+            'file_path',
+            'experiment_id',
+            'created_at',
+            'updated_at'
+        ],
+        include: [
+            {
+                model: Project,
+                attributes: ['id', 'project_name'],
+            },
+            {
+                model: Experiment,
+                attributes: ['id', 'title']
+            },
+            {
+                model: User,
+                attributes: ['username'],
+            }
+
+        ]
+    }).then(dbPostData => {
+
+        if (dbPostData) {
+            const attachment = dbPostData.get({ plain: true });
+            console.log(attachment);
+            console.log(req.session);
+            // TODO render handlebar
+            res.render('view-attachments', {
+                attachment,
+                loggedIn: true,
+                currentuserid: req.session.userId,
+            });
+        }
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
 module.exports = router;

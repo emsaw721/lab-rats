@@ -39,9 +39,11 @@
         <button type="submit">Add Comment</button>
       </div>
     </form>
-    <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post" enctype="multipart/form-data">
-      <input type="file" name="filetoupload"><br>
+    <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post"
+      enctype="multipart/form-data">
+      <input type="file" name="filetoupload"></br>
       <input type="hidden" name="experiment_id" value="{{experiment.id}}">
+      </br>
       <input type="submit">
     </form>
     <script src="/javascript/comment.js"></script>
@@ -50,3 +52,5 @@
 </section>
 <button class="edit-lab-btn"><a href="/project/experiment/edit/{{experiment.id}}" class="edit-link">Edit Lab
     Entry</a></button>
+<button class="view-attachments-btn"><a href="/projects/{{experiment.project_id}}/experiments/{{experiment.id}}" class="attachments-link">View Attachments
+    </a></button>
