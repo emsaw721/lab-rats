@@ -39,8 +39,13 @@ router.get('/:id', (req, res) => {
                 model: User,
                 attributes: ['username'],
             },
+            {
+                model: Attachment,
+                attributes: ['file_name'],
+            },
         ]
     }).then(dbPostData => {
+        console.log(dbPostData)
         if (dbPostData.length > 0) {
             const experiments = dbPostData.map(post => post.get({ plain: true }));
             console.log(experiments);
@@ -48,7 +53,7 @@ router.get('/:id', (req, res) => {
                 experiments,
                 loggedIn: req.session.loggedIn,
                 project_id: req.params.id,
-                project_name: experiments[0].project.project_name,
+                project_name: experiments[0].project.project_name                
             });
         } else {
             Project.findOne({
@@ -62,8 +67,8 @@ router.get('/:id', (req, res) => {
 
                     loggedIn: req.session.loggedIn,
                     project_id: req.params.id,
-                    project_name: project.project_name,
-                })
+                    project_name: project.project_name
+                });
             });
         }
     }).catch(err => {
@@ -171,55 +176,4 @@ router.get('/experiment/edit/:id', (req, res) => {
     });
 })
 
-router.get('/:id/fileupload/', (req, res) => {
-    console.log('==========project router.get/experiment/:id/fileupload============');
-    Attachment.findAll({
-        where: {
-            id: req.params.id
-        },
-        attributes: [
-            'id',
-            'file_name',
-            'file_path',
-            'experiment_id',
-            'created_at',
-            'updated_at'
-        ],
-        // include: [
-        //     {
-        //         model: Project,
-        //         attributes: ['id', 'project_name'],
-        //     },
-        //     {
-        //         model: Experiment,
-        //         attributes: ['id', 'title']
-        //     },
-        //     {
-        //         model: User,
-        //         attributes: ['username'],
-        //     }
-
-        // ]  
-
-    }).then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    //     if (dbPostData) {
-    //         const attachment = dbPostData.get({ plain: true });
-    //         console.log(attachment);
-    //         console.log(req.session);
-    //         // TODO render handlebar
-    //         res.render('view-attachment', {
-    //             attachment,
-    //             loggedIn: true,
-    //             currentuserid: req.session.userId,
-    //         });
-    //     }
-    // }).catch(err => {
-    //     console.log(err);
-    //     res.status(500).json(err);
-    // });
-})
 module.exports = router;

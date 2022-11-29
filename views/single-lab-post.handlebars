@@ -25,6 +25,14 @@
       <div class="experiment-view-heading">Analysis</div>
       <div class="experiment-info" id="analysis-lab">{{experiment.analysis}}</div>
     </div>
+    <div>
+      <div class="experiment-view-heading">Attachments</div>
+      {{#each experiment.attachments}}
+      <div class="experiment-info" id="attachments-lab">
+        <a target="_blank" href="/{{this.file_path}}">{{this.file_name}}</a>
+      </div>
+      {{/each}}
+    </div>
   </div>
   <div class="lab-comment-sidebar">
     {{> comments experiment.comments}}
@@ -50,7 +58,11 @@
     {{/if}}
   </div>
 </section>
-<button class="edit-lab-btn"><a href="/project/experiment/edit/{{experiment.id}}" class="edit-link">Edit Lab
-    Entry</a></button>
-<button class="view-attachments-btn"><a href="/project/experiment/{{experiment.id}}/fileupload/" class="attachments-link">View Attachments
-    </a></button>
+<button class="edit-lab-btn">
+  <a href="/project/experiment/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
+</button>
+
+
+{{!-- <button class="view-attachments-btn">
+  <a href="/project/experiment/{{experiment.id}}/fileupload/" class="attachments-link">View Attachments</a>
+{{!-- </button> --}}

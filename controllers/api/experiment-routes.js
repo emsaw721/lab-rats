@@ -75,8 +75,8 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
   form.parse(req, function (err, fields, file) {
     console.log(file);
     const oldpath = file.filetoupload.filepath;
-    const newpath = 'public/fileupload/' + file.filetoupload.originalFilename;
-    fs.rename(oldpath, newpath, function (err) {
+    const newpath = 'fileupload/' + file.filetoupload.originalFilename;
+    fs.rename(oldpath, 'public/' + newpath, function (err) {
       if (err) throw err;
       Attachment.create({
         file_name: file.filetoupload.originalFilename,
