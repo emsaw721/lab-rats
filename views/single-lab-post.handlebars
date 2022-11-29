@@ -30,7 +30,7 @@
       {{#each experiment.attachments}}
       <div class="experiment-info">
         <a target="_blank" href="/{{this.file_path}}">{{this.file_name}}</a>
-        <button type="button" onclick="deleteFile({{this.id}})" id="delete-file">Delete file</button>
+        <button class="deleteattach-btn" type="button" onclick="deleteFile({{this.id}})" id="delete-file">Delete file</button>
       </div>
       <script src="/javascript/delete-file.js"></script>
       {{/each}}
@@ -54,7 +54,7 @@
       <input type="file" name="filetoupload"></br>
       <input type="hidden" name="experiment_id" value="{{experiment.id}}">
       </br>
-      <input type="submit">
+      <input class="filebtn" type="submit">
     </form>
     <script src="/javascript/comment.js"></script>
     {{/if}}

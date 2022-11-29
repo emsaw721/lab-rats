@@ -239,28 +239,50 @@ form label {
 
 .new-lab-form {
   margin-left: 100px;
+  color: var(--text-color); 
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color-lite);
   border-radius: 5px;
 }
 
+.new-lab-form label {
+  font-size: 22px; 
+  color: var(--text-color); 
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding-left: 5px; 
+  position: -webkit-sticky;
+  position: sticky; 
+}
+
 .new-lab-form input {
-  width: 300px;
+  width: 90%;
+  padding-left: 10px; 
+  margin-left: 10px; 
 }
 .new-lab-form textarea {
-  width: 300px;
   height: 100px;
   inline-size: 300px;
   overflow-wrap: break-word;
+  width: 90%; 
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .new-lab-form button {
+    color: var(--text-color);
     width: 175px;
     height: 50px;
     background-color: var(--quaternary-color);
-    margin-left: 70px; 
+    margin: 0 10px 10px; 
     border-radius: 5px;
+    border: 1px solid var(--quaternary-color); 
+}
+
+.new-lab-form button:hover {
+  color: var(--quaternary-color);
+  background-color: var(--quinary-color);
 }
 
 .container {
@@ -292,7 +314,6 @@ form label {
 }
 
 .notebook-edit-form {
-  background-color: var(--primary-color-lite);
   padding: 10px; 
   border-radius: 5px;
 }
@@ -301,7 +322,7 @@ form label {
   text-align: center;
   margin: 60px 30px 200px; 
   padding: 8px; 
-  color: black;
+  color: var(--quinary-color);
   background-color: var(--text-color);
   text-transform: uppercase;
   display: flex;
@@ -399,26 +420,27 @@ form label {
 
 .experiment-list h2{
   color: var(--text-color); 
+  padding-left: 10px; 
 }
 
 .experiment-list p{
-  font-size: 14px;
+  font-size: 16px;
   color:var(--tertiary-color); 
 }
 
 .new-experiment-btn {
-  margin-left: 75px;
   width: 150px;
   height: 50px;
   text-decoration: none;
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin-top: 30px;
+  margin-top: 10px;
   align-items: center;
 }
 
 .new-experiment-btn:hover{
+  color: var(--quaternary-color);
   border: 1px solid var(--quinary-color);
   border-radius: 5px;
   background-color: var(--quinary-color);
@@ -435,7 +457,6 @@ form label {
 .edit-lab-info label {
   font-size: 22px; 
   color: var(--text-color); 
-  background-color: var(--quinary-color);
   border-radius: 2px;
   text-transform: uppercase;
   padding-left: 5px; 
@@ -445,11 +466,15 @@ form label {
 
 .edit-lab-info input {
   width: 90%;
+  margin-left: 10px;
 }
 .edit-lab-info textarea {
-  height: 300px;
+  height: 100px;
   inline-size: 300px;
   overflow-wrap: break-word;
+  width: 90%; 
+  padding-left: 10px;
+  margin-left: 10px;
 }
 
 .btn-div {
@@ -501,7 +526,7 @@ form label {
   border-radius: 5px;
 }
 
-.one-lab-container h4 {
+.one-lab-container h3 {
   color: var(--text-color);
 }
 
@@ -527,7 +552,7 @@ form label {
   border: 1px solid var(--quaternary-color);
   border-radius: 5px;
   background-color: var(--quaternary-color); 
-  margin: 0 0 50px 75px; 
+  margin: 10px 0 50px 0; 
   align-items: center;
 }
 
@@ -620,9 +645,93 @@ form label {
   border-radius: 5px;
 }
 
+.calform p {
+  color: var(--quinary-color); 
+  font-size: 22px; 
+}
+
+.calform label {
+  font-size: 22px; 
+  color: var(--text-color); 
+  border-radius: 2px;
+  text-transform: uppercase;
+  padding-left: 5px;  
+}
+
+.calfieldset {
+  border: none; 
+}
+
+#examples {
+  font-size: 16px; 
+}
+
+.cal-input {
+  font-size: 16px; 
+}
+
+.cal-btn {
+  color: var(--quinary-color);
+  background-color: var(--quaternary-color);
+  border: 1px solid var(--quaternary-color); 
+  width: 150px;
+  height: 50px;
+  font-size: 16px; 
+  border-radius: 5px;
+}
+
+.cal-btn:hover {
+  background-color: var(--quinary-color);
+  color: var(--text-color); 
+}
+
+#results {
+  font-size: 16px; 
+}
+
+.ncbiimg {
+  margin: 40px 0 0 100px;
+}
+
+.ncbi-form {
+  margin: 40px 0 0 100px; 
+}
+
+.ncbi-input {
+  font-size: 16px;
+  align-items: center;
+  width: 300px; 
+  margin-left: 30%; 
+}
+
+.ncbi-btn {
+  background-color: var(--quaternary-color);
+  color: var(--text-color); 
+  font-size: 16px; 
+  height: 50px; 
+  width: 100px; 
+  border: 1px solid var(--quaternary-color); 
+  border-radius: 5px;
+}
+
+.ncbi-btn:hover {
+  background-color: var(--quinary-color); 
+  border: 1px solid var(--quinary-color); 
+}
+
 .result-div {
   background-color: var(--primary-color-lite);
   border-radius: 5px;
+}
+
+.result-div h4 {
+  color: var(--tertiary-color);
+  font-size: 20px;
+}
+
+span {
+  text-transform: uppercase;
+  color: var(--quinary-color);
 }
 
 .filebtn {

@@ -1,17 +1,17 @@
 
 <form class="ncbi-form">
     <img id="ncbiimg" src="/img/pubmed.png" width="150">
-    <h3>NCBI PubMed search</h3>
+    <h1 class="titleformat">NCBI PubMed search</h1>
     <input class="ncbi-input" name="ncbi-input" ></input>
     <button class="ncbi-btn"> search </button>
 </form>
 {{# if text}}
 <div class="result-div">
-    <h4>There are {{count}} results about {{text}} from NCBI PubMed.</h4>
+    <h4>There are <span>{{count}}</span> results about <span>{{text}}</span> from NCBI PubMed.</h4>
     <ul class="result-list">
         {{#each papers}}
         <li class="paper">
-            <a class="title" href="https://pubmed.ncbi.nlm.nih.gov/{{pmid}}" target="_blank">Title: {{title}}</a>
+            <a class="papertitle" href="https://pubmed.ncbi.nlm.nih.gov/{{pmid}}" target="_blank">Title: {{title}}</a>
             <div class="journal">Journal: {{raw.fulljournalname}} {{raw.pubdate}} Type: {{raw.pubtype}}</div>
             <div class="author">{{format_plural 'Author' raw.authors.length}}: {{authors}}</div>
             <div class="pmid">
