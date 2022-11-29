@@ -86,6 +86,7 @@ This project was made by <a href="https://github.com/TBertazoli">Tatiana Bertazo
 The badges for this README were acquired <a href="https://dev.to/envoy_/150-badges-for-github-pnk">here</a> and <a href="https://shields.io/">here</a>.
 
 ## License 
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Project Status 
 <img src="https://img.shields.io/badge/Status-In%20Progress-orange" />
