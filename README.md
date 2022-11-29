@@ -69,7 +69,7 @@ After signing-in or signing-up, the user will be taken to their dashboard. An ex
 If they are a new user, they will see an empty dashboard with the option to create their first notebook. 
 ![Alt text](./images/lab-bench-new-user-dash.png)
 
-The user also has the option to view and edit the experiments contained within each notbook, as well as view and post comments to an experiment. 
+The user also has the option to view and edit the experiments contained within each notbook, as well as view and post comments and attachments to an experiment. 
 ![Alt text](./images/lab-bench-experiment-list.png)
 ![Alt text](./images/lab-bench-edit-experiment.png)
 ![Alt text](./images/lab-bench-new-experiment.png) 
