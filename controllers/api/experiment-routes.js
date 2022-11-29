@@ -85,12 +85,29 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
         //TODO rendering handlebar
         // TODO list attachments
         //TODO delete attachments
-      }).then(dbPostData => res.render('file-upload', {dbPostData}))
+      }).then(dbPostData => res.render('single-lab-post', { dbPostData }))
         .catch(err => {
           console.log(err);
           res.status(500).json(err);
         });
     });
+  });
+})
+
+router.delete('/:experiment_id/fileupload/:id', withAuth, (req, res) => {
+  Attachment.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(dbPostData => {
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    res.json(dbPostData);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 

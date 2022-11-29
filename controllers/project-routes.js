@@ -116,7 +116,7 @@ router.get('/experiment/:id', (req, res) => {
             },
             {
                 model: Attachment,
-                attributes: ['file_name', 'file_path'],
+                attributes: ['id', 'file_name', 'file_path'],
             }
 
         ]

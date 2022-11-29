@@ -28,9 +28,11 @@
     <div>
       <div class="experiment-view-heading">Attachments</div>
       {{#each experiment.attachments}}
-      <div class="experiment-info" id="attachments-lab">
+      <div class="experiment-info">
         <a target="_blank" href="/{{this.file_path}}">{{this.file_name}}</a>
+        <button type="button" onclick="deleteFile({{this.id}})" id="delete-file">Delete file</button>
       </div>
+      <script src="/javascript/delete-file.js"></script>
       {{/each}}
     </div>
   </div>
@@ -64,6 +66,3 @@
 </button>
 
 
-{{!-- <button class="view-attachments-btn">
-  <a href="/project/experiment/{{experiment.id}}/fileupload/" class="attachments-link">View Attachments</a>
-{{!-- </button> --}}
