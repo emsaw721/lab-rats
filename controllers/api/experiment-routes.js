@@ -85,7 +85,13 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
         //TODO rendering handlebar
         // TODO list attachments
         //TODO delete attachments
-      }).then(dbPostData => res.render('file-upload', {dbPostData}))
+      }).then(dbPostData => {
+        console.log(dbPostData)
+        const attachment = dbPostData.get({ plain: true })
+        console.log(attachment)
+
+        res.render('file-upload', {attachment, loggedIn: true, currentuserid: req.session.userId })
+      })
         .catch(err => {
           console.log(err);
           res.status(500).json(err);

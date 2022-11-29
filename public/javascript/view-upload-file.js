@@ -7,8 +7,11 @@ async function viewAttachment(event) {
     const experimentid = document.querySelector('#experimentid').getAttribute('data-idlab'); 
     const attachment = document.querySelector('.attachmentlink').getAttribute('href'); 
 
+    console.log(projectid)
+    console.log(experimentid)
+    console.log(attachment)
     const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}/fileupload`, {
-        method: 'POST',
+        method: 'GET',
         body: JSON.stringify({
             attachment
         }),
