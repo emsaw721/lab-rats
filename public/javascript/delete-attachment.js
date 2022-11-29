@@ -6,7 +6,7 @@ async function deleteAttachmentHandler(event) {
     const projectid = document.querySelector('#projectid').getAttribute('data-idproj'); 
     const experimentid = document.querySelector('#experimentid').getAttribute('data-idlab'); 
     const id = document.querySelector('#attachmentid').getAttribute('data-idattach'); 
-    console.log('attachmentid' + id)
+    console.log(id)
 
     const response = await fetch(`/api/projects/${projectid}/experiments/${experimentid}/fileupload/${id}`, {
         method: 'DELETE'
@@ -19,4 +19,4 @@ async function deleteAttachmentHandler(event) {
     }
 };
 
-document.querySelector('.deleteattach-btn').addEventListener('click', deleteAttachmentHandler); 
+// document.querySelector('.deleteattach-btn').addEventListener('click', deleteAttachmentHandler); 

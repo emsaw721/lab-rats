@@ -115,8 +115,8 @@ router.get('/experiment/:id', (req, res) => {
 
         if (dbPostData) {           
             const experiment = dbPostData.get({ plain: true });
-            console.log(experiment);
-            console.log(req.session);
+            // console.log(experiment);
+            // console.log(req.session);
             // TODO render handlebar
             res.render('single-lab-post', {
                 experiment,
@@ -153,7 +153,7 @@ router.get('/experiment/edit/:id', (req, res) => {
         ]
     }).then(dbPostData => {
         if (dbPostData) {
-            console.log(dbPostData);
+            // console.log(dbPostData);
             const experiment = dbPostData.get({ plain: true });
             res.render('edit-lab', {
                 experiment,

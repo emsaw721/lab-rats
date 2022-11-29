@@ -70,10 +70,10 @@ router.delete('/:id', withAuth, (req, res) => {
   });
 });
 
-router.post('/:id/fileupload', withAuth, (req, res) => {
+router.post('/:id/attachment', withAuth, (req, res) => {
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, file) {
-    console.log(file);
+    // console.log(file);
     const oldpath = file.filetoupload.filepath;
     const newpath = 'public/fileupload/' + file.filetoupload.originalFilename;
     fs.rename(oldpath, newpath, function (err) {
@@ -82,14 +82,13 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
         file_name: file.filetoupload.originalFilename,
         file_path: newpath,
         experiment_id: fields.experiment_id,
-        experiment_title: fields.experiment_title
+        // experiment_title: fields.experiment_title
         //TODO delete attachments
       }).then(dbPostData => {
-        console.log(dbPostData)
         const attachment = dbPostData.get({ plain: true })
         console.log(attachment)
 
-        res.render('file-upload', {attachment, loggedIn: true, currentuserid: req.session.userId })
+        res.render('file-upload', {attachment, loggedIn: true })
       })
         .catch(err => {
           console.log(err);
@@ -97,6 +96,24 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
         });
     });
   });
+});
+
+router.delete('/:experiment_id/attachment/:id', withAuth, (req,res) => {
+  console.log('====== router.delete/fileupload/:id =======');
+  Attachment.destroy({
+      where: {
+          id: req.params.id
+      }
+  }).then((dbData) => {
+      if(!dbData) {
+          res.status(404).json({message: 'No attachment found with this id!'});
+          return; 
+      }
+      res.json(dbData);
+  }).catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+  })
 });
 
 module.exports = router;

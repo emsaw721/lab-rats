@@ -4,9 +4,9 @@
     {{experiment.title}}</div>
   <div class="one-lab-container">
     <h4>Created on {{format_date experiment.created_at}} by {{experiment.user.username}}</h4>
-    {{#if attachment}}
+   
       <div class="attachmentlink" href="/file-upload">View Attachment List</div>
-  {{/if}}
+
   <div>
     <div class="experiment-view-heading">Purpose and Hypothesis</div>
     <div class="experiment-info" id="purpose-lab">{{experiment.purpose_and_hypothesis}}</div>
@@ -42,7 +42,7 @@
         <button type="submit">Add Comment</button>
       </div>
     </form>
-    <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/fileupload" method="post"
+    <form action="/api/projects/{{experiment.project_id}}/experiments/{{experiment.id}}/attachment" method="post"
       enctype="multipart/form-data">
       <input class="fileslct" type="file" name="filetoupload"><br>
       <input type="hidden" name="experiment_id" value="{{experiment.id}}">

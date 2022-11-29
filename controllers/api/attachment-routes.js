@@ -3,7 +3,9 @@ const sequelize = require('../../config/connection');
 const { Attachment, Experiment, Project } = require('../../models'); 
 const withAuth = require('../../utils/auth');
 
-router.get('/fileupload/:id', withAuth, (req,res) => {
+
+
+router.get('/:id', withAuth, (req,res) => {
     Attachment.findOne({
         where: {
             id: req.params.id
@@ -31,7 +33,8 @@ router.get('/fileupload/:id', withAuth, (req,res) => {
     }); 
 });
 
-router.delete('fileupload/:id', withAuth, (req,res) => {
+router.delete('/:id', withAuth, (req,res) => {
+    console.log('====== router.delete/attachment/:id =======');
     Attachment.destroy({
         where: {
             id: req.params.id
