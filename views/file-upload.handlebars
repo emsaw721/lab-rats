@@ -9,7 +9,7 @@
     <ol>
       {{#each attachment}}
       <li>
-        <a href="{{attachment.file_path}}">View Attachment</a>
+        <a href="{{attachment.file_path}}">View Attachment {{attachment.file_name}}</a>
       </li>
       <button class="deleteattach-btn">Delete Attachment</button>
       {{/each}}
