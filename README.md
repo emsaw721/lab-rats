@@ -55,23 +55,25 @@ into the terminal and navigating to the browser and typing the following into th
 
  > localhost:3001
 
+Or, the user can enter the following link into the search bar:
+ > https://obscure-lake-69191.herokuapp.com
 
-There, the user will see the homepage. 
-![Alt text](./images/lab-bench-first-pg.png)
-On the homepage, the user will select the sign-in link. There, the user can sign-in if they have already created an account or can click the link to sign-up if they have not. 
+ There, the user can sign-in if they have already created an account or can click the link to sign-up if they have not. 
 ![Alt text](./images/lab-bench-sign-in.png)
 ![Alt text](./images/lab-bench-sign-up.png)
 
 After signing-in or signing-up, the user will be taken to their dashboard. An existing user will see their previous lab notebooks with the options to view the experiments contained within, edit the notebook, or create a new notebook. 
 ![Alt text](./images/lab-bench-dashboard.png)
+![Alt text](./images/lab-bench-edit-project.png)
+
 If they are a new user, they will see an empty dashboard with the option to create their first notebook. 
 ![Alt text](./images/lab-rats-new-user-dash.png)
 
 The user also has the option to view and edit the experiments contained within each notbook, as well as view and post comments to an experiment. 
-![Alt text](./images/lab-rats-experiment-list.png)
-![Alt text](./images/lab-rats-edit-lab.png)
-![Alt text](./images/lab-rats-create-experiment.png) 
-![Alt text](./images/lab-rats-one-lab-with-comments.png) 
+![Alt text](./images/lab-bench-experiment-list.png)
+![Alt text](./images/lab-bench-edit-experiment.png)
+![Alt text](./images/lab-bench-new-experiment.png) 
+![Alt text](./images/lab-bench-single-lab.png) 
 
 ## Support
 
