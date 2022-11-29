@@ -82,8 +82,6 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
         file_name: file.filetoupload.originalFilename,
         file_path: newpath,
         experiment_id: fields.experiment_id
-        //TODO rendering handlebar
-        // TODO list attachments
         //TODO delete attachments
       }).then(dbPostData => {
         console.log(dbPostData)

@@ -2,13 +2,14 @@
 
 <section id="projectid" data-idproj="{{fileupload.experiment_id.project_id}}">
   <div id="experimentid" data-idlab="{{fileupload.experiment_id}}">
-  <a class="back-btn" href="/project/{{fileupload.experiment_id.project_id}}/experiment/{{fileupload.experiment_id}}" class="mx-5"> &larr; Back to {{experiment.title}}</a>
-  <div class="attachmentlist">
+  <a class="back-btn" href="/project/experiment/{{fileupload.experiment_id}}" class="mx-5"> &larr; Back to {{fileupload.experiment.title}}</a>
+  <div class="attachmentlist" id="attachmentid" data-idattach="{{fileupload.id}}">
     <ol>
       {{#each attachment}}
       <li>
-        <a href="{{dataValues.file_path}}">View Attachment</a>
+        <a href="{{fileupload.file_path}}">View Attachment</a>
       </li>
+      <button class="deleteattach-btn">Delete Attachment</button>
       {{/each}}
     </ol>
   </div>
