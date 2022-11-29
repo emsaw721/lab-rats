@@ -540,7 +540,7 @@ form label {
 .experiment-comment-list {
   padding: 1%;
   margin-bottom: 1%;
-  color: var(--quaternary-color); 
+  color: var(--text-color); 
 }
 
 .experiment-comment-list a {
@@ -646,4 +646,23 @@ form label {
 
 .back-btn:hover {
   text-decoration: none;
+}
+
+.attachmentlist ol{
+  color: var(--text-color); 
+  background-color: var(--primary-color-lite);
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.deleteattach-btn {
+  color: var(--text-color); 
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  border: 1px solid var(--quaternary-color);
+  border-radius: 5px;
+  background-color: var(--quaternary-color); 
+  margin: 0 0 50px 0; 
+  align-items: center;
 }

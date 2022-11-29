@@ -70,10 +70,10 @@ router.delete('/:id', withAuth, (req, res) => {
   });
 });
 
-router.post('/:id/fileupload', withAuth, (req, res) => {
+router.post('/:id/attachment', withAuth, (req, res) => {
   var form = new formidable.IncomingForm();
   form.parse(req, function (err, fields, file) {
-    console.log(file);
+    // console.log(file);
     const oldpath = file.filetoupload.filepath;
     const newpath = 'fileupload/' + file.filetoupload.originalFilename;
     fs.rename(oldpath, 'public/' + newpath, function (err) {

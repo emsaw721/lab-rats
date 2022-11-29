@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Project, Experiment, Comment, User, Attachment } = require('../models')
 const withAuth = require('../utils/auth');
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     console.log("=============project router.get/:id==============")
     router
     Experiment.findAll({
@@ -77,7 +77,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.get('/experiment/:id', (req, res) => {
+router.get('/experiment/:id', withAuth,(req, res) => {
     console.log('==========project router.get/Experiment/:id============');
     Experiment.findOne({
         order: [[{ model: Comment }, "createdAt", "ASC"]],
@@ -124,8 +124,9 @@ router.get('/experiment/:id', (req, res) => {
 
         if (dbPostData) {
             const experiment = dbPostData.get({ plain: true });
-            console.log(experiment);
-            console.log(req.session);            
+            // console.log(experiment);
+            // console.log(req.session);
+            // TODO render handlebar
             res.render('single-lab-post', {
                 experiment,
                 loggedIn: true,
@@ -138,7 +139,7 @@ router.get('/experiment/:id', (req, res) => {
     });
 })
 
-router.get('/experiment/edit/:id', (req, res) => {
+router.get('/experiment/edit/:id', withAuth, (req, res) => {
     console.log("===========project  router.get/experiment/edit/:id============");
     Experiment.findByPk(req.params.id, {
         attributes: [
@@ -161,7 +162,7 @@ router.get('/experiment/edit/:id', (req, res) => {
         ]
     }).then(dbPostData => {
         if (dbPostData) {
-            console.log(dbPostData);
+            // console.log(dbPostData);
             const experiment = dbPostData.get({ plain: true });
             res.render('edit-lab', {
                 experiment,

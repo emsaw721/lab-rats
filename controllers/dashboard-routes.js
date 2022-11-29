@@ -5,7 +5,7 @@ const sequelize = require('../config/connection');
 const { Project, User, Comment, Experiment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth,(req, res) => {
   console.log('======================');
   Project.findAll({
       attributes: [
