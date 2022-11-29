@@ -125,8 +125,7 @@ router.get('/experiment/:id', (req, res) => {
         if (dbPostData) {
             const experiment = dbPostData.get({ plain: true });
             console.log(experiment);
-            console.log(req.session);
-            // TODO render handlebar
+            console.log(req.session);            
             res.render('single-lab-post', {
                 experiment,
                 loggedIn: true,
