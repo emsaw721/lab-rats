@@ -27,6 +27,20 @@ Attachment.init(
                 key: "id",
             },
         },
+        experiment_title: {
+            type: DataTypes.STRING, 
+            references: {
+                model: "experiment",
+                key: "title"
+            }
+        },
+        project_id: {
+            type: DataTypes.INTEGER, 
+            references: {
+                model: "project",
+                key: "id"
+            }
+        }
     },
     {
         sequelize,

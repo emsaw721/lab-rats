@@ -81,7 +81,8 @@ router.post('/:id/fileupload', withAuth, (req, res) => {
       Attachment.create({
         file_name: file.filetoupload.originalFilename,
         file_path: newpath,
-        experiment_id: fields.experiment_id
+        experiment_id: fields.experiment_id,
+        experiment_title: fields.experiment_title
         //TODO delete attachments
       }).then(dbPostData => {
         console.log(dbPostData)

@@ -647,3 +647,9 @@ form label {
 .back-btn:hover {
   text-decoration: none;
 }
+
+.attachmentlist ol{
+  color: var(--text-color); 
+  background-color: var(--primary-color-lite);
+  font-size: 20px;
+}

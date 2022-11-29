@@ -4,8 +4,8 @@
     {{experiment.title}}</div>
   <div class="one-lab-container">
     <h4>Created on {{format_date experiment.created_at}} by {{experiment.user.username}}</h4>
-    {{#if fileupload}}
-      <div class="attachmentlink" href="{{fileupload.file_path}}">View Attachment</div>
+    {{#if attachment}}
+      <div class="attachmentlink" href="/file-upload">View Attachment List</div>
   {{/if}}
   <div>
     <div class="experiment-view-heading">Purpose and Hypothesis</div>

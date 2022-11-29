@@ -2,7 +2,8 @@
 
 <section id="projectid" data-idproj="{{fileupload.experiment_id.project_id}}">
   <div id="experimentid" data-idlab="{{fileupload.experiment_id}}">
-  <a class="back-btn" href="/project/experiment/{{fileupload.experiment_id}}" class="mx-5"> &larr; Back to {{fileupload.experiment.title}}</a>
+  <a class="back-btn" href="/project/experiment/{{fileupload.experiment_id}}" class="mx-5"> &larr; Back to {{fileupload.experiment_title}}</a>
+  <h1 class="titleformat">Attachment List</h1>
   <div class="attachmentlist" id="attachmentid" data-idattach="{{fileupload.id}}">
     <ol>
       {{#each attachment}}
