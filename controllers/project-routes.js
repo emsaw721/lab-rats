@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Project, Experiment, Comment, User } = require('../models')
 const withAuth = require('../utils/auth');
 
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     console.log("=============project router.get/:id==============")
     router
     Experiment.findAll({
@@ -72,7 +72,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.get('/experiment/:id', (req, res) => {
+router.get('/experiment/:id', withAuth,(req, res) => {
     console.log('==========project router.get/Experiment/:id============');
     Experiment.findOne({
         order: [[{ model: Comment }, "createdAt", "ASC"]],
@@ -130,7 +130,7 @@ router.get('/experiment/:id', (req, res) => {
     });
 })
 
-router.get('/experiment/edit/:id', (req, res) => {
+router.get('/experiment/edit/:id', withAuth, (req, res) => {
     console.log("===========project  router.get/experiment/edit/:id============");
     Experiment.findByPk(req.params.id, {
         attributes: [

@@ -69,7 +69,7 @@ router.get("/add_experiment/:id", withAuth,(req, res)=>{
     return;
 });
 
-router.get("/ncbisearch",(req,res)=>{
+router.get("/ncbisearch",withAuth,(req,res)=>{
   console.log("===================router.get/ncbisearch=====================");
   res.render("NCBI", {loggedIn:req.session.loggedIn});
 });
