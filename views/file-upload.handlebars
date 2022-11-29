@@ -7,6 +7,7 @@
   {{!-- {{#if attachments.length}} --}}
   <div class="attachmentlist" id="attachmentid" data-idattach="{{attachment.id}}">
     <ol>
+      {{!-- {{#each attachments as |attachment|}}--}}
       {{#each attachment}}
       <li>
         <a href="{{attachment.file_path}}">View Attachment {{attachment.file_name}}</a>
@@ -15,6 +16,6 @@
       {{/each}}
     </ol>
   </div>
-  {{!-- {{/if}} --}}
+  {{!-- {{/if}} --}} 
 </div>
 </section>
