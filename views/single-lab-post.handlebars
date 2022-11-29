@@ -1,5 +1,5 @@
 <section id="notebookid" data-id="{{experiment.project_id}}">
-  <a href="/project/{{experiment.project_id}}" class="mx-5"> &larr; Back to {{experiment.project.project_name}}</a>
+  <a class="back-btn" href="/project/{{experiment.project_id}}" class="mx-5"> &larr; Back to {{experiment.project.project_name}}</a>
   <div class="titleformat" style="font-size: 45px; margin-bottom:50px;" id="experimentid" data-id="{{experiment.id}}">
     {{experiment.title}}</div>
   <div class="one-lab-container">
@@ -38,8 +38,8 @@
     {{> comments experiment.comments}}
     {{#if loggedIn}}
     <form class="comment-form" data-cuser="currentuserid">
-      <div class="questions">Questions or suggestions? <span>Leave a
-          comment!</span></div>
+      <div class="questions">Questions or suggestions? Leave a
+        comment or drop a file!</div>
       <div>
         <textarea name="comment-body"></textarea>
       </div>
@@ -57,6 +57,7 @@
     <script src="/javascript/comment.js"></script>
     {{/if}}
   </div>
+
 </section>
 <button class="edit-lab-btn">
   <a href="/project/experiment/edit/{{experiment.id}}" class="edit-link">Edit Lab Entry</a>
