@@ -1,6 +1,6 @@
 const router = require('express').Router({ mergeParams: true });
 const sequelize = require('../config/connection');
-const { Project, Experiment, Comment, User } = require('../models')
+const { Project, Experiment, Comment, User, Attachment } = require('../models')
 const withAuth = require('../utils/auth');
 
 router.get('/:id', withAuth, (req, res) => {
@@ -32,15 +32,20 @@ router.get('/:id', withAuth, (req, res) => {
                 }
             },
             {
-                model:Project,
-                attributes:['id','project_name'],
+                model: Project,
+                attributes: ['id', 'project_name'],
             },
             {
-                model:User,
+                model: User,
                 attributes: ['username'],
+            },
+            {
+                model: Attachment,
+                attributes: ['file_name'],
             },
         ]
     }).then(dbPostData => {
+        console.log(dbPostData)
         if (dbPostData.length > 0) {
             const experiments = dbPostData.map(post => post.get({ plain: true }));
             console.log(experiments);
@@ -48,22 +53,22 @@ router.get('/:id', withAuth, (req, res) => {
                 experiments,
                 loggedIn: req.session.loggedIn,
                 project_id: req.params.id,
-                project_name: experiments[0].project.project_name,
+                project_name: experiments[0].project.project_name                
             });
         } else {
-            Project.findOne ({
-                where:{
+            Project.findOne({
+                where: {
                     id: req.params.id
                 }
-            }).then(dbdata=>{
+            }).then(dbdata => {
                 const project = dbdata.get({ plain: true });
                 console.log(dbdata);
                 res.render('experiment-list', {
-                    
+
                     loggedIn: req.session.loggedIn,
                     project_id: req.params.id,
-                    project_name: project.project_name,
-                })
+                    project_name: project.project_name
+                });
             });
         }
     }).catch(err => {
@@ -95,7 +100,7 @@ router.get('/experiment/:id', withAuth,(req, res) => {
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'user_id', 'experiment_id','created_at'],
+                attributes: ['id', 'comment_text', 'user_id', 'experiment_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -103,17 +108,21 @@ router.get('/experiment/:id', withAuth,(req, res) => {
             },
             {
                 model: Project,
-                attributes:['id','project_name'],
+                attributes: ['id', 'project_name'],
             },
             {
-                model:User,
+                model: User,
                 attributes: ['username'],
+            },
+            {
+                model: Attachment,
+                attributes: ['id', 'file_name', 'file_path'],
             }
 
         ]
     }).then(dbPostData => {
 
-        if (dbPostData) {           
+        if (dbPostData) {
             const experiment = dbPostData.get({ plain: true });
             // console.log(experiment);
             // console.log(req.session);
@@ -121,7 +130,7 @@ router.get('/experiment/:id', withAuth,(req, res) => {
             res.render('single-lab-post', {
                 experiment,
                 loggedIn: true,
-                currentuserid:req.session.userId,
+                currentuserid: req.session.userId,
             });
         }
     }).catch(err => {
@@ -148,7 +157,7 @@ router.get('/experiment/edit/:id', withAuth, (req, res) => {
         include: [
             {
                 model: Project,
-                attributes:['id','project_name'],
+                attributes: ['id', 'project_name'],
             }
         ]
     }).then(dbPostData => {

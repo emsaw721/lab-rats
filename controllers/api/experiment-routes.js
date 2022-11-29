@@ -75,45 +75,37 @@ router.post('/:id/attachment', withAuth, (req, res) => {
   form.parse(req, function (err, fields, file) {
     // console.log(file);
     const oldpath = file.filetoupload.filepath;
-    const newpath = 'public/fileupload/' + file.filetoupload.originalFilename;
-    fs.rename(oldpath, newpath, function (err) {
+    const newpath = 'fileupload/' + file.filetoupload.originalFilename;
+    fs.rename(oldpath, 'public/' + newpath, function (err) {
       if (err) throw err;
       Attachment.create({
         file_name: file.filetoupload.originalFilename,
         file_path: newpath,
-        experiment_id: fields.experiment_id,
-        // experiment_title: fields.experiment_title
-        //TODO delete attachments
-      }).then(dbPostData => {
-        const attachment = dbPostData.get({ plain: true })
-        console.log(attachment)
-
-        res.render('file-upload', {attachment, loggedIn: true })
-      })
+        experiment_id: fields.experiment_id
+      }).then(dbPostData => res.redirect(`/project/experiment/${fields.experiment_id}`))
         .catch(err => {
           console.log(err);
           res.status(500).json(err);
         });
     });
   });
-});
+})
 
-router.delete('/:experiment_id/attachment/:id', withAuth, (req,res) => {
-  console.log('====== router.delete/fileupload/:id =======');
+router.delete('/:experiment_id/fileupload/:id', withAuth, (req, res) => {
   Attachment.destroy({
-      where: {
-          id: req.params.id
-      }
-  }).then((dbData) => {
-      if(!dbData) {
-          res.status(404).json({message: 'No attachment found with this id!'});
-          return; 
-      }
-      res.json(dbData);
-  }).catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-  })
+    where: {
+      id: req.params.id
+    }
+  }).then(dbPostData => {
+    if (!dbPostData) {
+      res.status(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    res.json(dbPostData);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;
