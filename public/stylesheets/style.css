@@ -20,6 +20,7 @@ html {
     background-image: url('../img/possible-background.png'); 
     background-position: center;
     background-repeat: none; 
+    background-attachment: fixed;
 }
 
 h1 {
